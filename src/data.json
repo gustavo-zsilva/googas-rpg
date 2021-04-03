@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Googas",
+        "experience": 0,
+        "rarity": "legendary",
+        "url": "./images/googas.png",
+        "font": "Architects Daughter"
+    },
+    {
+        "name": "Bingus",
+        "experience": 0,
+        "rarity": "legendary",
+        "url": "./images/bingus.png",
+        "font": "Bebas Neue"
+    },
+    {
+        "name": "Big Floppa",
+        "experience": 0,
+        "rarity": "epic",
+        "url": "./images/big-floppa.png",
+        "font": "Chenla"
+    },
+    {
+        "name": "Fake Googas",
+        "experience": 0,
+        "rarity": "epic",
+        "url": "./images/fake-googas.png",
+        "font": "Dancing Script"
+    },
+    {
+        "name": "Sogga",
+        "experience": 0,
+        "rarity": "epic",
+        "url": "./images/sogga.png",
+        "font": "Indie Flower"
+    },
+    {
+        "name": "Zabloing",
+        "experience": 0,
+        "rarity": "epic",
+        "url": "./images/zabloing.png",
+        "font": "New Tegomin"
+    }
+]

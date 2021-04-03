@@ -1,0 +1,31 @@
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+  
+    position: relative;
+  
+    width: 20rem;
+    height: 20rem;
+    object-fit: contain;
+    overflow: hidden;
+}
+  
+.imageContainer img {
+    display: flex;
+    flex: 1;
+  
+    max-width: 100%;
+    height: auto;
+}
+
+.imageContainer > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  
+    background: rgb(221, 221, 221);
+    transition: .2s;
+}

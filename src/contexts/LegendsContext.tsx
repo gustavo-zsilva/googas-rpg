@@ -44,12 +44,37 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
     const [legendsHistory, setLegendsHistory] = useState([]);
 
     const isOutOfSpins = spins <= 0;
+
+    function getRandomLegend(legendArray: Legend[]) {
+        const randomIndex = Math.floor(Math.random() * legendArray.length);
+        return legendArray[randomIndex];
+    }
   
-    function getRandomLegend() {
-        const randomIndex = Math.floor(Math.random() * legends.length);
-        const randomLegend = legends[randomIndex];
+    function calculateChances() {
+        const randomIndex = Math.floor(Math.random() * 1000);
+        let legend: Legend;
+
+        console.log(randomIndex)
         
-        return randomLegend;
+        
+        if (randomIndex <= 3) {
+            const legendaryLegends = legends.filter(legend => legend.rarity == 'legendary' ? legend : null);
+            legend = getRandomLegend(legendaryLegends);
+        }
+        else if (randomIndex <= 12) {
+            const epicLegends = legends.filter(legend => legend.rarity == 'epic' ? legend : null);
+            legend = getRandomLegend(epicLegends);
+        }
+        else if (randomIndex <= 36) {
+            const rareLegends = legends.filter(legend => legend.rarity == 'rare' ? legend : null);
+            legend = getRandomLegend(rareLegends);
+        }
+        else if (randomIndex > 36) {
+            const commonLegends = legends.filter(legend => legend.rarity == 'common' ? legend : null);
+            legend = getRandomLegend(commonLegends);
+        }
+        
+        return legend;
     }
 
     const rarityScheme = {
@@ -60,7 +85,7 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
     }
 
     useEffect(() => {
-        const savedLegendsHistory = JSON.parse(Cookie.get('legendsHistory')) || "[]";
+        const savedLegendsHistory = JSON.parse(Cookie.get('legendsHistory')) || [];
         const savedSpins = Number(Cookie.get('spins'));
 
         setLegendsHistory(savedLegendsHistory);
@@ -80,7 +105,7 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
         setSpins(spins - 1);
         setIsRevealing(true);
     
-        const randomLegend = getRandomLegend();
+        const randomLegend = calculateChances();
     
         setLegend(randomLegend);
     }

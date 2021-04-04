@@ -10,8 +10,16 @@ type Legend = {
     font: string,
 }
 
+type Rarity = {
+    legendary: string,
+    epic: string,
+    rare: string,
+    common: string,
+}
+
 interface LegendsContextProps {
     legends: Legend[];
+    rarityScheme: Rarity;
     spins: number;
     isRevealing: boolean;
     legend: Legend;
@@ -38,6 +46,13 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
         const randomLegend = legends[randomIndex];
     
         return randomLegend;
+    }
+
+    const rarityScheme = {
+        legendary: '#ff8000',
+        epic: '#a335ee',
+        rare: '#0070dd',
+        common: '#cccccc',
     }
   
     function handleSpin() {
@@ -69,6 +84,7 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
                 spins,
                 isRevealing,
                 legend,
+                rarityScheme,
                 isOutOfSpins,
                 handleSpin,
                 handleDiscardLegend,

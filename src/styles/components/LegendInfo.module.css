@@ -1,0 +1,27 @@
+.legendInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: .8rem;
+}
+
+.legendInfo span {
+    font-size: 1.5rem;
+}
+
+.legendInfo > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.legendInfo .legendName {
+    font-size: 2.2rem;
+}
+
+.legendInfo .legendRarity {
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    padding: 0 .6rem;
+    margin-top: .8rem;
+}

@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    width: 100%;
 
     margin-top: 1.6rem;
 }
@@ -9,7 +11,13 @@
 .controlsContainer button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+
+    margin-top: 1.2rem;
+
     vertical-align: middle;
+
+    width: 100%;
 
     padding: .8rem;
     background: #0081A7;
@@ -22,13 +30,24 @@
   
 .controlsContainer span {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.controlsContainer span > span {
+    font-size: 3.2rem;
+    font-family: 'New Tegomin', Arial, Helvetica, sans-serif;
 }
 
 .controlsContainer .legendInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.controlsContainer > div {
+    display: flex;
 }
 
 .controlsContainer > div button:first-child {

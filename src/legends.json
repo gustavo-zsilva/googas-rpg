@@ -1,0 +1,121 @@
+[
+    {
+        "name": "Googas",
+        "experience": 0,
+        "rarity": "legendary",
+        "url": "./images/googas.png",
+        "font": "Architects Daughter"
+    },
+    {
+        "name": "Bingus",
+        "experience": 0,
+        "rarity": "legendary",
+        "url": "./images/bingus.png",
+        "font": "Bebas Neue"
+    },
+    {
+        "name": "Big Floppa",
+        "experience": 0,
+        "rarity": "epic",
+        "url": "./images/big_floppa.png",
+        "font": "Chenla"
+    },
+    {
+        "name": "Fake Googas",
+        "experience": 0,
+        "rarity": "epic",
+        "url": "./images/fake_googas.png",
+        "font": "Dancing Script"
+    },
+    {
+        "name": "Sogga",
+        "experience": 0,
+        "rarity": "epic",
+        "url": "./images/sogga.png",
+        "font": "Indie Flower"
+    },
+    {
+        "name": "Zabloing",
+        "experience": 0,
+        "rarity": "epic",
+        "url": "./images/zabloing.png",
+        "font": "New Tegomin"
+    },
+    {
+        "name": "Pingus",
+        "experience": 0,
+        "rarity": "rare",
+        "url": "./images/pingus.png",
+        "font": ""
+    },
+    {
+        "name": "Fleppa",
+        "experience": 0,
+        "rarity": "common",
+        "url": "./images/fleppa.png",
+        "font": ""
+    },
+    {
+        "name": "Choppa Floppa",
+        "experience": 0,
+        "rarity": "common",
+        "url": "./images/choppa_floppa.png",
+        "font": ""
+    },
+    {
+        "name": "Flopammed Al Googas",
+        "experience": 0,
+        "rarity": "common",
+        "url": "./images/flopammed_al_googas.png",
+        "font": ""
+    },
+    {
+        "name": "Juan",
+        "experience": 0,
+        "rarity": "rare",
+        "url": "./images/juan.png",
+        "font": ""
+    },
+    {
+        "name": "Lil Floppa",
+        "experience": 0,
+        "rarity": "common",
+        "url": "./images/lil_floppa.png",
+        "font": ""
+    },
+    {
+        "name": "Sandy Shoppa",
+        "experience": 0,
+        "rarity": "common",
+        "url": "./images/sandy_shoppa.png",
+        "font": ""
+    },
+    {
+        "name": "Selwyn McSoggers",
+        "experience": 0,
+        "rarity": "common",
+        "url": "./images/selwyn_mcsoggers.png",
+        "font": ""
+    },
+    {
+        "name": "Sleepy Shloopa",
+        "experience": 0,
+        "rarity": "common",
+        "url": "./images/sleepy_shloopa.png",
+        "font": ""
+    },
+    {
+        "name": "The Destroyer",
+        "experience": 0,
+        "rarity": "legendary",
+        "url": "./images/the_destroyer.png",
+        "font": "Dancing Script"
+    },
+    {
+        "name": "Baweley Sogga",
+        "experience": 0,
+        "rarity": "common",
+        "url": "./images/baweley_sogga.png",
+        "font": ""
+    }
+]

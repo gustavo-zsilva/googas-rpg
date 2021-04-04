@@ -8,7 +8,6 @@ import styles from '../styles/components/Controls.module.css';
 export function Controls() {
 
     const {
-        legend,
         spins,
         isRevealing,
         isOutOfSpins,
@@ -20,14 +19,12 @@ export function Controls() {
     return (
         <div className={styles.controlsContainer}>
 
-            {isRevealing && (
-                <div className={styles.legendInfo}>
-                    <span style={{ fontFamily: legend.font }}>{legend.name}</span>
-                    <span>{legend.rarity}</span>
-                </div>
-            )}
-
-            <span>{spins} spins left</span>
+            <span>
+                <span>
+                    {spins}
+                </span>
+                spins left
+            </span>
 
             {isRevealing && (
                 <div>

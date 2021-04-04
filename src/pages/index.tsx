@@ -6,6 +6,7 @@ import { Controls } from '../components/Controls';
 import { Image } from '../components/Image';
 
 import styles from '../styles/Home.module.css';
+import { LegendInfo } from '../components/LegendInfo';
 
 type Legend = {
   name: string,
@@ -32,16 +33,24 @@ export default function Home({ legends }: HomeProps) {
       <div className={styles.container}>
         <header>Googas RPG</header>
 
-        <Image />
-        <Controls />
+        <div>
+          <Image />
+          <LegendInfo />
+          <Controls />
+        </div>
+
+        <div>
+
+        </div>
+
       </div>
     </LegendsProvider>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const response = await import('../data.json');
-  const legends = response.default;
+  const legendsImport = await import('../legends.json');
+  const legends = legendsImport.default;
 
   return {
     props: {

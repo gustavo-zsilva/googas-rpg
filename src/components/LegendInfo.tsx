@@ -13,19 +13,19 @@ export function LegendInfo() {
                 <div>
                     <span
                         className={styles.legendName}
-                        style={{ fontFamily: legend.font }}
+                        style={{ fontFamily: legend?.font }}
                     >
-                        {legend.name}
+                        {legend?.name}
                     </span>
                     <span
                         className={styles.legendRarity}
                         style={{
-                            color: rarityScheme[legend.rarity],
-                            borderLeft: `2px solid ${rarityScheme[legend.rarity]}`,
-                            borderRight: `2px solid ${rarityScheme[legend.rarity]}`
+                            color: rarityScheme[legend?.rarity],
+                            borderLeft: `2px solid ${rarityScheme[legend?.rarity]}`,
+                            borderRight: `2px solid ${rarityScheme[legend?.rarity]}`
                         }}
                     >
-                        {legend.rarity}
+                        {legend?.rarity}
                     </span>
                 </div>
             )}

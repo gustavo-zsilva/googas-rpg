@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useState, useEffect } from "react";
+import Cookie from 'js-cookie';
 
 export const LegendsContext = createContext({} as LegendsContextProps);
 
@@ -22,7 +23,8 @@ interface LegendsContextProps {
     rarityScheme: Rarity;
     spins: number;
     isRevealing: boolean;
-    legend: Legend;
+    legend: Legend | null;
+    legendsHistory: any[];
     isOutOfSpins: boolean;
     handleSpin: () => void;
     handleDiscardLegend: () => void;
@@ -38,13 +40,15 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
 
     const [spins, setSpins] = useState(15);
     const [isRevealing, setIsRevealing] = useState(false);
-    const [legend, setLegend] = useState({});
+    const [legend, setLegend] = useState(null);
+    const [legendsHistory, setLegendsHistory] = useState([]);
+
     const isOutOfSpins = spins <= 0;
   
     function getRandomLegend() {
         const randomIndex = Math.floor(Math.random() * legends.length);
         const randomLegend = legends[randomIndex];
-    
+        
         return randomLegend;
     }
 
@@ -54,6 +58,20 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
         rare: '#0070dd',
         common: '#cccccc',
     }
+
+    useEffect(() => {
+        const savedLegendsHistory = JSON.parse(Cookie.get('legendsHistory')) || "[]";
+        const savedSpins = Number(Cookie.get('spins'));
+
+        setLegendsHistory(savedLegendsHistory);
+        setSpins(savedSpins);
+    }, [])
+
+    useEffect(() => {
+        Cookie.set('legendsHistory', JSON.stringify(legendsHistory));
+        Cookie.set('spins', String(spins));
+
+    }, [legendsHistory, spins])
   
     function handleSpin() {
 
@@ -69,12 +87,13 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
 
     function handleDiscardLegend() {
         setIsRevealing(false);
-        setLegend({});
+        setLegend(null);
     }
 
     function handleAddLegend() {
         setIsRevealing(false);
-        setLegend({});
+        setLegendsHistory([legend, ...legendsHistory]);
+        setLegend(null);
     }
 
     return (
@@ -84,6 +103,7 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
                 spins,
                 isRevealing,
                 legend,
+                legendsHistory,
                 rarityScheme,
                 isOutOfSpins,
                 handleSpin,

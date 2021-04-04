@@ -14,6 +14,34 @@
         "font": "Bebas Neue"
     },
     {
+        "name": "AdmPoggers",
+        "experience": 0,
+        "rarity": "legendary",
+        "url": "./images/adm_poggers.png",
+        "font": ""
+    },
+    {
+        "name": "Diedius123",
+        "experience": 0,
+        "rarity": "legendary",
+        "url": "./images/diedius123.png",
+        "font": ""
+    },
+    {
+        "name": "The Destroyer",
+        "experience": 0,
+        "rarity": "legendary",
+        "url": "./images/the_destroyer.png",
+        "font": "Dancing Script"
+    },
+    {
+        "name": "Cazumggbr",
+        "experience": 0,
+        "rarity": "epic",
+        "url": "./images/cazumggbr.png",
+        "font": "Indie Flower"
+    },
+    {
         "name": "Big Floppa",
         "experience": 0,
         "rarity": "epic",
@@ -49,6 +77,13 @@
         "font": ""
     },
     {
+        "name": "Juan",
+        "experience": 0,
+        "rarity": "rare",
+        "url": "./images/juan.png",
+        "font": ""
+    },
+    {
         "name": "Fleppa",
         "experience": 0,
         "rarity": "common",
@@ -67,13 +102,6 @@
         "experience": 0,
         "rarity": "common",
         "url": "./images/flopammed_al_googas.png",
-        "font": ""
-    },
-    {
-        "name": "Juan",
-        "experience": 0,
-        "rarity": "rare",
-        "url": "./images/juan.png",
         "font": ""
     },
     {
@@ -103,13 +131,6 @@
         "rarity": "common",
         "url": "./images/sleepy_shloopa.png",
         "font": ""
-    },
-    {
-        "name": "The Destroyer",
-        "experience": 0,
-        "rarity": "legendary",
-        "url": "./images/the_destroyer.png",
-        "font": "Dancing Script"
     },
     {
         "name": "Baweley Sogga",

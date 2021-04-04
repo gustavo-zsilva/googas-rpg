@@ -9,11 +9,11 @@ export function Image() {
     return (
         <div
             className={styles.imageContainer}
-            style={{ border: `8px solid ${rarityScheme[legend.rarity]}` }}
+            style={{ border: `8px solid ${rarityScheme[legend?.rarity]}` }}
         >
             <div style={{ background: isRevealing ? 'transparent' : null }} />
-
-            <img src={legend.url} alt={legend.name} />
+            
+            <img src={legend?.url} alt={legend?.name} />
         </div>
     );
 }

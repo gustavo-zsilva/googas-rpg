@@ -4,9 +4,11 @@ import { GetServerSideProps } from 'next';
 import { LegendsProvider } from '../contexts/LegendsContext';
 import { Controls } from '../components/Controls';
 import { Image } from '../components/Image';
+import { LegendHistory } from '../components/LegendHistory';
 
 import styles from '../styles/Home.module.css';
 import { LegendInfo } from '../components/LegendInfo';
+import { Backstory } from '../components/Backstory';
 
 type Legend = {
   name: string,
@@ -31,16 +33,21 @@ export default function Home({ legends }: HomeProps) {
       </Head>
 
       <div className={styles.container}>
-        <header>Googas RPG</header>
 
         <div>
+          <Backstory />
+        </div>
+
+        <div>
+          <header>Googas RPG</header>
+          
           <Image />
           <LegendInfo />
           <Controls />
         </div>
 
         <div>
-
+          <LegendHistory />
         </div>
 
       </div>

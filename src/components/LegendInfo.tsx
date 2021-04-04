@@ -5,7 +5,9 @@ import styles from '../styles/components/LegendInfo.module.css';
 
 export function LegendInfo() {
 
-    const { legend, isRevealing, rarityScheme } = useContext(LegendsContext);
+    const { legend, isRevealing, rarityScheme, legendsHistory } = useContext(LegendsContext);
+    const rarityColor = rarityScheme[legend?.rarity];
+    const hasLegend = legendsHistory.includes(legend);
 
     return (
         <div className={styles.legendInfo}>
@@ -20,13 +22,14 @@ export function LegendInfo() {
                     <span
                         className={styles.legendRarity}
                         style={{
-                            color: rarityScheme[legend?.rarity],
-                            borderLeft: `2px solid ${rarityScheme[legend?.rarity]}`,
-                            borderRight: `2px solid ${rarityScheme[legend?.rarity]}`
+                            color: rarityColor,
+                            borderLeft: `2px solid ${rarityColor}`,
+                            borderRight: `2px solid ${rarityColor}`
                         }}
                     >
                         {legend?.rarity}
                     </span>
+                    {hasLegend && <span>(You already has this legend)</span>}
                 </div>
             )}
         </div>

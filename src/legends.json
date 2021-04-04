@@ -18,7 +18,14 @@
         "experience": 0,
         "rarity": "legendary",
         "url": "./images/adm_poggers.png",
-        "font": ""
+        "font": "Indie Flower"
+    },
+    {
+        "name": "Blue Jesus",
+        "experience": 0,
+        "rarity": "legendary",
+        "url": "./images/blue_jesus.png",
+        "font": "Indie Flower"
     },
     {
         "name": "Diedius123",

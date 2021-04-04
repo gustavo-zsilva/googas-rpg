@@ -53,9 +53,6 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
     function calculateChances() {
         const randomIndex = Math.floor(Math.random() * 1000);
         let legend: Legend;
-
-        console.log(randomIndex)
-        
         
         if (randomIndex <= 3) {
             const legendaryLegends = legends.filter(legend => legend.rarity == 'legendary' ? legend : null);

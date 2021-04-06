@@ -16,7 +16,7 @@ export function LegendHistory() {
                 {legendsHistory.map((legend, index) => {
                     return (
                         <li key={index} style={{ borderLeft: `4px solid ${rarityScheme[legend.rarity]}` }}>
-                            <div style={{ backgroundImage: `url(${legend.url})` }} />
+                            <div style={{ backgroundImage: `url(${legend.imageUrl})` }} />
                             <span>{legend.name}</span>
                         </li>
                     );

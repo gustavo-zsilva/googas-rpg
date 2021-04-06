@@ -3,147 +3,180 @@
         "name": "Googas",
         "experience": 0,
         "rarity": "legendary",
-        "url": "./images/googas.png",
-        "font": "Architects Daughter"
+        "imageUrl": "./images/googas.png",
+        "font": "Architects Daughter",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/The_Real_Googas"
     },
     {
         "name": "Bingus",
         "experience": 0,
         "rarity": "legendary",
-        "url": "./images/bingus.png",
-        "font": "Bebas Neue"
+        "imageUrl": "./images/bingus.png",
+        "font": "Bebas Neue",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Bingus"
     },
     {
         "name": "AdmPoggers",
         "experience": 0,
         "rarity": "legendary",
-        "url": "./images/adm_poggers.png",
-        "font": "Indie Flower"
+        "imageUrl": "./images/adm_poggers.png",
+        "font": "Indie Flower",
+        "description": "",
+        "url": "https://www.roblox.com/users/2268073812/profile"
     },
     {
         "name": "Blue Jesus",
         "experience": 0,
         "rarity": "legendary",
-        "url": "./images/blue_jesus.png",
-        "font": "Indie Flower"
+        "imageUrl": "./images/blue_jesus.png",
+        "font": "Indie Flower",
+        "description": "",
+        "url": "https://www.roblox.com/users/197125692/profile"
     },
     {
         "name": "Diedius123",
         "experience": 0,
         "rarity": "legendary",
-        "url": "./images/diedius123.png",
-        "font": ""
+        "imageUrl": "./images/diedius123.png",
+        "font": "",
+        "description": "",
+        "url": "https://www.roblox.com/users/197125692/profile"
     },
     {
         "name": "The Destroyer",
         "experience": 0,
         "rarity": "legendary",
-        "url": "./images/the_destroyer.png",
-        "font": "Dancing Script"
+        "imageUrl": "./images/the_destroyer.png",
+        "font": "Dancing Script",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/The_Destroyer"
     },
     {
         "name": "Cazumggbr",
         "experience": 0,
         "rarity": "epic",
-        "url": "./images/cazumggbr.png",
-        "font": "Indie Flower"
+        "imageUrl": "./images/cazumggbr.png",
+        "font": "Indie Flower",
+        "description": "",
+        "url": "https://www.roblox.com/users/62853383/profile"
     },
     {
         "name": "Big Floppa",
         "experience": 0,
         "rarity": "epic",
-        "url": "./images/big_floppa.png",
-        "font": "Chenla"
+        "imageUrl": "./images/big_floppa.png",
+        "font": "Chenla",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Big_Floppa"
     },
     {
         "name": "Fake Googas",
         "experience": 0,
         "rarity": "epic",
-        "url": "./images/fake_googas.png",
-        "font": "Dancing Script"
+        "imageUrl": "./images/fake_googas.png",
+        "font": "Dancing Script",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Googas"
     },
     {
         "name": "Sogga",
         "experience": 0,
         "rarity": "epic",
-        "url": "./images/sogga.png",
-        "font": "Indie Flower"
+        "imageUrl": "./images/sogga.png",
+        "font": "Indie Flower",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Sogga"
     },
     {
         "name": "Zabloing",
         "experience": 0,
         "rarity": "epic",
-        "url": "./images/zabloing.png",
-        "font": "New Tegomin"
+        "imageUrl": "./images/zabloing.png",
+        "font": "New Tegomin",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Zabloing"
     },
     {
         "name": "Pingus",
         "experience": 0,
         "rarity": "rare",
-        "url": "./images/pingus.png",
-        "font": ""
+        "imageUrl": "./images/pingus.png",
+        "font": "",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Pingus"
     },
     {
         "name": "Juan",
         "experience": 0,
         "rarity": "rare",
-        "url": "./images/juan.png",
-        "font": ""
+        "imageUrl": "./images/juan.png",
+        "font": "",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Juan"
     },
     {
         "name": "Fleppa",
         "experience": 0,
         "rarity": "common",
-        "url": "./images/fleppa.png",
-        "font": ""
+        "imageUrl": "./images/fleppa.png",
+        "font": "",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Fleppa"
     },
     {
         "name": "Choppa Floppa",
         "experience": 0,
         "rarity": "common",
-        "url": "./images/choppa_floppa.png",
-        "font": ""
+        "imageUrl": "./images/choppa_floppa.png",
+        "font": "",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Choppa_Floppa"
     },
     {
         "name": "Flopammed Al Googas",
         "experience": 0,
         "rarity": "common",
-        "url": "./images/flopammed_al_googas.png",
-        "font": ""
+        "imageUrl": "./images/flopammed_al_googas.png",
+        "font": "",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Flopammed_Al-Googas"
     },
     {
         "name": "Lil Floppa",
         "experience": 0,
         "rarity": "common",
-        "url": "./images/lil_floppa.png",
-        "font": ""
-    },
-    {
-        "name": "Sandy Shoppa",
-        "experience": 0,
-        "rarity": "common",
-        "url": "./images/sandy_shoppa.png",
-        "font": ""
+        "imageUrl": "./images/lil_floppa.png",
+        "font": "",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Lil_Floppa"
     },
     {
         "name": "Selwyn McSoggers",
         "experience": 0,
         "rarity": "common",
-        "url": "./images/selwyn_mcsoggers.png",
-        "font": ""
+        "imageUrl": "./images/selwyn_mcsoggers.png",
+        "font": "",
+        "description": "",
+        "url": ""
     },
     {
         "name": "Sleepy Shloopa",
         "experience": 0,
         "rarity": "common",
-        "url": "./images/sleepy_shloopa.png",
-        "font": ""
+        "imageUrl": "./images/sleepy_shloopa.png",
+        "font": "",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Sleepy_Shloopa"
     },
     {
         "name": "Baweley Sogga",
         "experience": 0,
         "rarity": "common",
-        "url": "./images/baweley_sogga.png",
-        "font": ""
+        "imageUrl": "./images/baweley_sogga.png",
+        "font": "",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Baweley"
     }
 ]

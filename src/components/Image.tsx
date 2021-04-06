@@ -13,7 +13,7 @@ export function Image() {
         >
             <div style={{ background: isRevealing ? 'transparent' : null }} />
             
-            <img src={legend?.url} alt={legend?.name} />
+            <img src={legend?.imageUrl} alt={legend?.name} />
         </div>
     );
 }

@@ -1,7 +1,10 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 80px 1fr;
+  grid-template-areas:
+    'Header Header Header'
+    'Backstory Main History';
 
   margin: 2.6rem auto;
   max-width: 80rem;
@@ -11,4 +14,5 @@
 .container header {
   margin-bottom: 2rem;
   text-align: center;
+  grid-area: Header;
 }

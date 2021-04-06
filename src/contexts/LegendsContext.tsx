@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useState, useEffect } from "react";
 import Cookie from 'js-cookie';
+import localForage from 'localforage';
 
 export const LegendsContext = createContext({} as LegendsContextProps);
 
@@ -7,8 +8,10 @@ type Legend = {
     name: string,
     experience: number,
     rarity: string,
-    url: string,
+    imageUrl: string,
     font: string,
+    description: string,
+    url: string,
 }
 
 type Rarity = {
@@ -22,10 +25,10 @@ interface LegendsContextProps {
     legends: Legend[];
     rarityScheme: Rarity;
     spins: number;
+    seconds: number;
     isRevealing: boolean;
     legend: Legend | null;
     legendsHistory: any[];
-    isOutOfSpins: boolean;
     handleSpin: () => void;
     handleDiscardLegend: () => void;
     handleAddLegend: () => void;
@@ -38,12 +41,11 @@ interface LegendsProviderProps {
 
 export function LegendsProvider({ legends, children }: LegendsProviderProps) {
 
-    const [spins, setSpins] = useState(15);
+    const [spins, setSpins] = useState(0);
+    const [seconds, setSeconds] = useState(60);
     const [isRevealing, setIsRevealing] = useState(false);
     const [legend, setLegend] = useState(null);
     const [legendsHistory, setLegendsHistory] = useState([]);
-
-    const isOutOfSpins = spins <= 0;
 
     function getRandomLegend(legendArray: Legend[]) {
         const randomIndex = Math.floor(Math.random() * legendArray.length);
@@ -81,19 +83,47 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
         common: '#cccccc',
     }
 
-    useEffect(() => {
-        const savedLegendsHistory = JSON.parse(Cookie.get('legendsHistory')) || [];
-        const savedSpins = Number(Cookie.get('spins'));
+    async function getInfoFromDB() {
+        const savedLegendsHistory: Legend[] = await localForage.getItem('legendsHistory');
+        const savedSpins: number = await localForage.getItem('spins');
 
         setLegendsHistory(savedLegendsHistory);
         setSpins(savedSpins);
+    }
+
+    async function updateInfoToDB() {
+        await localForage.setItem('legendsHistory', legendsHistory);
+        await localForage.setItem('spins', spins);
+    }
+
+    useEffect(() => {
+        getInfoFromDB();
     }, [])
 
     useEffect(() => {
-        Cookie.set('legendsHistory', JSON.stringify(legendsHistory));
-        Cookie.set('spins', String(spins));
-
+        updateInfoToDB();
     }, [legendsHistory, spins])
+
+    useEffect(() => {
+        setTimeout(() => {
+            console.log(seconds)
+
+            if (seconds > 0) {
+                setSeconds(previousState => previousState - 1);
+                
+                return;
+            } else {
+                console.log('Finished + 10 spins')
+                setSeconds(10 * 60)
+                setSpins(previousState => previousState + 10);
+                console.log(spins)
+            }
+
+         
+
+        }, 1000)
+
+    }, [seconds])
   
     function handleSpin() {
 
@@ -123,11 +153,11 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
             value={{
                 legends,
                 spins,
+                seconds,
                 isRevealing,
                 legend,
                 legendsHistory,
                 rarityScheme,
-                isOutOfSpins,
                 handleSpin,
                 handleDiscardLegend,
                 handleAddLegend,

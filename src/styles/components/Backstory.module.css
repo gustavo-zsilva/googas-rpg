@@ -1,0 +1,4 @@
+.backstoryContainer {
+    display: flex;
+    flex-direction: column;
+}

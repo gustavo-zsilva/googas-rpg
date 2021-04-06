@@ -9,13 +9,16 @@ import { LegendHistory } from '../components/LegendHistory';
 import styles from '../styles/Home.module.css';
 import { LegendInfo } from '../components/LegendInfo';
 import { Backstory } from '../components/Backstory';
+import { Counter } from '../components/Counter';
 
 type Legend = {
   name: string,
   experience: number,
   rarity: string,
-  url: string,
+  imageUrl: string,
   font: string,
+  description: string,
+  url: string,
 }
 
 interface HomeProps {
@@ -34,28 +37,27 @@ export default function Home({ legends }: HomeProps) {
 
       <div className={styles.container}>
 
-        <div>
-          <Backstory />
-        </div>
+        <header>Googas RPG</header>
 
         <div>
-          <header>Googas RPG</header>
-          
+          <Backstory />
+          <Counter />
+        </div>
+
+        <div>          
           <Image />
           <LegendInfo />
           <Controls />
         </div>
 
-        <div>
-          <LegendHistory />
-        </div>
+        <LegendHistory />
 
       </div>
     </LegendsProvider>
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const legendsImport = await import('../legends.json');
   const legends = legendsImport.default;
 

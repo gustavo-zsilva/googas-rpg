@@ -10,11 +10,12 @@ export function Controls() {
     const {
         spins,
         isRevealing,
-        isOutOfSpins,
         handleSpin,
         handleDiscardLegend,
         handleAddLegend,
     } = useContext(LegendsContext);
+
+    const isOutOfSpins = spins <= 0;
 
     return (
         <div className={styles.controlsContainer}>

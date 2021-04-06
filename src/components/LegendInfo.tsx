@@ -29,7 +29,7 @@ export function LegendInfo() {
                     >
                         {legend?.rarity}
                     </span>
-                    {hasLegend && <span>(You already has this legend)</span>}
+                    {hasLegend && <span>(You already have this legend)</span>}
                 </div>
             )}
         </div>

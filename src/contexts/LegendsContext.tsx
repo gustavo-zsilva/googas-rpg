@@ -25,6 +25,7 @@ interface LegendsContextProps {
     legends: Legend[];
     rarityScheme: Rarity;
     spins: number;
+    minutes: number;
     seconds: number;
     isRevealing: boolean;
     legend: Legend | null;
@@ -42,10 +43,21 @@ interface LegendsProviderProps {
 export function LegendsProvider({ legends, children }: LegendsProviderProps) {
 
     const [spins, setSpins] = useState(0);
-    const [seconds, setSeconds] = useState(60);
+    const [time, setTime] = useState(10 * 60);
     const [isRevealing, setIsRevealing] = useState(false);
     const [legend, setLegend] = useState(null);
     const [legendsHistory, setLegendsHistory] = useState([]);
+
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    let timeoutID: NodeJS.Timeout;
+
+    const rarityScheme = {
+        legendary: '#ff8000',
+        epic: '#a335ee',
+        rare: '#0070dd',
+        common: '#cccccc',
+    }
 
     function getRandomLegend(legendArray: Legend[]) {
         const randomIndex = Math.floor(Math.random() * legendArray.length);
@@ -76,57 +88,47 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
         return legend;
     }
 
-    const rarityScheme = {
-        legendary: '#ff8000',
-        epic: '#a335ee',
-        rare: '#0070dd',
-        common: '#cccccc',
-    }
-
-    async function getInfoFromDB() {
+    async function getInfoFromStorage() {
         const savedLegendsHistory: Legend[] = await localForage.getItem('legendsHistory');
         const savedSpins: number = await localForage.getItem('spins');
+        const sessionTime: number = Number(sessionStorage.getItem('time'));
 
         setLegendsHistory(savedLegendsHistory);
         setSpins(savedSpins);
+
+        clearTimeout(timeoutID);
+        setTime(sessionTime);
     }
 
-    async function updateInfoToDB() {
+    async function updateInfoToStorage() {
         await localForage.setItem('legendsHistory', legendsHistory);
         await localForage.setItem('spins', spins);
+        sessionStorage.setItem('time', String(time));
     }
 
     useEffect(() => {
-        getInfoFromDB();
+        getInfoFromStorage();
     }, [])
 
     useEffect(() => {
-        updateInfoToDB();
-    }, [legendsHistory, spins])
+        updateInfoToStorage();
+    }, [legendsHistory, spins, time])
 
     useEffect(() => {
-        setTimeout(() => {
-            console.log(seconds)
-
-            if (seconds > 0) {
-                setSeconds(previousState => previousState - 1);
+        timeoutID = setTimeout(() => {
+            if (time > 0) {
+                setTime(previousState => previousState - 1);
                 
                 return;
-            } else {
-                console.log('Finished + 10 spins')
-                setSeconds(10 * 60)
-                setSpins(previousState => previousState + 10);
-                console.log(spins)
             }
-
-         
-
+                setTime(10 * 60);
+                setSpins(previousState => previousState + 10);
         }, 1000)
 
-    }, [seconds])
+    }, [time])
   
     function handleSpin() {
-
+        
         if (spins <= 0) return;
         
         setSpins(spins - 1);
@@ -153,6 +155,7 @@ export function LegendsProvider({ legends, children }: LegendsProviderProps) {
             value={{
                 legends,
                 spins,
+                minutes,
                 seconds,
                 isRevealing,
                 legend,

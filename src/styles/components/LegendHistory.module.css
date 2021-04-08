@@ -24,6 +24,16 @@
     width: 6px;
 }
 
+.legendHistoryContainer header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+
+.legendHistoryContainer .select {
+    width: 8rem;
+}
+
 .legendHistoryContainer h3 {
     font-weight: 400;
 }
@@ -46,6 +56,10 @@
 
     padding: .8rem;
     /* margin-bottom: .2rem; */
+}
+
+.legendHistoryContainer ul li:hover {
+    background: #f5f2f2;
 }
 
 .legendHistoryContainer ul li div {

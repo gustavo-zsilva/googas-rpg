@@ -1,18 +1,18 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 80px 1fr;
+  grid-template-rows: 80px auto;
   grid-template-areas:
     'Header Header Header'
-    'Backstory Main History';
+    'Info Main History';
 
-  margin: 2.6rem auto;
+  margin: 0 auto 2.6rem auto;
   max-width: 80rem;
-  /* height: 100vh; */
 }
 
-.container header {
-  margin-bottom: 2rem;
-  text-align: center;
+.container > header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   grid-area: Header;
 }

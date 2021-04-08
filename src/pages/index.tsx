@@ -9,7 +9,7 @@ import { LegendHistory } from '../components/LegendHistory';
 import styles from '../styles/Home.module.css';
 import { LegendInfo } from '../components/LegendInfo';
 import { Backstory } from '../components/Backstory';
-import { Counter } from '../components/Counter';
+import { Counter } from '../components/Countdown';
 
 type Legend = {
   name: string,

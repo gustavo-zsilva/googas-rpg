@@ -1,15 +1,20 @@
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 
-import { LegendsProvider } from '../contexts/LegendsContext';
+import { LegendsContext, LegendsProvider } from '../contexts/LegendsContext';
 import { Controls } from '../components/Controls';
 import { Image } from '../components/Image';
 import { LegendHistory } from '../components/LegendHistory';
-
-import styles from '../styles/Home.module.css';
 import { LegendInfo } from '../components/LegendInfo';
 import { Backstory } from '../components/Backstory';
 import { Counter } from '../components/Countdown';
+import { SpinCodes } from '../components/SpinCodes';
+
+import localForage from 'localforage';
+
+import styles from '../styles/Home.module.css';
+import { CodesProvider } from '../contexts/CodesContext';
+import { useContext } from 'react';
 
 type Legend = {
   name: string,
@@ -21,14 +26,11 @@ type Legend = {
   url: string,
 }
 
-interface HomeProps {
-  legends: Legend[];
-}
-
-export default function Home({ legends }: HomeProps) {
+export default function Home() {
 
   return (
-    <LegendsProvider legends={legends}>
+    <LegendsProvider>
+    <CodesProvider>
 
       <Head>
           <title>Googas RPG</title>
@@ -42,6 +44,7 @@ export default function Home({ legends }: HomeProps) {
         <div>
           <Backstory />
           <Counter />
+          <SpinCodes />
         </div>
 
         <div>          
@@ -53,17 +56,9 @@ export default function Home({ legends }: HomeProps) {
         <LegendHistory />
 
       </div>
+      
+    </CodesProvider>
     </LegendsProvider>
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const legendsImport = await import('../legends.json');
-  const legends = legendsImport.default;
-
-  return {
-    props: {
-      legends,
-    }
-  }
-}

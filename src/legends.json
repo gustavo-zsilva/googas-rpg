@@ -1,7 +1,6 @@
 [
     {
         "name": "Googas",
-        "experience": 0,
         "rarity": "legendary",
         "imageUrl": "./images/googas.png",
         "font": "Architects Daughter",
@@ -10,7 +9,6 @@
     },
     {
         "name": "Bingus",
-        "experience": 0,
         "rarity": "legendary",
         "imageUrl": "./images/bingus.png",
         "font": "Bebas Neue",
@@ -19,7 +17,6 @@
     },
     {
         "name": "AdmPoggers",
-        "experience": 0,
         "rarity": "legendary",
         "imageUrl": "./images/adm_poggers.png",
         "font": "Indie Flower",
@@ -28,7 +25,6 @@
     },
     {
         "name": "Blue Jesus",
-        "experience": 0,
         "rarity": "legendary",
         "imageUrl": "./images/blue_jesus.png",
         "font": "Indie Flower",
@@ -37,7 +33,6 @@
     },
     {
         "name": "Diedius123",
-        "experience": 0,
         "rarity": "legendary",
         "imageUrl": "./images/diedius123.png",
         "font": "",
@@ -46,7 +41,6 @@
     },
     {
         "name": "The Destroyer",
-        "experience": 0,
         "rarity": "legendary",
         "imageUrl": "./images/the_destroyer.png",
         "font": "Dancing Script",
@@ -54,8 +48,15 @@
         "url": "https://floppa.fandom.com/wiki/The_Destroyer"
     },
     {
+        "name": "DaBaby Convertible",
+        "rarity": "legendary",
+        "imageUrl": "./images/dababy_convertible.png",
+        "font": "Indie Flower",
+        "description": "",
+        "url": "https://www.roblox.com/games/6541412379/LAPS-Dababy-Car-Driving-3D"
+    },
+    {
         "name": "Cazumggbr",
-        "experience": 0,
         "rarity": "epic",
         "imageUrl": "./images/cazumggbr.png",
         "font": "Indie Flower",
@@ -63,8 +64,15 @@
         "url": "https://www.roblox.com/users/62853383/profile"
     },
     {
+        "name": "VitorGamerV3",
+        "rarity": "epic",
+        "imageUrl": "./images/vitorgamerv3.png",
+        "font": "",
+        "description": "",
+        "url": ""
+    },
+    {
         "name": "Big Floppa",
-        "experience": 0,
         "rarity": "epic",
         "imageUrl": "./images/big_floppa.png",
         "font": "Chenla",
@@ -73,7 +81,6 @@
     },
     {
         "name": "Fake Googas",
-        "experience": 0,
         "rarity": "epic",
         "imageUrl": "./images/fake_googas.png",
         "font": "Dancing Script",
@@ -82,7 +89,6 @@
     },
     {
         "name": "Sogga",
-        "experience": 0,
         "rarity": "epic",
         "imageUrl": "./images/sogga.png",
         "font": "Indie Flower",
@@ -91,7 +97,6 @@
     },
     {
         "name": "Zabloing",
-        "experience": 0,
         "rarity": "epic",
         "imageUrl": "./images/zabloing.png",
         "font": "New Tegomin",
@@ -100,7 +105,6 @@
     },
     {
         "name": "Pingus",
-        "experience": 0,
         "rarity": "rare",
         "imageUrl": "./images/pingus.png",
         "font": "",
@@ -109,7 +113,6 @@
     },
     {
         "name": "Juan",
-        "experience": 0,
         "rarity": "rare",
         "imageUrl": "./images/juan.png",
         "font": "",
@@ -117,8 +120,31 @@
         "url": "https://floppa.fandom.com/wiki/Juan"
     },
     {
+        "name": "Moliammo",
+        "rarity": "rare",
+        "imageUrl": "./images/moliammo.png",
+        "font": "",
+        "description": "",
+        "url": ""
+    },
+    {
+        "name": "iatedosma503",
+        "rarity": "rare",
+        "imageUrl": "./images/iatedosma.png",
+        "font": "",
+        "description": "",
+        "url": "https://www.roblox.com/users/527075815/profile"
+    },
+    {
+        "name": "DaBaby",
+        "rarity": "rare",
+        "imageUrl": "./images/dababy.png",
+        "font": "",
+        "description": "",
+        "url": ""
+    },
+    {
         "name": "Fleppa",
-        "experience": 0,
         "rarity": "common",
         "imageUrl": "./images/fleppa.png",
         "font": "",
@@ -127,7 +153,6 @@
     },
     {
         "name": "Choppa Floppa",
-        "experience": 0,
         "rarity": "common",
         "imageUrl": "./images/choppa_floppa.png",
         "font": "",
@@ -136,7 +161,6 @@
     },
     {
         "name": "Flopammed Al Googas",
-        "experience": 0,
         "rarity": "common",
         "imageUrl": "./images/flopammed_al_googas.png",
         "font": "",
@@ -145,7 +169,6 @@
     },
     {
         "name": "Lil Floppa",
-        "experience": 0,
         "rarity": "common",
         "imageUrl": "./images/lil_floppa.png",
         "font": "",
@@ -154,7 +177,6 @@
     },
     {
         "name": "Selwyn McSoggers",
-        "experience": 0,
         "rarity": "common",
         "imageUrl": "./images/selwyn_mcsoggers.png",
         "font": "",
@@ -163,7 +185,6 @@
     },
     {
         "name": "Sleepy Shloopa",
-        "experience": 0,
         "rarity": "common",
         "imageUrl": "./images/sleepy_shloopa.png",
         "font": "",
@@ -172,7 +193,6 @@
     },
     {
         "name": "Baweley Sogga",
-        "experience": 0,
         "rarity": "common",
         "imageUrl": "./images/baweley_sogga.png",
         "font": "",

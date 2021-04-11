@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from 'react';
 import { LegendsContext } from '../contexts/LegendsContext';
 
 import Select from 'react-select';
+import { BiGhost } from 'react-icons/bi';
+import { CgPacman } from 'react-icons/cg';
 
 import styles from '../styles/components/LegendHistory.module.css';
 
@@ -35,7 +37,7 @@ export function LegendHistory() {
         <div className={styles.legendHistoryContainer}>
             <header>
                 <h3>
-                    You have <span>{legendsHistory.length}</span> legends
+                    You have <span>{filteredLegends.length}</span> {legendFilter}
                 </h3>
                 <Select
                     options={options}
@@ -44,17 +46,22 @@ export function LegendHistory() {
                     onChange={(option) => setLegendFilter(option.value)}
                 />
             </header>
-            
 
             <ul>
-                {filteredLegends.map((legend, index) => {
-                    return (
+                {filteredLegends.length > 0 ? (
+                    filteredLegends.map((legend, index) => (
                         <li key={index} style={{ borderLeft: `4px solid ${rarityScheme[legend.rarity]}` }}>
                             <div style={{ backgroundImage: `url(${legend.imageUrl})` }} />
                             <span>{legend.name}</span>
                         </li>
-                    );
-                })}
+                    ))
+                ) : (
+                    <span>
+                        <CgPacman size={32} />
+                        You don't have any legends of this type.
+                        <BiGhost size={32} />
+                    </span>
+                )}
                 
             </ul>
         </div>

@@ -10,7 +10,6 @@
     padding: 1rem 0;
     border-radius: 4px;
 
-    margin-right: 4rem;
     margin-top: 1rem;
 }
 
@@ -25,6 +24,12 @@
     display: flex;
     justify-content: center;
     font-size: 6rem;
+}
+
+.countdownContainer div div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .countdownContainer div div span {

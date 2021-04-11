@@ -5,18 +5,15 @@
 
     border-top: 3px solid #0081A7;
     border-bottom: 3px solid #0081A7;
-    /* padding-left: 1rem; */
-    margin-right: 4rem;
 }
 
 .backstoryContainer h3 {
     font-weight: 400;
-    margin: 0;
-    margin-bottom: .6rem;
 }
 
 .backstoryContainer span {
     font-size: 2rem;
+    margin: 1rem 0 1rem 0;
 }
 
 .backstoryContainer a {
@@ -27,5 +24,4 @@
     border: 2px solid #0096c4;
     padding: 1rem;
     border-radius: 4px;
-
 }

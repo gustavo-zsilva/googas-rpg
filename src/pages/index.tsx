@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import { CountdownProvider } from '../contexts/CountdownContext';
 import { Controls } from '../components/Controls';
-import { Image } from '../components/Image';
+import { LegendImage } from '../components/LegendImage';
 import { LegendHistory } from '../components/LegendHistory';
 import { LegendInfo } from '../components/LegendInfo';
 import { Backstory } from '../components/Backstory';
@@ -44,7 +44,7 @@ export default function Home() {
         </div>
 
         <div>
-          <Image />
+          <LegendImage />
           <LegendInfo />
           <Controls />
         </div>

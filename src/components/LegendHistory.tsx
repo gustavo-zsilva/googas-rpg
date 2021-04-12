@@ -52,9 +52,9 @@ export function LegendHistory() {
             <ul>
                 {filteredLegends.length > 0 ? (
                     filteredLegends.map((legend, index) => (
-                        <li key={index} style={{ borderLeft: `4px solid ${rarityScheme[legend.rarity]}` }}>
-                            <div style={{ backgroundImage: `url(${legend.imageUrl})` }} />
-                            <span>{legend.name}</span>
+                        <li key={index} style={{ borderLeft: `4px solid ${rarityScheme[legend?.rarity]}` }}>
+                            <div style={{ backgroundImage: `url(${legend?.imageUrl})` }} />
+                            <span>{legend?.name}</span>
                         </li>
                     ))
                 ) : (

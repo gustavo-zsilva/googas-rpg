@@ -37,15 +37,14 @@ export function CodesProvider({ children }: CodesProviderProps) {
             })
 
             savedRedeemedCodes = await localForage.getItem('redeemedCodes') || [];
-            
             codesImport = await import('../codes.json');
+
+            setCodes(codesImport.default);
+            setRedeemedCodes(savedRedeemedCodes);
 
         } catch (err) {
             console.error(err);
         }
-
-        setCodes(codesImport.default);
-        setRedeemedCodes(savedRedeemedCodes);
     }
 
     async function updateInfoToStorage() {

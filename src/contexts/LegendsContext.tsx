@@ -63,12 +63,12 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
     
     function calculateChances() {
         const multiplier = isLuckySpin ? 50 : 100;
-        const randomIndex = Math.floor(Math.random() * multiplier);
+        let randomIndex = Math.random() * multiplier;
         let legend: Legend;
 
         const filterByRarity = (rarity: string) => legends.filter(legend => legend.rarity == rarity ? legend : null);
         
-        if (randomIndex <= 0.05) {
+        if (randomIndex <= 0.02) {
             const mythicalLegends = filterByRarity('mythical');
             legend = getRandomLegend(mythicalLegends);
         }
@@ -112,14 +112,14 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
 
             legendsImport = await import('../legends.json');
             legends = legendsImport.default;
+
+            setLegends(legends);
+            setLegendsHistory(savedLegends);
+            setSpins(savedSpins);
       
         } catch (err) {
             console.error(err);
         }
-
-        setLegends(legends);
-        setLegendsHistory(savedLegends);
-        setSpins(savedSpins);
     }
 
     async function updateInfoToStorage() {
@@ -128,8 +128,7 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
             await localForage.setItem('spins', spins);
         } catch (err) {
             console.error(err);
-        }
-        
+        }   
     }
 
     useEffect(() => {

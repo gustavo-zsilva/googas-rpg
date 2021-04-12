@@ -8,6 +8,22 @@
         "url": ""
     },
     {
+        "name": "Guga Maçaneta",
+        "rarity": "mythical",
+        "imageUrl": "./images/guga_macaneta.png",
+        "font": "Dancing Script",
+        "description": "",
+        "url": ""
+    },
+    {
+        "name": "El Conserje",
+        "rarity": "mythical",
+        "imageUrl": "./images/el_conserje.png",
+        "font": "New Tegomin",
+        "description": "",
+        "url": ""
+    },
+    {
         "name": "Googas",
         "rarity": "legendary",
         "imageUrl": "./images/googas.png",

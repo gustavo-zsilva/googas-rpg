@@ -214,5 +214,13 @@
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Baweley"
+    },
+    {
+        "name": "Mahmoud Flobdul",
+        "rarity": "common",
+        "imageUrl": "./images/mahmoud_flobdul.png",
+        "font": "",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Mahmoud_Flobdul"
     }
 ]

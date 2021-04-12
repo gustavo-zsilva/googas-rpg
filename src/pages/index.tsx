@@ -1,7 +1,6 @@
 import Head from 'next/head';
-import { GetServerSideProps } from 'next';
 
-import { LegendsContext, LegendsProvider } from '../contexts/LegendsContext';
+import { CountdownProvider } from '../contexts/CountdownContext';
 import { Controls } from '../components/Controls';
 import { Image } from '../components/Image';
 import { LegendHistory } from '../components/LegendHistory';
@@ -9,12 +8,9 @@ import { LegendInfo } from '../components/LegendInfo';
 import { Backstory } from '../components/Backstory';
 import { Counter } from '../components/Countdown';
 import { SpinCodes } from '../components/SpinCodes';
-
-import localForage from 'localforage';
+import { CodesProvider } from '../contexts/CodesContext';
 
 import styles from '../styles/Home.module.css';
-import { CodesProvider } from '../contexts/CodesContext';
-import { useContext } from 'react';
 
 type Legend = {
   name: string,
@@ -30,6 +26,7 @@ export default function Home() {
 
   return (
     <CodesProvider>
+    <CountdownProvider>
 
       <Head>
           <title>Googas RPG</title>
@@ -56,6 +53,7 @@ export default function Home() {
 
       </div>
       
+    </CountdownProvider>  
     </CodesProvider>
   )
 }

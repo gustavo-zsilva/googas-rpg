@@ -1,5 +1,13 @@
 [
     {
+        "name": "Martin",
+        "rarity": "mythical",
+        "imageUrl": "./images/martin.png",
+        "font": "Bebas Neue",
+        "description": "",
+        "url": ""
+    },
+    {
         "name": "Googas",
         "rarity": "legendary",
         "imageUrl": "./images/googas.png",
@@ -142,6 +150,14 @@
         "font": "",
         "description": "",
         "url": ""
+    },
+    {
+        "name": "Amogus",
+        "rarity": "rare",
+        "imageUrl": "./images/amogus.png",
+        "font": "",
+        "description": "",
+        "url": "https://youtu.be/5DlROhT8NgU?t=3"
     },
     {
         "name": "Fleppa",

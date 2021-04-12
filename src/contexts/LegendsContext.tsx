@@ -54,8 +54,8 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
     let timeoutID: NodeJS.Timeout;
     let isLuckySpin = false;
 
-
     const rarityScheme = {
+        mythical: '#08f7fe',
         legendary: '#ff8000',
         epic: '#a335ee',
         rare: '#0070dd',
@@ -74,7 +74,11 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
 
         const filterByRarity = (rarity: string) => legends.filter(legend => legend.rarity == rarity ? legend : null);
         
-        if (randomIndex <= 0.5) {
+        if (randomIndex <= 0.05) {
+            const mythicalLegends = filterByRarity('mythical');
+            legend = getRandomLegend(mythicalLegends);
+        }
+        else if (randomIndex <= 0.5) {
             const legendaryLegends = filterByRarity('legendary');
             legend = getRandomLegend(legendaryLegends);
         }
@@ -97,22 +101,25 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
     }
 
     async function getInfoFromStorage() {
-        const legendsImport = await import('../legends.json');
-        const legends = legendsImport.default;
 
         const sessionTime: number = Number(sessionStorage.getItem('time')) || time;
 
         let savedLegends: Legend[];
         let savedSpins: number;
+        let legendsImport;
+        let legends: Legend[];
       
         try {
             localForage.config({
                 driver: localForage.INDEXEDDB,
-                name: 'googasrpg',
+                name: 'localforage'
             })
         
-            savedLegends = await localForage.getItem('legendsHistory');
-            savedSpins = await localForage.getItem('spins');
+            savedLegends = await localForage.getItem('legendsHistory') || [];
+            savedSpins = await localForage.getItem('spins') || spins;
+
+            legendsImport = await import('../legends.json');
+            legends = legendsImport.default;
       
         } catch (err) {
             console.error(err);
@@ -127,31 +134,35 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
     }
 
     async function updateInfoToStorage() {
-        await localForage.setItem('legendsHistory', legendsHistory);
-        await localForage.setItem('spins', spins);
-        sessionStorage.setItem('time', String(time));
+        try {
+            await localForage.setItem('legendsHistory', legendsHistory);
+            await localForage.setItem('spins', spins);
+            sessionStorage.setItem('time', String(time));
+        } catch (err) {
+            console.error(err);
+        }
+        
     }
 
     useEffect(() => {
         getInfoFromStorage();
-        
     }, [])
 
     useEffect(() => {
         updateInfoToStorage();
     }, [legendsHistory, spins, time])
 
-    useEffect(() => {
-        timeoutID = setTimeout(() => {
-            if (time > 0) {
-                setTime(previousState => previousState - 1);
-                return;
-            }
-                setTime(10 * 60);
-                setSpins(previousState => previousState + 10);
-        }, 1000)
+    // useEffect(() => {
+        // timeoutID = setTimeout(() => {
+        //     if (time > 0) {
+        //         setTime(previousState => previousState - 1);
+        //         return;
+        //     }
+        //         setTime(10 * 60);
+        //         setSpins(previousState => previousState + 10);
+        // }, 1000)
 
-    }, [time])
+    // }, [time])
   
     function handleSpin() {
 

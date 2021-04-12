@@ -12,8 +12,8 @@ type Code = {
 
 interface CodesContextProps {
     codes: Code[];
-    usedCodes: Code[];
-    setUsedCode: (code: Code) => void;
+    redeemedCodes: Code[];
+    redeemCode: (code: Code) => void;
 }
 
 interface CodesProviderProps {
@@ -23,56 +23,64 @@ interface CodesProviderProps {
 export function CodesProvider({ children }: CodesProviderProps) {
 
     const { handleAddSpins } = useContext(LegendsContext);
-    const [usedCodes, setUsedCodes] = useState([]);
-    const codes = [
-        {
-            name: 'martin',
-            spins: 10
-        },
-        {
-            name: 'moliammo144p',
-            spins: 20
-        },
-        {
-            name: 'Floppa4Life',
-            spins: 20
-        },
-        {
-            name: 'h',
-            spins: 20
-        }
-    ]
+    const [redeemedCodes, setRedeemedCodes] = useState([]);
+    const [codes, setCodes] = useState([]);
 
     async function getInfoFromStorage() {
-        const savedUsedCodes: Code[] = await localForage.getItem('usedCodes') || [];
-        setUsedCodes(savedUsedCodes);
+        let savedRedeemedCodes: Code[];
+        let codesImport;
+
+        try {
+            localForage.config({
+                driver: localForage.INDEXEDDB,
+                name: 'localforage'
+            })
+
+            savedRedeemedCodes = await localForage.getItem('redeemedCodes') || [];
+            
+            codesImport = await import('../codes.json');
+
+        } catch (err) {
+            console.error(err);
+        }
+
+        setCodes(codesImport.default);
+        setRedeemedCodes(savedRedeemedCodes);
     }
 
     async function updateInfoToStorage() {
-        await localForage.setItem('usedCodes', usedCodes);
+        try {
+            await localForage.setItem('redeemedCodes', redeemedCodes);
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     useEffect(() => {
-        getInfoFromStorage()
+        getInfoFromStorage();
     }, [])
     
     useEffect(() => {
-        updateInfoToStorage()
-    }, [usedCodes])
+        updateInfoToStorage();
+    }, [redeemedCodes])
 
-    async function setUsedCode(code: Code) {
-        if (usedCodes.includes(code)) return;
-        setUsedCodes([...usedCodes, code]);
+    async function redeemCode(code: Code) {
 
-        handleAddSpins(10);
+        const isCodeRedeemed = redeemedCodes.find(({name}) => code.name === name);
+
+        if (isCodeRedeemed) return;
+        
+        // setRedeemedCodes([...redeemedCodes, code]);
+        setRedeemedCodes([...redeemedCodes, code]);
+        handleAddSpins(code.spins);
     }
 
     return (
         <CodesContext.Provider
             value={{
                 codes,
-                usedCodes,
-                setUsedCode
+                redeemedCodes,
+                redeemCode
             }}
         >
             {children}

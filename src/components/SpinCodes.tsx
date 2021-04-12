@@ -7,16 +7,16 @@ import styles from '../styles/components/SpinCodes.module.css';
 
 export function SpinCodes() {
 
-    const { codes, usedCodes, setUsedCode } = useContext(CodesContext);
+    const { codes, redeemCode } = useContext(CodesContext);
     const [code, setCode] = useState('');
     const codeNames = codes.map(code => code.name);
 
     useEffect(() => {
         if (!codeNames.includes(code)) return;
+
+        const codeObj = codes.find(({name}) => name === code);
         
-        const codeObj = codes.filter(code => code.name)[0];
-        
-        setUsedCode(codeObj);
+        redeemCode(codeObj);
         setCode('');
     }, [code])
 

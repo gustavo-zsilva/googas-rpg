@@ -29,7 +29,6 @@ type Legend = {
 export default function Home() {
 
   return (
-    <LegendsProvider>
     <CodesProvider>
 
       <Head>
@@ -47,7 +46,7 @@ export default function Home() {
           <SpinCodes />
         </div>
 
-        <div>          
+        <div>
           <Image />
           <LegendInfo />
           <Controls />
@@ -58,7 +57,6 @@ export default function Home() {
       </div>
       
     </CodesProvider>
-    </LegendsProvider>
   )
 }
 

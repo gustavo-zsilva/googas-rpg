@@ -15,6 +15,7 @@ export function LegendHistory() {
 
     const options = [
         { value: 'all', label: 'All' },
+        { value: 'mythical', label: 'Mythical' },
         { value: 'legendary', label: 'Legendary' },
         { value: 'epic', label: 'Epic' },
         { value: 'rare', label: 'Rare' },
@@ -44,6 +45,7 @@ export function LegendHistory() {
                     className={styles.select}
                     defaultValue={options[0]}
                     onChange={(option) => setLegendFilter(option.value)}
+                    instanceId="filter-select"
                 />
             </header>
 

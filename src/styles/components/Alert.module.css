@@ -1,0 +1,53 @@
+.alertContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: absolute;
+    top: 0;
+
+    background: var(--background);
+    padding: 1rem;
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    margin-top: 1rem;
+
+    box-shadow: 0px 10px 3px 3px rgba(0, 0, 0, 0.03);
+}
+
+.alertContainer h3 {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.8rem;
+    align-items: center;
+    font-weight: 400;
+}
+
+.alertContainer h3 span {
+    padding: 0 .6rem;
+}
+
+.alertContainer > div {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.alertContainer > div > button {
+    display: flex;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: .2rem;
+    border-radius: 50%;
+    transition: .2s;
+}
+
+.alertContainer > div > button:hover {
+    background: #eeeeee;
+    transform: scale(1.1);
+}
+
+.alertContainer > div > button + button {
+    margin-left: 1rem;
+}

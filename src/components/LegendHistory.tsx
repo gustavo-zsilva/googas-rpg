@@ -23,7 +23,14 @@ export function LegendHistory() {
     ]
 
     useEffect(() => {
-        setFilteredLegends(legendsHistory);
+        const newLegends = legendsHistory.map(legend => (
+            {
+                ...legend,
+                unities: 0
+            }
+        ))
+        
+        setFilteredLegends(newLegends);
     }, [])
 
     useEffect(() => {

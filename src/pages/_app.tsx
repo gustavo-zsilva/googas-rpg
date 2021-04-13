@@ -1,5 +1,5 @@
-import { CodesProvider } from '../contexts/CodesContext';
 import { LegendsProvider } from '../contexts/LegendsContext';
+
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {

@@ -18,5 +18,9 @@
     {
         "name": "SendSaveToVitinh0",
         "spins": 40
+    },
+    {
+        "name": "number6",
+        "spins": 30
     }
 ]

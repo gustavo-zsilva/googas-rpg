@@ -1,9 +1,17 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { LegendsContext } from '../contexts/LegendsContext';
 
-import { AiOutlineCloseCircle, AiOutlineCheckCircle } from 'react-icons/ai';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { MdAttachMoney } from 'react-icons/md';
+
+import { Alert } from '../components/Alert';
 
 import styles from '../styles/components/Controls.module.css';
+
+interface AlertController {
+    openModal: () => void;
+    closeModal: () => void;
+}
 
 export function Controls() {
 
@@ -13,7 +21,23 @@ export function Controls() {
         handleSpin,
         handleDiscardLegend,
         handleAddLegend,
+        legend
     } = useContext(LegendsContext);
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const alertController: AlertController = {
+        openModal: () => setIsModalOpen(true),
+        closeModal: () => setIsModalOpen(false)
+    }
+
+    function handleShowAlert() {
+        if (legend.rarity === 'common' || legend.rarity === 'rare') {
+            return handleDiscardLegend();
+        }
+
+        setIsModalOpen(true);
+    }
 
     const isOutOfSpins = spins <= 0;
 
@@ -29,16 +53,18 @@ export function Controls() {
 
             {isRevealing && (
                 <div>
-                    <button onClick={handleDiscardLegend}>
-                        <AiOutlineCloseCircle color="#fff" size={32} />
-                        Descartar
+                    <button onClick={handleShowAlert}>
+                        <MdAttachMoney color="#fff" size={32} className={styles.icon} />
+                        Vender
                     </button>
                     <button onClick={handleAddLegend}>
                         Adicionar
-                        <AiOutlineCheckCircle color="#fff" size={32} />
+                        <AiOutlineCheckCircle color="#fff" size={32} className={styles.icon} />
                     </button>
                 </div>
             )}
+
+            {isModalOpen && <Alert controller={alertController} />}
 
             <button
                 type="button"

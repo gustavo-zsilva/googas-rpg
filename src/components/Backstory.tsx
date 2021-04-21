@@ -17,7 +17,7 @@ export function Backstory() {
 
             <p>{legend?.description}</p>
 
-            {legend && <a href={legend?.url} rel="noopener noreferrer" target="_blank">
+            {legend?.url && <a href={legend?.url} rel="noopener noreferrer" target="_blank">
                 Ver fonte original
                 <AiOutlineArrowRight size={28} />
             </a>}

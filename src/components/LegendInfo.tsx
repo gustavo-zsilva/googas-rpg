@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import { LegendsContext } from "../contexts/LegendsContext";
 
+import { GiLightBackpack } from 'react-icons/gi';
+
 import styles from '../styles/components/LegendInfo.module.css';
 
 export function LegendInfo() {
 
     const { legend, isRevealing, rarityScheme, legendsHistory } = useContext(LegendsContext);
     const rarityColor = rarityScheme[legend?.rarity];
-    const hasLegend = legendsHistory.includes(legend);
+    const hasLegend = JSON.stringify(legendsHistory).includes(JSON.stringify(legend));
 
     return (
         <div className={styles.legendInfo}>
@@ -17,6 +19,7 @@ export function LegendInfo() {
                         className={styles.legendName}
                         style={{ fontFamily: legend?.font }}
                     >
+                        {hasLegend && <GiLightBackpack size={32} style={{ marginRight: '.4rem' }} />}
                         {legend?.name}
                     </span>
                     <span
@@ -29,7 +32,6 @@ export function LegendInfo() {
                     >
                         {legend?.rarity}
                     </span>
-                    {hasLegend && <span>(You already have this legend)</span>}
                 </div>
             )}
         </div>

@@ -51,6 +51,7 @@ export function Alert({ controller }: AlertProps) {
                 }}>
                     {legend?.name}
                 </span>
+                <span>por {spinMarket[legend?.rarity]} spins?</span>
             </h3>
             
             
@@ -63,5 +64,5 @@ export function Alert({ controller }: AlertProps) {
                 </button>
             </div>
         </div>
-    )
+    );
 }

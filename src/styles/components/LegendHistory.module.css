@@ -54,9 +54,30 @@
 .legendHistoryContainer ul li {
     display: flex;
     align-items: center;
+    width: 100%;
 
     padding: .8rem;
     /* margin-bottom: .2rem; */
+}
+
+.legendHistoryContainer ul li > span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex: 1;
+}
+
+.legendHistoryContainer ul li > span span:last-child {
+    display: flex;
+    justify-content: center;
+
+    font-size: 1.6rem;
+    font-family: 'Bebas Neue';
+    background: rgb(238, 238, 238);
+    
+    padding: 0 .6rem;
+    border-radius: 2px;
 }
 
 .legendHistoryContainer ul li:hover {

@@ -9,18 +9,10 @@ import { Backstory } from '../components/Backstory';
 import { Counter } from '../components/Countdown';
 import { SpinCodes } from '../components/SpinCodes';
 import { CodesProvider } from '../contexts/CodesContext';
+import { DailyCode } from '../components/DailyCode';
+import { Layout } from '../components/Layout';
 
-import styles from '../styles/Home.module.css';
-
-type Legend = {
-  name: string,
-  experience: number,
-  rarity: string,
-  imageUrl: string,
-  font: string,
-  description: string,
-  url: string,
-}
+import styles from '../styles/pages/Home.module.css';
 
 export default function Home() {
 
@@ -33,25 +25,27 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.container}>
+      <Layout>
+        <div className={styles.container}>
 
-        <header>Googas RPG</header>
+          <div>
+            <Backstory />
+            <Counter />
+            {/* <DailyCode /> */}
+            <SpinCodes />
+          </div>
 
-        <div>
-          <Backstory />
-          <Counter />
-          <SpinCodes />
+          <div>
+            <LegendImage />
+            <LegendInfo />
+            <Controls />
+          </div>
+
+          <LegendHistory />
+
         </div>
+      </Layout>
 
-        <div>
-          <LegendImage />
-          <LegendInfo />
-          <Controls />
-        </div>
-
-        <LegendHistory />
-
-      </div>
       
     </CountdownProvider>  
     </CodesProvider>

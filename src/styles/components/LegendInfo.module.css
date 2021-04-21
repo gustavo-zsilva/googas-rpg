@@ -17,6 +17,8 @@
 }
 
 .legendInfo .legendName {
+    display: flex;
+    align-items: center;
     font-size: 1.8rem;
 }
 

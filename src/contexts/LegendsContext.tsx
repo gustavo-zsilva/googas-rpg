@@ -94,26 +94,28 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
         return legend;
     }
 
+    function connectToDB() {
+        return localForage.config({
+            driver: localForage.INDEXEDDB,
+            name: 'localforage'
+        });
+    }
+
     async function getInfoFromStorage() {
 
         let savedLegends: Legend[];
         let savedSpins: number;
         let legendsImport;
         let legends: Legend[];
-      
+        
         try {
-            localForage.config({
-                driver: localForage.INDEXEDDB,
-                name: 'localforage'
-            })
+            connectToDB();
         
             savedLegends = await localForage.getItem('legendsHistory') || [];
-            savedSpins = await localForage.getItem('spins') || spins;
-
+            savedSpins = await localForage.getItem('spins') || 0;
             legendsImport = await import('../legends.json');
-            legends = legendsImport.default;
 
-            setLegends(legends);
+            setLegends(legendsImport.default);
             setLegendsHistory(savedLegends);
             setSpins(savedSpins);
       
@@ -124,6 +126,8 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
 
     async function updateInfoToStorage() {
         try {
+            connectToDB();
+
             await localForage.setItem('legendsHistory', legendsHistory);
             await localForage.setItem('spins', spins);
         } catch (err) {

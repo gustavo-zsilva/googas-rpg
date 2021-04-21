@@ -7,11 +7,18 @@ import styles from '../styles/components/SpinCodes.module.css';
 
 export function SpinCodes() {
 
-    const { codes, redeemCode } = useContext(CodesContext);
+    const { codes, redeemCode, dailyCode, isDailyCodeRedeemed, redeemDailyCode } = useContext(CodesContext);
     const [code, setCode] = useState('');
     const codeNames = codes.map(code => code.name);
 
     useEffect(() => {
+
+        if (dailyCode === code && !isDailyCodeRedeemed) {
+            // redeemDailyCode();
+            setCode('');
+            return;
+        }
+
         if (!codeNames.includes(code)) return;
 
         const codeObj = codes.find(({name}) => name === code);

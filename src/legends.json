@@ -5,7 +5,7 @@
         "imageUrl": "./images/martin.png",
         "font": "Bebas Neue",
         "description": "",
-        "url": ""
+        "url": null
     },
     {
         "name": "Guga Maçaneta",
@@ -13,7 +13,7 @@
         "imageUrl": "./images/guga_macaneta.png",
         "font": "Dancing Script",
         "description": "",
-        "url": ""
+        "url": null
     },
     {
         "name": "El Conserje",
@@ -21,7 +21,7 @@
         "imageUrl": "./images/el_conserje.png",
         "font": "New Tegomin",
         "description": "",
-        "url": ""
+        "url": null
     },
     {
         "name": "Googas",
@@ -80,6 +80,14 @@
         "url": "https://www.roblox.com/games/6541412379/LAPS-Dababy-Car-Driving-3D"
     },
     {
+        "name": "Duda",
+        "rarity": "legendary",
+        "imageUrl": "./images/duda.png",
+        "font": "",
+        "description": "",
+        "url": null
+    },
+    {
         "name": "Cazumggbr",
         "rarity": "epic",
         "imageUrl": "./images/cazumggbr.png",
@@ -93,7 +101,7 @@
         "imageUrl": "./images/vitorgamerv3.png",
         "font": "",
         "description": "",
-        "url": ""
+        "url": "https://www.roblox.com/users/64158079/profile"
     },
     {
         "name": "Big Floppa",
@@ -128,6 +136,14 @@
         "url": "https://floppa.fandom.com/wiki/Zabloing"
     },
     {
+        "name": "Dudão",
+        "rarity": "epic",
+        "imageUrl": "./images/dudao.png",
+        "font": "",
+        "description": "",
+        "url": null
+    },
+    {
         "name": "Pingus",
         "rarity": "rare",
         "imageUrl": "./images/pingus.png",
@@ -149,7 +165,7 @@
         "imageUrl": "./images/moliammo.png",
         "font": "",
         "description": "",
-        "url": ""
+        "url": null
     },
     {
         "name": "iatedosma503",
@@ -165,7 +181,7 @@
         "imageUrl": "./images/dababy.png",
         "font": "",
         "description": "",
-        "url": ""
+        "url": null
     },
     {
         "name": "Amogus",
@@ -238,5 +254,13 @@
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Mahmoud_Flobdul"
+    },
+    {
+        "name": "Bobba",
+        "rarity": "common",
+        "imageUrl": "./images/bobba.png",
+        "font": "",
+        "description": "",
+        "url": "https://floppa.fandom.com/wiki/Bobba"
     }
 ]

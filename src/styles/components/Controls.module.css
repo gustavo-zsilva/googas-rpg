@@ -11,9 +11,7 @@
 
 .controlsContainer > button,
 .controlsContainer > div > button {
-    display: inline-flex;
     align-items: center;
-    justify-content: center;
 
     margin-top: 1.2rem;
 
@@ -28,6 +26,10 @@
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer;
+}
+
+.controlsContainer > div > button {
+    display: inline-flex;
 }
 
 .controlsContainer .icon {

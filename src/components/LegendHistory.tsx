@@ -22,24 +22,42 @@ export function LegendHistory() {
         { value: 'common', label: 'Common' },
     ]
 
+
     useEffect(() => {
-        const newLegends = legendsHistory.map(legend => (
-            {
+        // Runs every time a new legend is added to the historic
+        stackLegends();
+    }, [legendsHistory, legendFilter])
+
+    function stackLegends() {
+        const legendsCache = [];
+        let newLegends = [];
+        let newFilteredLegends = [];
+
+        newLegends = legendsHistory.map(legend => ({ ...legend, unities: 1 }))
+
+        let count = {};
+        newLegends.forEach(({name}) => { count[name] = (count[name]||0) + 1;});
+
+        newLegends.map(legend => {
+            if (legendsCache.find(({name}) => legend.name === name)) return;
+
+            const newLegend = {
                 ...legend,
-                unities: 0
+                unities: count[legend.name]
             }
-        ))
-        
-        setFilteredLegends(newLegends);
-    }, [])
 
-    useEffect(() => {
-        if (legendFilter === 'all') return setFilteredLegends(legendsHistory);
+            legendsCache.push(newLegend);
+        })
 
-        const newFilteredLegends = legendsHistory.filter(legend => legend.rarity === legendFilter ? legend : null);
+        if (legendFilter === 'all') return setFilteredLegends(legendsCache);
+        newFilteredLegends = legendsCache.filter(legend => legend.rarity === legendFilter ? legend : null);
 
         setFilteredLegends(newFilteredLegends);
-    }, [legendFilter, legendsHistory])
+    }
+
+    useEffect(() => {
+        stackLegends();
+    }, [])
 
     return (
         <div className={styles.legendHistoryContainer}>
@@ -61,7 +79,15 @@ export function LegendHistory() {
                     filteredLegends.map((legend, index) => (
                         <li key={index} style={{ borderLeft: `4px solid ${rarityScheme[legend?.rarity]}` }}>
                             <div style={{ backgroundImage: `url(${legend?.imageUrl})` }} />
-                            <span>{legend?.name}</span>
+                            <span>
+                                <span>
+                                    {legend?.name}
+                                </span>
+                                
+                                <span>
+                                    {legend?.unities > 1 && legend?.unities}
+                                </span>
+                            </span>
                         </li>
                     ))
                 ) : (

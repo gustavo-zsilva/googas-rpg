@@ -1,0 +1,10 @@
+.headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.6rem;
+}
+
+.headerContainer h3 {
+    font-weight: 400;
+}

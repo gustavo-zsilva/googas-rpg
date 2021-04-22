@@ -1,3 +1,19 @@
 .tabsContainer {
-    
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tabsContainer button {
+    border: 0;
+    background: transparent;
+    border-left: 6px solid var(--primary);
+    border-bottom-left-radius: 2px;
+
+    padding: 1.6rem;
+
+    cursor: pointer;
 }

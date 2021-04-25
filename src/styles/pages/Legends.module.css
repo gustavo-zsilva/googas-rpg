@@ -1,0 +1,16 @@
+.legendsContainer {
+    height: 85vh;
+}
+
+.legendsContainer h3 {
+    display: flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-bottom: .2rem;
+}
+
+.legendsContainer h3 span {
+    margin-left: .4rem;
+}

@@ -2,7 +2,7 @@
     {
         "name": "Martin",
         "rarity": "mythical",
-        "imageUrl": "./images/martin.png",
+        "imageUrl": "/images/martin.png",
         "font": "Bebas Neue",
         "description": "",
         "url": null
@@ -10,7 +10,7 @@
     {
         "name": "Guga Maçaneta",
         "rarity": "mythical",
-        "imageUrl": "./images/guga_macaneta.png",
+        "imageUrl": "/images/guga_macaneta.png",
         "font": "Dancing Script",
         "description": "",
         "url": null
@@ -18,7 +18,7 @@
     {
         "name": "El Conserje",
         "rarity": "mythical",
-        "imageUrl": "./images/el_conserje.png",
+        "imageUrl": "/images/el_conserje.png",
         "font": "New Tegomin",
         "description": "",
         "url": null
@@ -26,7 +26,7 @@
     {
         "name": "Googas",
         "rarity": "legendary",
-        "imageUrl": "./images/googas.png",
+        "imageUrl": "/images/googas.png",
         "font": "Architects Daughter",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/The_Real_Googas"
@@ -34,7 +34,7 @@
     {
         "name": "Bingus",
         "rarity": "legendary",
-        "imageUrl": "./images/bingus.png",
+        "imageUrl": "/images/bingus.png",
         "font": "Bebas Neue",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Bingus"
@@ -42,7 +42,7 @@
     {
         "name": "AdmPoggers",
         "rarity": "legendary",
-        "imageUrl": "./images/adm_poggers.png",
+        "imageUrl": "/images/adm_poggers.png",
         "font": "Indie Flower",
         "description": "",
         "url": "https://www.roblox.com/users/2268073812/profile"
@@ -50,7 +50,7 @@
     {
         "name": "Blue Jesus",
         "rarity": "legendary",
-        "imageUrl": "./images/blue_jesus.png",
+        "imageUrl": "/images/blue_jesus.png",
         "font": "Indie Flower",
         "description": "",
         "url": "https://www.roblox.com/users/197125692/profile"
@@ -58,7 +58,7 @@
     {
         "name": "Diedius123",
         "rarity": "legendary",
-        "imageUrl": "./images/diedius123.png",
+        "imageUrl": "/images/diedius123.png",
         "font": "",
         "description": "",
         "url": "https://www.roblox.com/users/197125692/profile"
@@ -66,7 +66,7 @@
     {
         "name": "The Destroyer",
         "rarity": "legendary",
-        "imageUrl": "./images/the_destroyer.png",
+        "imageUrl": "/images/the_destroyer.png",
         "font": "Dancing Script",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/The_Destroyer"
@@ -74,7 +74,7 @@
     {
         "name": "DaBaby Convertible",
         "rarity": "legendary",
-        "imageUrl": "./images/dababy_convertible.png",
+        "imageUrl": "/images/dababy_convertible.png",
         "font": "Indie Flower",
         "description": "",
         "url": "https://www.roblox.com/games/6541412379/LAPS-Dababy-Car-Driving-3D"
@@ -82,7 +82,7 @@
     {
         "name": "Duda",
         "rarity": "legendary",
-        "imageUrl": "./images/duda.png",
+        "imageUrl": "/images/duda.png",
         "font": "",
         "description": "",
         "url": null
@@ -90,7 +90,7 @@
     {
         "name": "Cazumggbr",
         "rarity": "epic",
-        "imageUrl": "./images/cazumggbr.png",
+        "imageUrl": "/images/cazumggbr.png",
         "font": "Indie Flower",
         "description": "",
         "url": "https://www.roblox.com/users/62853383/profile"
@@ -98,7 +98,7 @@
     {
         "name": "VitorGamerV3",
         "rarity": "epic",
-        "imageUrl": "./images/vitorgamerv3.png",
+        "imageUrl": "/images/vitorgamerv3.png",
         "font": "",
         "description": "",
         "url": "https://www.roblox.com/users/64158079/profile"
@@ -106,7 +106,7 @@
     {
         "name": "Big Floppa",
         "rarity": "epic",
-        "imageUrl": "./images/big_floppa.png",
+        "imageUrl": "/images/big_floppa.png",
         "font": "Chenla",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Big_Floppa"
@@ -114,7 +114,7 @@
     {
         "name": "Fake Googas",
         "rarity": "epic",
-        "imageUrl": "./images/fake_googas.png",
+        "imageUrl": "/images/fake_googas.png",
         "font": "Dancing Script",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Googas"
@@ -122,7 +122,7 @@
     {
         "name": "Sogga",
         "rarity": "epic",
-        "imageUrl": "./images/sogga.png",
+        "imageUrl": "/images/sogga.png",
         "font": "Indie Flower",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Sogga"
@@ -130,7 +130,7 @@
     {
         "name": "Zabloing",
         "rarity": "epic",
-        "imageUrl": "./images/zabloing.png",
+        "imageUrl": "/images/zabloing.png",
         "font": "New Tegomin",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Zabloing"
@@ -138,7 +138,7 @@
     {
         "name": "Dudão",
         "rarity": "epic",
-        "imageUrl": "./images/dudao.png",
+        "imageUrl": "/images/dudao.png",
         "font": "",
         "description": "",
         "url": null
@@ -146,7 +146,7 @@
     {
         "name": "Pingus",
         "rarity": "rare",
-        "imageUrl": "./images/pingus.png",
+        "imageUrl": "/images/pingus.png",
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Pingus"
@@ -154,7 +154,7 @@
     {
         "name": "Juan",
         "rarity": "rare",
-        "imageUrl": "./images/juan.png",
+        "imageUrl": "/images/juan.png",
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Juan"
@@ -162,7 +162,7 @@
     {
         "name": "Moliammo",
         "rarity": "rare",
-        "imageUrl": "./images/moliammo.png",
+        "imageUrl": "/images/moliammo.png",
         "font": "",
         "description": "",
         "url": null
@@ -170,7 +170,7 @@
     {
         "name": "iatedosma503",
         "rarity": "rare",
-        "imageUrl": "./images/iatedosma.png",
+        "imageUrl": "/images/iatedosma.png",
         "font": "",
         "description": "",
         "url": "https://www.roblox.com/users/527075815/profile"
@@ -178,7 +178,7 @@
     {
         "name": "DaBaby",
         "rarity": "rare",
-        "imageUrl": "./images/dababy.png",
+        "imageUrl": "/images/dababy.png",
         "font": "",
         "description": "",
         "url": null
@@ -186,7 +186,7 @@
     {
         "name": "Amogus",
         "rarity": "rare",
-        "imageUrl": "./images/amogus.png",
+        "imageUrl": "/images/amogus.png",
         "font": "",
         "description": "",
         "url": "https://youtu.be/5DlROhT8NgU?t=3"
@@ -194,7 +194,7 @@
     {
         "name": "Fleppa",
         "rarity": "common",
-        "imageUrl": "./images/fleppa.png",
+        "imageUrl": "/images/fleppa.png",
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Fleppa"
@@ -202,7 +202,7 @@
     {
         "name": "Choppa Floppa",
         "rarity": "common",
-        "imageUrl": "./images/choppa_floppa.png",
+        "imageUrl": "/images/choppa_floppa.png",
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Choppa_Floppa"
@@ -210,7 +210,7 @@
     {
         "name": "Flopammed Al Googas",
         "rarity": "common",
-        "imageUrl": "./images/flopammed_al_googas.png",
+        "imageUrl": "/images/flopammed_al_googas.png",
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Flopammed_Al-Googas"
@@ -218,7 +218,7 @@
     {
         "name": "Lil Floppa",
         "rarity": "common",
-        "imageUrl": "./images/lil_floppa.png",
+        "imageUrl": "/images/lil_floppa.png",
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Lil_Floppa"
@@ -226,7 +226,7 @@
     {
         "name": "Selwyn McSoggers",
         "rarity": "common",
-        "imageUrl": "./images/selwyn_mcsoggers.png",
+        "imageUrl": "/images/selwyn_mcsoggers.png",
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Selwyn_Mcsoggers"
@@ -234,7 +234,7 @@
     {
         "name": "Sleepy Shloopa",
         "rarity": "common",
-        "imageUrl": "./images/sleepy_shloopa.png",
+        "imageUrl": "/images/sleepy_shloopa.png",
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Sleepy_Shloopa"
@@ -242,7 +242,7 @@
     {
         "name": "Baweley Sogga",
         "rarity": "common",
-        "imageUrl": "./images/baweley_sogga.png",
+        "imageUrl": "/images/baweley_sogga.png",
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Baweley"
@@ -250,7 +250,7 @@
     {
         "name": "Mahmoud Flobdul",
         "rarity": "common",
-        "imageUrl": "./images/mahmoud_flobdul.png",
+        "imageUrl": "/images/mahmoud_flobdul.png",
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Mahmoud_Flobdul"
@@ -258,7 +258,7 @@
     {
         "name": "Bobba",
         "rarity": "common",
-        "imageUrl": "./images/bobba.png",
+        "imageUrl": "/images/bobba.png",
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Bobba"

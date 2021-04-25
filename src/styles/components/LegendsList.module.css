@@ -1,0 +1,68 @@
+.legendsListContainer {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.legendsListContainer::-webkit-scrollbar {
+    width: 4px;
+}
+
+.legendsListContainer::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+.legendsListContainer::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    width: 6px;
+}
+
+.legendsListContainer table {
+    width: 100%;
+    border-collapse: separate;
+    position: relative;
+}
+
+.legendsListContainer th,
+.legendsListContainer td {
+    padding: .6rem;
+    border-bottom: 1px solid gray;
+}
+
+.legendsListContainer th {
+    color: gray;
+    text-transform: uppercase;
+    font: 500 0.75rem Lexend, sans-serif;
+    text-align: left;
+
+    position: sticky;
+    top: 0;
+    background: var(--background);
+    z-index: 5;
+}
+
+.legendsListContainer .legendName {
+    display: flex;
+    align-items: center;
+}
+
+.legendsListContainer .legendName strong {
+    margin-left: .6rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+.legendsListContainer .legendName img {
+    border-radius: 50%;
+}
+
+.legendsListContainer .legendName div {
+    display: flex;
+    border-radius: 50%;
+}
+
+.legendsListContainer .legendRarity {
+    text-transform: capitalize;
+}
+

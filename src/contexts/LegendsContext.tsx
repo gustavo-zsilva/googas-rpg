@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState, useEffect } from "react";
+import { createContext, ReactNode, useState, useEffect, useContext } from "react";
 import localForage from 'localforage';
 
 export const LegendsContext = createContext({} as LegendsContextProps);
@@ -26,7 +26,8 @@ interface LegendsContextProps {
     spins: number;
     isRevealing: boolean;
     legend: Legend | null;
-    legendsHistory: any[];
+    legendsHistory: Legend[];
+    ownedLegends: string[];
     handleSpin: () => void;
     handleDiscardLegend: () => void;
     handleAddLegend: () => void;
@@ -45,6 +46,7 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
     const [legend, setLegend] = useState(null);
     const [legendsHistory, setLegendsHistory] = useState([]);
     const [luckySpins, setLuckySpins] = useState(0);
+    const [ownedLegends, setOwnedLegends] = useState([]);
     
     let isLuckySpin = false;
 
@@ -106,7 +108,6 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
         let savedLegends: Legend[];
         let savedSpins: number;
         let legendsImport;
-        let legends: Legend[];
         
         try {
             connectToDB();
@@ -142,6 +143,11 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
     useEffect(() => {
         updateInfoToStorage();
     }, [legendsHistory, spins])
+
+    useEffect(() => {
+        const ownedLegendsName = legendsHistory.map(({ name }) => name);
+        setOwnedLegends(ownedLegendsName);
+    }, [legendsHistory])
   
     function handleSpin() {
 
@@ -168,6 +174,10 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
     }
 
     function handleAddLegend() {
+        if (!ownedLegends.includes(legend.name)) {
+            setOwnedLegends([...ownedLegends, legend.name]);
+        }
+
         setIsRevealing(false);
         setLegendsHistory([legend, ...legendsHistory]);
         setLegend(null);
@@ -185,6 +195,7 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
                 isRevealing,
                 legend,
                 legendsHistory,
+                ownedLegends,
                 rarityScheme,
                 handleSpin,
                 handleDiscardLegend,
@@ -195,4 +206,8 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
             {children}
         </LegendsContext.Provider>
     );
+}
+
+export const useLegends = () => {
+    return useContext(LegendsContext);
 }

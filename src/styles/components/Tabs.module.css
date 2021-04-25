@@ -10,10 +10,20 @@
 .tabsContainer button {
     border: 0;
     background: transparent;
-    border-left: 6px solid var(--primary);
     border-bottom-left-radius: 2px;
 
     padding: 1.6rem;
 
     cursor: pointer;
+    transition: .2s;
+}
+
+.tabsContainer button div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tabsContainer button div span {
+    color: var(--primary);
 }

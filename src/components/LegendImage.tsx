@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { LegendsContext } from '../contexts/LegendsContext';
 
+import Image from 'next/image';
+
 import Tilt from 'react-tilt';
 
 import styles from '../styles/components/Image.module.css';
@@ -16,8 +18,15 @@ export function LegendImage() {
                 style={{ border: `8px solid ${rarityScheme[legend?.rarity]}` }}
             >
                 <div style={{ background: isRevealing ? 'transparent' : null }} />
-                    
-                <img src={legend?.imageUrl} alt={legend?.name} />
+                
+                { legend && <Image
+                    width={310}
+                    height={310}
+                    src={legend?.imageUrl}
+                    alt={legend?.name}
+                    objectFit="cover"
+                /> }
+                
             </div>
         </Tilt>
 

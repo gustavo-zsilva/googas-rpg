@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { LegendsContext } from '../contexts/LegendsContext';
+import { useLegends } from '../contexts/LegendsContext';
 
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
@@ -7,7 +6,7 @@ import styles from '../styles/components/Backstory.module.css';
 
 export function Backstory() {
 
-    const { legend } = useContext(LegendsContext);
+    const { legend } = useLegends();
 
     return (
         <div className={styles.backstoryContainer}>

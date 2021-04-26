@@ -20,14 +20,14 @@
 
 .legendsListContainer table {
     width: 100%;
-    border-collapse: separate;
+    border-collapse: collapse;
     position: relative;
 }
 
 .legendsListContainer th,
 .legendsListContainer td {
     padding: .6rem;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #c0c0c0;
 }
 
 .legendsListContainer th {
@@ -64,5 +64,16 @@
 
 .legendsListContainer .legendRarity {
     text-transform: capitalize;
+    width: 8rem;
 }
 
+.legendsListContainer .legendRarity div {
+    border: 1px solid var(--primary);
+    border-radius: 2px;
+    padding: .6rem;
+    text-align: center;
+}
+
+.legendsListContainer .ownedLegend {
+    width: 8rem;
+}

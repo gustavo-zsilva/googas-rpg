@@ -1,5 +1,4 @@
-import { useContext, useEffect } from 'react';
-import { LegendsContext } from '../contexts/LegendsContext';
+import { useLegends } from '../contexts/LegendsContext';
 
 import { AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineInfoCircle } from 'react-icons/ai';
 
@@ -16,7 +15,7 @@ interface AlertProps {
 
 export function Alert({ controller }: AlertProps) {
 
-    const { legend, rarityScheme, handleAddSpins, handleDiscardLegend } = useContext(LegendsContext);
+    const { legend, rarityScheme, handleAddSpins, handleDiscardLegend } = useLegends();
 
     const rarityColor = rarityScheme[legend?.rarity];
 

@@ -1,5 +1,5 @@
-import { useContext, useState } from 'react';
-import { LegendsContext } from '../contexts/LegendsContext';
+import { useState } from 'react';
+import { useLegends } from '../contexts/LegendsContext';
 
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { MdAttachMoney } from 'react-icons/md';
@@ -22,7 +22,7 @@ export function Controls() {
         handleDiscardLegend,
         handleAddLegend,
         legend
-    } = useContext(LegendsContext);
+    } = useLegends();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 

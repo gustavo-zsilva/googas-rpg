@@ -42,16 +42,20 @@ export function LegendsList() {
                                     </div>
                                     <strong style={{ fontFamily: legend.font }}>{legend.name}</strong>
                                 </td>
-                                <td>{ownedLegends.includes(legend.name) ? (
-                                    <AiFillCheckCircle color="#02e902" size={32} />
-                                ) : (
-                                    <AiFillCloseCircle color="#ff4e4e" size={32} />
-                                )}</td>
+                                <td className={styles.ownedLegend}>
+                                    {ownedLegends.includes(legend.name) ? (
+                                        <AiFillCheckCircle color="#02e902" size={32} />
+                                    ) : (
+                                        <AiFillCloseCircle color="#ff4e4e" size={32} />
+                                    )}
+                                </td>
                                 <td
                                     className={styles.legendRarity}
                                     style={{ color: rarityScheme[legend.rarity] }}
                                 >
-                                    {legend.rarity}
+                                    <div>
+                                        {legend.rarity}
+                                    </div>
                                 </td>
                             </tr>
                         );

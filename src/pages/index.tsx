@@ -13,6 +13,7 @@ import { DailyCode } from '../components/DailyCode';
 import { Layout } from '../components/Layout';
 
 import styles from '../styles/pages/Home.module.css';
+import { Popup } from '../components/Popup';
 
 export default function Home() {
 
@@ -27,6 +28,8 @@ export default function Home() {
 
       <Layout>
         <div className={styles.container}>
+
+          <Popup />
 
           <div>
             <Backstory />

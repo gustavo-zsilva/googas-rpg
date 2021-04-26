@@ -32,6 +32,7 @@ interface LegendsContextProps {
     handleDiscardLegend: () => void;
     handleAddLegend: () => void;
     handleAddSpins: (spinsToSum: number) => void;
+    showPopup: boolean;
 }
 
 interface LegendsProviderProps {
@@ -47,6 +48,7 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
     const [legendsHistory, setLegendsHistory] = useState([]);
     const [luckySpins, setLuckySpins] = useState(0);
     const [ownedLegends, setOwnedLegends] = useState([]);
+    const [showPopup, setShowPopup] = useState(false);
     
     let isLuckySpin = false;
 
@@ -108,18 +110,21 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
         let savedLegends: Legend[];
         let savedSpins: number;
         let legendsImport;
+        let savedPopupState: boolean;
         
         try {
             connectToDB();
         
             savedLegends = await localForage.getItem('legendsHistory') || [];
             savedSpins = await localForage.getItem('spins') || 0;
+            savedPopupState = Boolean(localStorage.getItem('showPopup'));
             legendsImport = await import('../legends.json');
 
             setLegends(legendsImport.default);
             setLegendsHistory(savedLegends);
             setSpins(savedSpins);
-      
+            setShowPopup(savedPopupState);
+            
         } catch (err) {
             console.error(err);
         }
@@ -201,6 +206,7 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
                 handleDiscardLegend,
                 handleAddLegend,
                 handleAddSpins,
+                showPopup,
             }}
         >
             {children}

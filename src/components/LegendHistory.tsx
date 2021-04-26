@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
-import { LegendsContext } from '../contexts/LegendsContext';
+import { useEffect, useState } from 'react';
+import { useLegends } from '../contexts/LegendsContext';
 
 import Select from 'react-select';
 import { BiGhost } from 'react-icons/bi';
@@ -9,7 +9,7 @@ import styles from '../styles/components/LegendHistory.module.css';
 
 export function LegendHistory() {
 
-    const { legendsHistory, rarityScheme } = useContext(LegendsContext);
+    const { legendsHistory, rarityScheme } = useLegends();
     const [legendFilter, setLegendFilter] = useState('all');
     const [filteredLegends, setFilteredLegends] = useState([]);
 

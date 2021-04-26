@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { LegendsContext } from '../contexts/LegendsContext';
+import { useLegends } from '../contexts/LegendsContext';
 
 import Image from 'next/image';
 
@@ -9,7 +8,7 @@ import styles from '../styles/components/Image.module.css';
 
 export function LegendImage() {
 
-    const { legend, isRevealing, rarityScheme } = useContext(LegendsContext);
+    const { legend, isRevealing, rarityScheme } = useLegends();
     
     return (
         <Tilt>

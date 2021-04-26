@@ -15,7 +15,7 @@ export function Tabs() {
     }
 
     useEffect(() => {
-        const sessionActiveTab = sessionStorage.getItem('activeTab');
+        const sessionActiveTab = sessionStorage.getItem('activeTab') || 'home';
         setActiveTab(sessionActiveTab);
     }, [])
 
@@ -33,7 +33,7 @@ export function Tabs() {
                             <span>Home</span>
                         </div>
                     ) : (
-                        <AiOutlineHome size={32} />
+                        <AiOutlineHome size={32} color="#c0c0c0" />
                     ) }
                 </button>
             </Link>
@@ -50,7 +50,7 @@ export function Tabs() {
                             <span>Legends</span>
                         </div>
                     ) : (
-                        <AiOutlineStar size={32} />
+                        <AiOutlineStar size={32} color="#c0c0c0" />
                     ) }
                 </button>
             </Link>

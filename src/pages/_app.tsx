@@ -1,3 +1,5 @@
+import { GetServerSideProps } from 'next';
+
 import { LegendsProvider } from '../contexts/LegendsContext';
 
 import '../styles/globals.css';

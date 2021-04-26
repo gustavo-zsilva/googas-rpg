@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { LegendsContext } from "../contexts/LegendsContext";
+import { useLegends } from "../contexts/LegendsContext";
 
 import { GiLightBackpack } from 'react-icons/gi';
 
@@ -7,7 +6,7 @@ import styles from '../styles/components/LegendInfo.module.css';
 
 export function LegendInfo() {
 
-    const { legend, isRevealing, rarityScheme, legendsHistory } = useContext(LegendsContext);
+    const { legend, isRevealing, rarityScheme, legendsHistory } = useLegends();
     const rarityColor = rarityScheme[legend?.rarity];
     const hasLegend = JSON.stringify(legendsHistory).includes(JSON.stringify(legend));
 

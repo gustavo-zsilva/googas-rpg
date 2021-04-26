@@ -1,0 +1,58 @@
+.popupContainer {
+    display: flex;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.075);
+
+    z-index: 5;
+}
+
+.popupContainer div {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+
+    background: var(--background);
+    padding: 1rem;
+
+    max-width: 30rem;
+}
+
+.popupContainer div header {
+    margin: 1rem 0;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.popupContainer div section {
+    line-height: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.popupContainer div footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.popupContainer div footer button {
+    background: var(--primary);
+
+    padding: 1rem;
+    border: 0;
+    border-radius: 2px;
+
+    color: var(--background);
+
+    font-size: 1rem;
+    cursor: pointer;
+}

@@ -119,7 +119,7 @@ export function LegendsProvider({ children }: LegendsProviderProps) {
             savedSpins = await localForage.getItem('spins') || 0;
             savedPopupState = Boolean(localStorage.getItem('showPopup'));
             legendsImport = await import('../legends.json');
-
+            
             setLegends(legendsImport.default);
             setLegendsHistory(savedLegends);
             setSpins(savedSpins);

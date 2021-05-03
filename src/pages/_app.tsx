@@ -1,14 +1,15 @@
-import { GetServerSideProps } from 'next';
-
+import { AuthProvider } from '../contexts/AuthContext';
 import { LegendsProvider } from '../contexts/LegendsContext';
 
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <LegendsProvider>
-      <Component {...pageProps} />
-    </LegendsProvider>
+    <AuthProvider>
+      <LegendsProvider>
+        <Component {...pageProps} />
+      </LegendsProvider>
+    </AuthProvider>
   )
 }
 

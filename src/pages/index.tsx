@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 import { CountdownProvider } from '../contexts/CountdownContext';
 import { Controls } from '../components/Controls';
@@ -11,11 +13,20 @@ import { SpinCodes } from '../components/SpinCodes';
 import { CodesProvider } from '../contexts/CodesContext';
 import { DailyCode } from '../components/DailyCode';
 import { Layout } from '../components/Layout';
-
-import styles from '../styles/pages/Home.module.css';
 import { Popup } from '../components/Popup';
 
+import { useAuth } from '../contexts/AuthContext';
+
+import styles from '../styles/pages/Home.module.css';
+
 export default function Home() {
+
+  const { user } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!user || !user.emailVerified) router.push('/login');
+  }, [user])
 
   return (
     <CodesProvider>
@@ -29,15 +40,15 @@ export default function Home() {
       <Layout>
         <div className={styles.container}>
 
-          <Popup />
-
+          {/* <Popup /> */}
+          
           <div>
             <Backstory />
             <Counter />
             {/* <DailyCode /> */}
             <SpinCodes />
           </div>
-
+          
           <div>
             <LegendImage />
             <LegendInfo />
@@ -54,4 +65,3 @@ export default function Home() {
     </CodesProvider>
   )
 }
-

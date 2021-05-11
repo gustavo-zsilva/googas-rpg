@@ -3,6 +3,10 @@
     flex-direction: column;
     overflow-y: scroll;
     height: 100%;
+
+    border-radius: 4px;
+    padding: 0 2rem;
+    background: #FFF;
 }
 
 .legendsListContainer::-webkit-scrollbar {
@@ -27,18 +31,20 @@
 .legendsListContainer th,
 .legendsListContainer td {
     padding: .6rem;
-    border-bottom: 1px solid #c0c0c0;
+    /* border-bottom: 1px solid #c0c0c0; */
+    background: #FFF;
 }
 
 .legendsListContainer th {
     color: gray;
+    padding: 1rem;
+
     text-transform: uppercase;
     font: 500 0.75rem Lexend, sans-serif;
     text-align: left;
 
     position: sticky;
     top: 0;
-    background: var(--background);
     z-index: 5;
 }
 
@@ -48,18 +54,14 @@
 }
 
 .legendsListContainer .legendName strong {
-    margin-left: .6rem;
+    margin-left: 1.2rem;
     font-weight: 400;
     font-size: 1.3rem;
 }
 
-.legendsListContainer .legendName img {
-    border-radius: 50%;
-}
-
 .legendsListContainer .legendName div {
     display: flex;
-    border-radius: 50%;
+    border-radius: 10px;
 }
 
 .legendsListContainer .legendRarity {
@@ -75,5 +77,26 @@
 }
 
 .legendsListContainer .ownedLegend {
-    width: 8rem;
+    width: 10rem;
+}
+
+.legendsListContainer .ownedLegend span {
+    display: flex;
+    justify-content: center;
+
+    border-radius: 16px;
+    padding: .4rem;
+
+    font-size: .9rem;
+    margin-right: 2rem;
+}
+
+.legendsListContainer .owned {
+    background: rgba(79, 241, 79, 0.767);
+    color: rgb(0, 180, 0);
+}
+
+.legendsListContainer .notOwned {
+    background: rgba(255, 0, 0, 0.308);
+    color: rgba(212, 0, 0, 0.5);
 }

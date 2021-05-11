@@ -24,7 +24,6 @@ export function LegendHistory() {
         { value: 'common', label: 'Common' },
     ]
 
-
     useEffect(() => {
         // Runs every time a new legend is added to the historic
         stackLegends();

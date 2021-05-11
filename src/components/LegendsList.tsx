@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { rarityScheme } from '../utils/rarityScheme';
 import { useLegendsList } from '../contexts/LegendsListContext';
 
-import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai';
+import Shimmer from 'react-shimmer-effect';
 
 import styles from '../styles/components/LegendsList.module.css';
 
@@ -32,22 +32,28 @@ export function LegendsList() {
                                     className={styles.legendName}
                                     style={{ borderLeft: `3px solid ${rarityScheme[legend.rarity]}` }}
                                 >
-                                    <div style={{ border: `2px solid ${rarityScheme[legend.rarity]}` }}>
-                                        <Image
-                                            width={40}
-                                            height={40}
-                                            src={legend.imageUrl}
-                                            alt={legend.name}
-                                            objectFit="cover"
-                                        />
+                                    <div>
+                                        <Shimmer>
+                                            <Image
+                                                width={40}
+                                                height={40}
+                                                src={legend.imageUrl}
+                                                alt={legend.name}
+                                                objectFit="cover"
+                                            />
+                                        </Shimmer>
                                     </div>
                                     <strong style={{ fontFamily: legend.font }}>{legend.name}</strong>
                                 </td>
                                 <td className={styles.ownedLegend}>
                                     {ownedLegends.includes(legend.name) ? (
-                                        <AiFillCheckCircle color="#02e902" size={32} />
+                                        <span className={styles.owned}>
+                                            Owned
+                                        </span>
                                     ) : (
-                                        <AiFillCloseCircle color="#ff4e4e" size={32} />
+                                        <span className={styles.notOwned}>
+                                            Not Owned
+                                        </span>
                                     )}
                                 </td>
                                 <td

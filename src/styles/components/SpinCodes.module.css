@@ -20,6 +20,8 @@
     display: flex;
     flex: 1;
 
+    background: transparent;
+
     padding: .8rem;
     font-size: 1.05rem;
     border: 0;

@@ -1,6 +1,7 @@
 import { useLegends } from '../contexts/LegendsContext';
 
 import Image from 'next/image';
+import Shimmer from 'react-shimmer-effect';
 
 import Tilt from 'react-tilt';
 
@@ -20,14 +21,17 @@ export function LegendImage() {
             >
                 <div style={{ background: isRevealing ? 'transparent' : null }} />
                 
-                { legend && <Image
-                    width={310}
-                    height={310}
-                    src={legend?.imageUrl}
-                    alt={legend?.name}
-                    objectFit="cover"
-                /> }
-                
+                { legend && (
+                    <Shimmer>
+                        <Image
+                            width={310}
+                            height={310}
+                            src={legend?.imageUrl}
+                            alt={legend?.name}
+                            objectFit="cover"
+                        />
+                    </Shimmer>
+                ) }
             </div>
         </Tilt>
 

@@ -50,13 +50,6 @@ interface HomeProps {
 
 export default function Home({ legends, firestoreUser }: HomeProps) {
 
-  const { user } = useAuth();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!user) router.push('/login');
-  }, [user])
-
   return (
     <LegendsProvider firestoreLegends={legends} firestoreUser={firestoreUser}>
     <CodesProvider>
@@ -96,9 +89,18 @@ export default function Home({ legends, firestoreUser }: HomeProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 
-  const { uid } = req.cookies;
+  const { uid, token } = req.cookies;
+
+  // If user is not authenticated
+  if (token === 'null') {
+    res.statusCode = 302;
+    res.setHeader('Location', '/login');
+    return {
+      props: {},
+    }
+  }
   
   let legends = [];
   let firestoreUser;

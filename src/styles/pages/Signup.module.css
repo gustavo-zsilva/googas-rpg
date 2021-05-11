@@ -1,0 +1,225 @@
+.signupContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 4rem;
+
+    position: relative;
+
+    border-radius: 6px;
+    background: var(--white);
+
+    box-shadow: -10px 10px 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.signupContainer button {
+    background: transparent;
+    transition: .2s;
+}
+
+.signupContainer button:disabled {
+    background: #bdbdbd;
+
+    cursor: not-allowed;
+}
+
+.signupContainer header {
+    position: absolute;
+
+    margin: 1rem;
+}
+
+.signupContainer header button {
+    padding: .4rem;
+
+    font-size: 0;
+    
+    border-radius: 50%;
+    outline: 0;
+
+    transition: background .2s;
+}
+
+.signupContainer header button:hover {
+    background: #f3f3f3;
+}
+
+.signupContainer section form {
+    width: 100%;
+    margin: 5rem;
+}
+
+.signupContainer section form h2 {
+    margin-bottom: 1rem;
+}
+
+.signupContainer section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signupContainer section .username,
+.signupContainer section .password,
+.signupContainer section .confirmPassword {
+    display: flex;
+    border: 2px solid #dbdbdb;
+    padding: .5rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    transition: .2s;
+}
+
+.signupContainer section .username:focus-within,
+.signupContainer section .password:focus-within,
+.signupContainer section .confirmPassword:focus-within {
+    border: 2px solid var(--primary);
+}
+
+.signupContainer .signUpButton {
+    width: 100%;
+    padding: 1rem;
+
+    border-radius: 4px;
+    margin-top: 1rem;
+
+    background: var(--primary);
+    color: var(--background);
+    font-size: 1rem;
+}
+
+.signupContainer section input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+
+.signupContainer .login {
+    margin-top: 1.4rem;
+}
+
+.signupContainer a {
+    color: var(--primary);
+    margin-top: 1rem;
+}
+
+.signupContainer a:hover {
+    text-decoration: underline 2px;
+}
+
+.signupContainer section:last-child img {
+    width: 100%;
+    height: auto;
+}
+
+.signupContainer .separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 1.8rem 0;
+
+    background: #dbdbdb;
+    height: 3px;
+
+    border-radius: 4px;
+}
+
+.signupContainer .separator span {
+    background: var(--background);
+    padding: 0 1rem;
+
+    color: #a1a1a1;
+}
+
+.signupContainer .providers {
+    display: flex;
+    flex-direction: column;
+}
+
+.signupContainer .providers button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    padding: 1rem;
+    border: 0;
+
+    border-radius: 4px;
+    font-size: 1rem;
+
+    color: var(--background);
+    cursor: pointer;
+}
+
+.signupContainer .providers button div {
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+
+    padding: .2rem .8rem;
+    
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.signupContainer .providers button + button {
+    margin-top: 1rem;
+}
+
+.signupContainer .providers .googleButton {
+    background: #F64233;
+}
+
+.signupContainer .providers .googleButton div {
+    background: #C63024;
+}
+
+.signupContainer .providers .facebookButton {
+    background: #3A5999;
+}
+
+.signupContainer .providers .facebookButton div {
+    background: #233B67;
+}
+
+.signupContainer .providers .anonymousButton {
+    color: var(--text);
+    background: #EFEFEF;
+}
+
+.signupContainer .providers .anonymousButton div {
+    background: #dbdbdb;
+}
+
+.signupContainer .errorMessage {
+    background: rgba(255, 28, 28, 0.349);
+    color: var(--background);
+
+    padding: 1rem;
+    border-radius: 2px;
+
+    margin-bottom: 1rem;
+
+    line-height: 1.3;
+}
+
+.signupContainer .successMessage {
+    background: rgba(28, 255, 28, 0.6);
+    color: var(--background);
+
+    padding: 1rem;
+    border-radius: 2px;
+
+    margin-bottom: 1rem;
+
+    line-height: 1.3;
+}

@@ -1,0 +1,29 @@
+.tabsContainer {
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tabsContainer button {
+    border: 0;
+    background: transparent;
+    border-bottom-left-radius: 2px;
+
+    padding: 1.6rem;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.tabsContainer button div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tabsContainer button div span {
+    color: var(--primary);
+}

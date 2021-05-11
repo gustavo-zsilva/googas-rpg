@@ -1,0 +1,71 @@
+.controlsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 100%;
+
+    margin-top: 1.6rem;
+    color: #2e384d;
+}
+
+.controlsContainer > button,
+.controlsContainer > div > button {
+    align-items: center;
+
+    margin-top: 1.2rem;
+
+    vertical-align: middle;
+
+    width: 100%;
+
+    padding: .8rem;
+    background: #0081A7;
+    border: 0;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.controlsContainer > button:disabled {
+    background: #bdbdbd;
+
+    cursor: not-allowed;
+}
+
+.controlsContainer > div > button {
+    display: inline-flex;
+}
+
+.controlsContainer .icon {
+    display: flex;
+    align-self: center;
+}
+  
+.controlsContainer > span {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.controlsContainer > span > span {
+    font-size: 3.2rem;
+    font-family: 'New Tegomin', Arial, Helvetica, sans-serif;
+}
+
+.controlsContainer .legendInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controlsContainer > div {
+    display: flex;
+}
+
+.controlsContainer > div > button:first-child {
+    margin-right: 1rem;
+    background: #ff4e4e;
+}

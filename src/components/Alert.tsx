@@ -2,6 +2,8 @@ import { useLegends } from '../contexts/LegendsContext';
 
 import { AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineInfoCircle } from 'react-icons/ai';
 
+import { rarityScheme } from '../utils/rarityScheme';
+
 import styles from '../styles/components/Alert.module.css';
 
 interface AlertController {
@@ -15,7 +17,7 @@ interface AlertProps {
 
 export function Alert({ controller }: AlertProps) {
 
-    const { legend, rarityScheme, handleAddSpins, handleDiscardLegend } = useLegends();
+    const { legend, handleAddSpins, handleDiscardLegend } = useLegends();
 
     const rarityColor = rarityScheme[legend?.rarity];
 

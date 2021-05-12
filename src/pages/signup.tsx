@@ -10,13 +10,21 @@ import { AiFillGoogleCircle, AiFillFacebook } from 'react-icons/ai';
 
 import { useAuth } from '../contexts/AuthContext';
 
-import firebase, { firestore } from '../lib/firebase';
-
 import styles from '../styles/pages/Signup.module.css';
+import { createUser } from '../lib/db';
 
 export default function Signup() {
 
-    const { loading, signInWithGoogle, signUpWithEmail, signInWithEmail, sendEmailVerification, user, auth } = useAuth();
+    const {
+        loading,
+        signInWithGoogle,
+        signInWithFacebook,
+        signUpWithEmail,
+        signInWithEmail,
+        sendEmailVerification,
+        user,
+        auth
+    } = useAuth();
 
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
@@ -25,24 +33,32 @@ export default function Signup() {
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
 
+    function formatUser(user) {
+        const formattedUser = {
+            name: user.displayName,
+            email: user.email,
+            photoUrl: user.photoURL,
+            emailVerified: user.emailVerified,
+            isAnonymous: user.isAnonymous,
+            uid: user.uid,
+        }
+
+        return formattedUser;
+    }
+
+    async function loginUser() {
+        const authUser = formatUser(auth.currentUser);
+            
+        await createUser(authUser);
+
+        setMessage('Your account has been successfully created!');
+    }
+
     async function handleFormSubmit(event: FormEvent) {
         event.preventDefault();
 
         if (passwordRef.current.value !== confirmPassword.current.value) {
             return setError('Passwords do not match. Please retry.')
-        }
-
-        function formatUser(user) {
-            const formattedUser = {
-                name: user.displayName,
-                email: user.email,
-                photoUrl: user.photoURL,
-                emailVerified: user.emailVerified,
-                isAnonymous: user.isAnonymous,
-                uid: user.uid,
-            }
-
-            return formattedUser;
         }
 
         try {
@@ -52,20 +68,6 @@ export default function Signup() {
 
             await handleSendEmailVerification();
 
-            const authUser = formatUser(auth.currentUser);
-            
-            const usersCollection = firestore.collection('users');
-            const userDoc = usersCollection.doc(authUser.uid);
-            await userDoc.set({
-                ...authUser,
-                spins: 0,
-                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-            })
-            .then(() => console.log('Success in Saving User.'))
-            .catch(err => console.error(err))
-
-            setMessage('Your account has been successfully created!');
-
             emailRef.current.value = '';
             passwordRef.current.value = '';
             confirmPassword.current.value = '';
@@ -74,6 +76,16 @@ export default function Signup() {
             console.error(err);
             setError(err.message);
         }
+    }
+
+    async function handleSignUpWithGoogle() {
+        await signInWithGoogle();
+        loginUser();
+    }
+
+    async function handleSignUpWithFacebook() {
+        await signInWithFacebook();
+        loginUser();
     }
 
     async function handleSendEmailVerification() {
@@ -96,6 +108,12 @@ export default function Signup() {
 
         return () => clearTimeout(timeoutID);
     }, [message, error])
+
+    useEffect(() => {
+        if (user?.emailVerified) {
+            loginUser();
+        }
+    }, [user])
 
     return (
         <Layout>
@@ -179,8 +197,9 @@ export default function Signup() {
 
                         <div className={styles.providers}>
                             <button
+                                type="button"
                                 className={styles.googleButton}
-                                onClick={signInWithGoogle}
+                                onClick={handleSignUpWithGoogle}
                                 disabled={loading}
                             >
                                 <div>
@@ -190,7 +209,9 @@ export default function Signup() {
                             </button>
                                 
                             <button
+                                type="button"
                                 className={styles.facebookButton}
+                                onClick={handleSignUpWithFacebook}
                                 disabled={loading}
                             >
                                 <div>

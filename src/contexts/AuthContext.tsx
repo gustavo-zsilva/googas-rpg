@@ -19,13 +19,14 @@ interface AuthContextProps {
     user: User;
     loading: boolean;
     signInWithGoogle: () => any;
+    signInWithFacebook: () => any;
     signInWithEmail: (email: string, password: string) => any;
     signInAnonymously: () => any;
     signOut: () => any;
     sendEmailVerification: () => any;
     resetPassword: (email: string) => any;
     signUpWithEmail: (email: string, password: string) => any;
-    auth: any;
+    auth: firebase.auth.Auth;
 }
 
 export function AuthProvider({ children }) {
@@ -38,8 +39,13 @@ export function AuthProvider({ children }) {
     }
 
     function signInWithGoogle() {
-
         const provider = new firebase.auth.GoogleAuthProvider();
+
+        return auth.signInWithPopup(provider)
+    }
+
+    function signInWithFacebook() {
+        const provider = new firebase.auth.FacebookAuthProvider();
 
         return auth.signInWithPopup(provider)
     }
@@ -97,6 +103,8 @@ export function AuthProvider({ children }) {
         const tokenUnsubscribe = auth.onIdTokenChanged(async (user) => {
             if (!user) {
                 Cookie.set('token', null);
+                Cookie.set('uid', null);
+                Cookie.set('emailVerified', String(false));
                 return;
             }
 
@@ -104,6 +112,7 @@ export function AuthProvider({ children }) {
 
             Cookie.set('token', token);
             Cookie.set('uid', user.uid);
+            Cookie.set('emailVerified', String(user.emailVerified));
         })
 
         return () => {
@@ -118,6 +127,7 @@ export function AuthProvider({ children }) {
                 user,
                 loading,
                 signInWithGoogle,
+                signInWithFacebook,
                 signInWithEmail,
                 signInAnonymously,
                 signOut,

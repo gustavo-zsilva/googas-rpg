@@ -9,15 +9,16 @@ import styles from '../styles/components/Header.module.css';
 
 export function Header() {
 
-    const { user, signInWithGoogle, signInAnonymously, signOut } = useAuth();
+    const { user, signOut } = useAuth();
 
     return (
         <header className={styles.headerContainer}>
             <h3>
                 <Link href="/">
-                    <button>
-                        <img src="/assets/logo.jpg" alt="Logo" />
-                    </button>
+                    <a>
+                        {/* <img src="/assets/logo.jpg" alt="Logo" /> */}
+                        <span>Googas RPG</span>
+                    </a>
                 </Link>
             </h3>
 
@@ -36,6 +37,7 @@ export function Header() {
                             <BiUserCircle size={34} color="#bdbdbd" />
                         ) }
                        
+                        { !user.emailVerified && <span className={styles.emailNotVerified}>! Verify your email</span> }
 
                         <span>{user.isAnonymous ? 'Anonymous' : user.name ? user.name : user.email}</span>
                     </div>

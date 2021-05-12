@@ -124,8 +124,6 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
     useEffect(() => {
         updateSpins(firestoreUser.uid, spins);
     }, [spins])
-
-    
   
     function handleSpin() {
 

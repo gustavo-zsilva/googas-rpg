@@ -24,6 +24,16 @@ export function LegendHistory() {
         { value: 'common', label: 'Common' },
     ]
 
+    const customStyles = {
+        control: () => ({
+            background: 'transparent',
+            width: '8rem',
+            display: 'flex',
+            border: '1px solid #c0c0c0',
+            borderRadius: '4px',
+        })
+    }
+
     useEffect(() => {
         // Runs every time a new legend is added to the historic
         stackLegends();
@@ -72,6 +82,7 @@ export function LegendHistory() {
                     defaultValue={options[0]}
                     onChange={(option) => setLegendFilter(option.value)}
                     instanceId="filter-select"
+                    styles={customStyles}
                 />
             </header>
 

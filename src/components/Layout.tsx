@@ -17,7 +17,7 @@ export function Layout({ children }: LayoutProps) {
     return (
         <div className={styles.layoutContainer}>
             <Header />
-            { user && <Tabs /> }
+            { user && user.emailVerified && <Tabs /> }
             
             {children}
         </div>

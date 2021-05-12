@@ -15,7 +15,7 @@ import styles from '../styles/pages/Login.module.css';
 
 export default function Login() {
 
-    const { signInWithGoogle, signInWithEmail, signInAnonymously, loading, sendEmailVerification, resetPassword, user } = useAuth();
+    const { signInWithGoogle, signInWithEmail, signInAnonymously, loading, resetPassword, signInWithFacebook } = useAuth();
 
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
@@ -134,6 +134,7 @@ export default function Login() {
 
                         <div className={styles.providers}>
                             <button
+                                type="button"
                                 className={styles.googleButton}
                                 onClick={signInWithGoogle}
                                 disabled={loading}
@@ -145,7 +146,9 @@ export default function Login() {
                             </button>
                                 
                             <button
+                                type="button"
                                 className={styles.facebookButton}
+                                onClick={signInWithFacebook}
                                 disabled={loading}
                             >
                                 <div>
@@ -155,6 +158,7 @@ export default function Login() {
                             </button>
 
                             <button
+                                type="button"
                                 className={styles.anonymousButton}
                                 onClick={signInAnonymously}
                                 disabled={loading}

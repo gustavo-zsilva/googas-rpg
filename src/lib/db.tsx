@@ -17,8 +17,18 @@ type Code = {
     spins: number,
 }
 
-type Props = {
-    spins?: number,
+export async function createUser(user) {
+    try {
+        const usersCollection = firestore.collection('users');
+        const userDoc = usersCollection.doc(user.uid);
+        await userDoc.set({
+            ...user,
+            spins: 0,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        })
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 export async function updateRedeemedCodes(uid: string, redeemedCode: Code) {

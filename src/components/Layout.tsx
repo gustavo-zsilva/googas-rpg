@@ -19,7 +19,52 @@ export function Layout({ children }: LayoutProps) {
             <Header />
             { user && user.emailVerified && <Tabs /> }
             
-            {children}
+            <div className={styles.content}>
+                {children}
+            </div>
+
+            <footer>
+                <div className={styles.author}>
+                    <span>
+                        Copyright © Gustavo Silva
+                    </span>
+                    <div>
+                        <a 
+                            href="https://github.com/gustavo-zsilva"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            My Github
+                        </a>
+                        <a
+                            href="https://github.com/gustavo-zsilva/googas-rpg"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Site Repository
+                        </a>
+                    </div>
+                </div>
+                
+                <div className={styles.contributors}>
+                    <strong>Top Contributors</strong>
+                    <div>
+                        <span>Meu pai</span>
+                        <span>Mimi</span>
+                        <span>Romão - {""}
+                            <a 
+                                href="https://www.instagram.com/madeira_cu/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                Insta
+                            </a>
+                        </span>
+                        <span>Vitão</span>
+                    </div>
+                </div>
+
+            </footer>
         </div>
     );
 }

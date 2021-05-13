@@ -1,5 +1,47 @@
-.layoutContainer {
+
+
+.layoutContainer .content {
     max-width: 80rem;
     max-height: 100vh;
-    margin: 0 auto 2.6rem auto;
+    margin: 2rem auto 2.6rem auto;
+}
+
+.layoutContainer footer {
+    display: flex;
+    justify-content: space-between;
+    padding: .6rem 20rem;
+
+    width: 100%;
+
+    background: var(--text);
+    color: var(--background);
+}
+
+.layoutContainer footer a {
+    color: var(--primary);
+}
+
+.layoutContainer footer a:hover {
+    text-decoration: underline 2px;
+}
+
+.layoutContainer footer div {
+    display: flex;
+    line-height: 2;
+}
+
+.layoutContainer footer .author {
+    display: flex;
+    flex-direction: column;
+}
+
+.layoutContainer footer .contributors {
+    display: flex;
+    flex-direction: column;
+}
+
+.layoutContainer footer .author a + a:before,
+.layoutContainer footer .contributors span + span:before {
+    content: '●';
+    margin: 0 .4rem;
 }

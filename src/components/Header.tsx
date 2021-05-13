@@ -26,17 +26,19 @@ export function Header() {
                 <div className={styles.loggedIn}>
                     <div>
                         { user.photoUrl ? (
-                            <Image
-                                width={50}
-                                height={50}
-                                src={user.photoUrl}
-                                alt={user.name}
-                                objectFit="cover"
-                            />
+                            <div>
+                                <Image
+                                    width={45}
+                                    height={45}
+                                    src={user.photoUrl}
+                                    alt={user.name}
+                                    objectFit="cover"
+                                />
+                            </div>
                         ) : (
-                            <BiUserCircle size={34} color="#bdbdbd" />
+                            <BiUserCircle size={45} color="#bdbdbd" />
                         ) }
-                       
+
                         { !user.emailVerified && <span className={styles.emailNotVerified}>! Verify your email</span> }
 
                         <span>{user.isAnonymous ? 'Anonymous' : user.name ? user.name : user.email}</span>

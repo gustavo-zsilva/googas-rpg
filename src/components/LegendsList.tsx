@@ -33,7 +33,7 @@ export function LegendsList() {
                                     style={{ borderLeft: `3px solid ${rarityScheme[legend.rarity]}` }}
                                 >
                                     <div>
-                                        <Shimmer>
+                                        {/* <Shimmer> */}
                                             <Image
                                                 width={40}
                                                 height={40}
@@ -41,7 +41,7 @@ export function LegendsList() {
                                                 alt={legend.name}
                                                 objectFit="cover"
                                             />
-                                        </Shimmer>
+                                        {/* </Shimmer> */}
                                     </div>
                                     <strong style={{ fontFamily: legend.font }}>{legend.name}</strong>
                                 </td>

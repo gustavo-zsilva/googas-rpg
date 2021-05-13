@@ -10,7 +10,7 @@ export default function User() {
 
     return (
         <div>
-            
+            {slug}
         </div>
     );
 }

@@ -29,7 +29,7 @@
 .countdownContainer div div {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 9.5rem;
 }
 
 .countdownContainer div div span {

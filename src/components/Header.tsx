@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { useSpring, animated } from '@react-spring/web';
+
 import { useAuth } from '../contexts/AuthContext';
 
 import { BiUserCircle } from 'react-icons/bi';
@@ -10,9 +12,17 @@ import styles from '../styles/components/Header.module.css';
 export function Header() {
 
     const { user, signOut } = useAuth();
+    const springStyles = useSpring({
+        from: {
+            y: -100
+        },
+        to: {
+            y: 0
+        }
+    })
 
     return (
-        <header className={styles.headerContainer}>
+        <animated.header style={{ ...springStyles }} className={styles.headerContainer}>
             <h3>
                 <Link href="/">
                     <a>
@@ -21,7 +31,7 @@ export function Header() {
                     </a>
                 </Link>
             </h3>
-
+            
             { user ? (
                 <div className={styles.loggedIn}>
                     <div>
@@ -57,6 +67,7 @@ export function Header() {
                     </Link>
                 </div>
             ) }
-        </header>
+            
+        </animated.header>
     );
 }

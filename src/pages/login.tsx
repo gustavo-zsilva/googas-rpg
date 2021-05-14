@@ -161,7 +161,7 @@ export default function Login() {
                                 type="button"
                                 className={styles.anonymousButton}
                                 onClick={signInAnonymously}
-                                disabled={loading}
+                                disabled={true}
                             >
                                 <div>
                                     <BiUser color="#EFEFEF" size={28} />

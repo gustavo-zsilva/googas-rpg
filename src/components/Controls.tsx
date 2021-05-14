@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useLegends } from '../contexts/LegendsContext';
 
+import { useSpring, useChain, useSpringRef, animated, useTransition } from '@react-spring/web';
+
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { MdAttachMoney } from 'react-icons/md';
 
@@ -41,13 +43,18 @@ export function Controls() {
 
     const isOutOfSpins = spins <= 0;
 
+    const springRef = useSpringRef();
+    const props = useSpring({ ref: springRef })
+
+    useChain([springRef, springRef], [0.5, 2])
+
     return (
         <div className={styles.controlsContainer}>
 
             <span>
-                <span>
+                <animated.span style={props}>
                     {spins}
-                </span>
+                </animated.span>
                 spins left
             </span>
 

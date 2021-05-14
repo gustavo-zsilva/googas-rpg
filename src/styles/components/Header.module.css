@@ -36,8 +36,10 @@
     right: 0;
 }
 
-.headerContainer .loggedIn {
+.headerContainer .loggedIn,
+.headerContainer .loggedOut {
     margin-right: 20rem;
+    
 }
 
 .headerContainer .loggedIn div {

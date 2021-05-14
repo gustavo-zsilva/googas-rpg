@@ -49,7 +49,7 @@ export function Layout({ children }: LayoutProps) {
                 <div className={styles.contributors}>
                     <strong>Top Contributors</strong>
                     <div>
-                        <span>Meu pai</span>
+                        {/* <span>Meu pai</span>
                         <span>Mimi</span>
                         <span>Romão - {""}
                             <a 
@@ -60,7 +60,7 @@ export function Layout({ children }: LayoutProps) {
                                 Insta
                             </a>
                         </span>
-                        <span>Vitão</span>
+                        <span>Vitão</span> */}
                     </div>
                 </div>
 

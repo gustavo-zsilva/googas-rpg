@@ -35,46 +35,20 @@ export function LegendHistory() {
     }
 
     useEffect(() => {
-        // Runs every time a new legend is added to the historic
-        stackLegends();
-    }, [legendsHistory, legendFilter])
-
-    function stackLegends() {
-        const legendsCache = [];
-        let newLegends = [];
-        let newFilteredLegends = [];
-
-        newLegends = legendsHistory.map(legend => ({ ...legend, unities: 1 }))
-
-        let count = {};
-        newLegends.forEach(({name}) => { count[name] = (count[name]||0) + 1;});
-
-        newLegends.map(legend => {
-            if (legendsCache.find(({name}) => legend.name === name)) return;
-
-            const newLegend = {
-                ...legend,
-                unities: count[legend.name]
-            }
-
-            legendsCache.push(newLegend);
-        })
-
-        if (legendFilter === 'all') return setFilteredLegends(legendsCache);
-        newFilteredLegends = legendsCache.filter(legend => legend.rarity === legendFilter ? legend : null);
-
-        setFilteredLegends(newFilteredLegends);
-    }
+        setFilteredLegends(legendsHistory);
+    }, [])
 
     useEffect(() => {
-        stackLegends();
-    }, [])
+        if (legendFilter === 'all') return setFilteredLegends(legendsHistory);
+        const newLegends = legendsHistory.filter(legend => legend.rarity === legendFilter);
+        setFilteredLegends(newLegends);
+    }, [legendFilter, legendsHistory])
 
     return (
         <div className={styles.legendHistoryContainer}>
             <header>
                 <h3>
-                    You have <span>{filteredLegends.length}</span> {legendFilter}
+                    You have <span>{legendsHistory.length}</span> {legendFilter}
                 </h3>
                 <Select
                     options={options}

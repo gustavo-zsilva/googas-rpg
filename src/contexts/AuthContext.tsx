@@ -54,8 +54,8 @@ export function AuthProvider({ children }) {
         return auth.signInWithEmailAndPassword(email, password)
     }
 
-    function signUpWithEmail(email: string, password: string) {
-        return auth.createUserWithEmailAndPassword(email, password)
+    async function signUpWithEmail(email: string, password: string) {
+        return auth.createUserWithEmailAndPassword(email, password);
     }
 
     function sendEmailVerification() {

@@ -58,7 +58,7 @@ export default function Login() {
     }, [message, error])
 
     return (
-        <Layout>
+        <div>
             <Head>
                 <title>Login | Googas RPG</title>
             </Head>
@@ -149,7 +149,7 @@ export default function Login() {
                                 type="button"
                                 className={styles.facebookButton}
                                 onClick={signInWithFacebook}
-                                disabled={loading}
+                                disabled={true}
                             >
                                 <div>
                                     <AiFillFacebook color="#dbdbdb" size={28} />
@@ -177,6 +177,7 @@ export default function Login() {
                 </section>
                 
             </div>
-        </Layout>
+        </div>
     );
 }
+

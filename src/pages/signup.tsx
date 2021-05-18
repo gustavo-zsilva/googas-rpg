@@ -12,6 +12,7 @@ import { useAuth } from '../contexts/AuthContext';
 
 import styles from '../styles/pages/Signup.module.css';
 import { createUser } from '../lib/db';
+import { firestore } from '../lib/firebase';
 
 export default function Signup() {
 
@@ -37,19 +38,27 @@ export default function Signup() {
         const formattedUser = {
             name: user.displayName,
             email: user.email,
-            photoUrl: user.photoURL,
-            emailVerified: user.emailVerified,
-            isAnonymous: user.isAnonymous,
             uid: user.uid,
         }
 
         return formattedUser;
     }
 
-    async function loginUser() {
+    async function handleCreateUser() {
         const authUser = formatUser(auth.currentUser);
             
-        await createUser(authUser);
+        try {
+            await firestore
+            .collection('users')
+            .doc(authUser.uid)
+            .set({
+                ...authUser,
+                spins: 0,
+                // createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            })
+        } catch (err) {
+            console.error(err);
+        }
 
         setMessage('Your account has been successfully created!');
     }
@@ -63,8 +72,6 @@ export default function Signup() {
 
         try {
             await signUpWithEmail(emailRef.current.value, passwordRef.current.value);
-            
-            await signInWithEmail(emailRef.current.value, passwordRef.current.value);
 
             await handleSendEmailVerification();
 
@@ -79,13 +86,16 @@ export default function Signup() {
     }
 
     async function handleSignUpWithGoogle() {
-        await signInWithGoogle();
-        loginUser();
+        try {
+            await signInWithGoogle();
+            await handleCreateUser();
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     async function handleSignUpWithFacebook() {
-        await signInWithFacebook();
-        loginUser();
+        
     }
 
     async function handleSendEmailVerification() {
@@ -96,6 +106,10 @@ export default function Signup() {
         } catch (err) {
             setError(err.message)
         }
+    }
+
+    async function handleCreateUserIfEmailVerified() {
+        await handleCreateUser();
     }
 
     useEffect(() => {
@@ -111,12 +125,12 @@ export default function Signup() {
 
     useEffect(() => {
         if (user?.emailVerified) {
-            loginUser();
+            handleCreateUserIfEmailVerified();
         }
     }, [user])
 
     return (
-        <Layout>
+        <div>
 
             <Head>
                 <title>Signup | Googas RPG</title>
@@ -212,7 +226,7 @@ export default function Signup() {
                                 type="button"
                                 className={styles.facebookButton}
                                 onClick={handleSignUpWithFacebook}
-                                disabled={loading}
+                                disabled={true}
                             >
                                 <div>
                                     <AiFillFacebook color="#dbdbdb" size={28} />
@@ -228,6 +242,7 @@ export default function Signup() {
                 </section>
 
                 </div>
-        </Layout>
+        </div>
     );
 }
+

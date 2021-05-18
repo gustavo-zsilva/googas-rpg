@@ -3,13 +3,13 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB-c8Uh7B5xqEau37ObHcz26MpXQjsFVJM",
-    authDomain: "mythic-emissary-298019.firebaseapp.com",
-    projectId: "mythic-emissary-298019",
-    storageBucket: "mythic-emissary-298019.appspot.com",
-    messagingSenderId: "337149164742",
-    appId: "1:337149164742:web:787aed9e916faee6e82bc7",
-    measurementId: "G-F364FMYVK9"
+    apiKey: "AIzaSyDM0BWt4Xq2S3aZLihg09kD51CSnfBCApo",
+    authDomain: "googas-rpg-prod.firebaseapp.com",
+    projectId: "googas-rpg-prod",
+    storageBucket: "googas-rpg-prod.appspot.com",
+    messagingSenderId: "943763231511",
+    appId: "1:943763231511:web:6fa5504d693dc161015d52",
+    measurementId: "G-11YLGS0P8R"
 }
 
 firebase.auth.Auth.Persistence.LOCAL;

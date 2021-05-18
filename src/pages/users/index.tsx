@@ -1,6 +1,10 @@
 import { GetStaticProps } from "next"
-import { Layout } from "../../components/Layout";
+import Image from 'next/image';
+import Link from 'next/link';
+
 import { firestore } from "../../lib/firebase";
+
+import { BiUserCircle } from 'react-icons/bi';
 
 import styles from '../../styles/pages/Users.module.css';
 
@@ -22,9 +26,35 @@ interface UsersProps {
 
 export default function Users({ users }: UsersProps) {
     return (
-        <Layout>
+        <div>
+            <div className={styles.usersContainer}>
+                {users.map(user => {
+                    return (
+                        <Link href={`/users/${user.uid}`} key={user.uid}>
+                            <div className={styles.userCard}>
+                                { user.photoUrl ? (
+                                    <div style={{ display: 'flex', borderRadius: '50%' }}>
+                                        <Image
+                                            width={100}
+                                            height={100}
+                                            src={user.photoUrl}
+                                            alt={`${user.name} Photo`}
+                                            objectFit="cover"
+                                        />
+                                    </div>
+                                ) : (
+                                    <BiUserCircle size={100} color="#bdbdbd" />
+                                ) }
 
-        </Layout>
+                                <div className={styles.userContent}>
+                                    <strong>{user.name || user.email}</strong>
+                                </div>
+                            </div>
+                        </Link>
+                    )
+                })}
+            </div>
+        </div>
     )
 }
 
@@ -34,7 +64,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
     try {
         const usersCollection = firestore.collection('users');
-        usersCollection.limit(15);
+        usersCollection.limit(10);
         const usersData = await usersCollection.get();
         users = JSON.parse(JSON.stringify(usersData.docs.map(doc => doc.data())));
 

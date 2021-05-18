@@ -1,14 +1,8 @@
 import firebase, { firestore } from '../lib/firebase';
 
 type User = {
-    createdAt: Date,
-    email: string,
-    emailVerified: boolean,
-    isAnonymous: boolean,
     name: string,
-    photoUrl: string,
-    spins: number,
-    redeemedCodes: [],
+    email: string,
     uid: string,
 }
 
@@ -17,23 +11,13 @@ type Code = {
     spins: number,
 }
 
-export async function createUser(user) {
-    try {
-        const usersCollection = firestore.collection('users');
-        const userDoc = usersCollection.doc(user.uid);
-        await userDoc.set({
-            ...user,
-            spins: 0,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        })
-    } catch (err) {
-        console.error(err);
-    }
+export async function createUser(user: User) {
+    
 }
 
 export async function updateRedeemedCodes(uid: string, redeemedCode: Code) {
     try {
-        firestore
+        await firestore
         .collection('users')
         .doc(uid)
         .collection('redeemedCodes')
@@ -48,7 +32,7 @@ export async function updateRedeemedCodes(uid: string, redeemedCode: Code) {
 
 export async function updateSpins(uid: string, spins: number) {
     try {
-        firestore
+        await firestore
         .collection('users')
         .doc(uid)
         .update({
@@ -60,12 +44,31 @@ export async function updateSpins(uid: string, spins: number) {
 }
 
 export async function saveLegend(uid: string, legend) {
-
-    return firestore
+    try {
+        await firestore
         .collection('users')
         .doc(uid)
         .collection('legends')
-        .add(legend)
+        .doc(legend.name)
+        .set(legend)
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+export async function updateLegendUnities(uid: string, { name, unities }) {
+    try {
+        await firestore
+        .collection('users')
+        .doc(uid)
+        .collection('legends')
+        .doc(name)
+        .update({
+            unities,
+        })
+    } catch (err) {
+        console.error(err)
+    }  
 }
 
 export async function getRedeemedCodes(uid: string) {
@@ -79,7 +82,7 @@ export async function getRedeemedCodes(uid: string) {
         redeemedCodes = redeemedCodesCollection.docs.map(doc => doc.data());
         
     } catch (err) {
-        console.error(err)
+        console.error(err.message)
     }
 
     return redeemedCodes;

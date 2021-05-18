@@ -28,18 +28,15 @@ type Legend = {
   url: string,
   rarity: string,
   font: string,
-  description: string 
+  description: string,
+  unities: number,
 }
 
 type User = {
   createdAt: Date,
   email: string,
-  emailVerified: boolean,
-  isAnonymous: boolean,
   name: string,
-  photoUrl: string,
   spins: number,
-  redeemedCodes: [],
   uid: string,
 }
 
@@ -70,28 +67,28 @@ export default function Home({ legends, firestoreUser }: HomeProps) {
           <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout>
-        <div className={styles.container}>
+     
+      <div className={styles.container}>
 
-          {/* <Popup /> */}
-          
-          <div>
-            <Backstory />
-            <Counter />
-            {/* <DailyCode /> */}
-            <SpinCodes />
-          </div>
-          
-          <div>
-            <LegendImage />
-            <LegendInfo />
-            <Controls />
-          </div>
-
-          <LegendHistory />
-
+        {/* <Popup /> */}
+        
+        <div>
+          <Backstory />
+          <Counter />
+          {/* <DailyCode /> */}
+          <SpinCodes />
         </div>
-      </Layout>
+        
+        <div>
+          <LegendImage />
+          <LegendInfo />
+          <Controls />
+        </div>
+
+        <LegendHistory />
+
+      </div>
+    
       
     </CountdownProvider>
     </CodesProvider>
@@ -113,15 +110,14 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   }
   
   let legends = [];
-  let firestoreUser;
+  let firestoreUser = null;
 
   try {
-    const usersCollection = firestore.collection('users');
-    const userDoc = usersCollection.doc(uid);
+    const userDoc = firestore.collection('users').doc(uid);
     const userData = await userDoc.get();
     firestoreUser = JSON.parse(JSON.stringify(userData.data()));
 
-    const legendsCollection = userDoc.collection('legends');
+    const legendsCollection = userDoc.collection('legends') || null;
     const legendsData = await legendsCollection.get();
 
     legendsData.docs.forEach(doc => {

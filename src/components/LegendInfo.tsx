@@ -10,7 +10,7 @@ export function LegendInfo() {
 
     const { legend, isRevealing, legendsHistory } = useLegends();
     const rarityColor = rarityScheme[legend?.rarity];
-    const hasLegend = JSON.stringify(legendsHistory).includes(JSON.stringify(legend));
+    const hasLegend = legendsHistory.some(currentLegend => currentLegend.name === legend?.name);
 
     return (
         <div className={styles.legendInfo}>

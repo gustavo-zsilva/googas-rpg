@@ -1,8 +1,7 @@
 import { createContext, ReactNode, useState, useEffect, useContext } from "react";
 import localForage from 'localforage';
 
-import { saveLegend, updateSpins } from '../lib/db';
-import { firestore } from '../lib/firebase';
+import { saveLegend, updateSpins, updateLegendUnities } from '../lib/db';
 import { useAuth } from './AuthContext';
 
 export const LegendsContext = createContext({} as LegendsContextProps);
@@ -14,17 +13,14 @@ type Legend = {
     font: string,
     description: string,
     url: string,
+    unities: number,
 }
 
 type User = {
     createdAt: Date,
     email: string,
-    emailVerified: boolean,
-    isAnonymous: boolean,
     name: string,
-    photoUrl: string,
     spins: number,
-    redeemedCodes: [],
     uid: string,
 }
 
@@ -151,8 +147,27 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
 
     function handleAddLegend() {
         setIsRevealing(false);
-        saveLegend(firestoreUser.uid, legend)
-        setLegendsHistory([legend, ...legendsHistory]);
+
+        if (legendsHistory.some(currentLegend => currentLegend.name === legend.name)) {
+            const repeatedLegend = legendsHistory.find(currentLegend => currentLegend.name === legend.name);
+            const repeatedLegendIndex = legendsHistory.indexOf(repeatedLegend);
+            const newLegendsHistory = [...legendsHistory];
+            newLegendsHistory[repeatedLegendIndex].unities += 1;
+            
+            updateLegendUnities(firestoreUser.uid, { name: repeatedLegend.name, unities: repeatedLegend.unities });
+            
+            setLegendsHistory(newLegendsHistory);
+            setLegend(null);
+            return;
+        }
+
+        const newLegend = {
+            ...legend,
+            unities: 1,
+        }
+
+        saveLegend(firestoreUser.uid, newLegend);
+        setLegendsHistory([newLegend, ...legendsHistory]);
         setLegend(null);
     }
 

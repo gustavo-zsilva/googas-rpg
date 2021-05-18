@@ -27,7 +27,6 @@ interface LegendsProps {
 export default function Legends({ allLegends, firestoreLegends }: LegendsProps) {
     return (
         <LegendsListProvider legends={allLegends} firestoreLegends={firestoreLegends}>
-        <Layout>
             <Head>
                 <title>Legends | Googas RPG</title>
             </Head>
@@ -39,7 +38,6 @@ export default function Legends({ allLegends, firestoreLegends }: LegendsProps) 
                 </h3>
                 <LegendsList />
             </div>
-        </Layout>
         </LegendsListProvider>
     );
 }

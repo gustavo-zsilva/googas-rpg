@@ -25,13 +25,32 @@ export function LegendHistory() {
     ]
 
     const customStyles = {
-        control: () => ({
-            background: 'transparent',
+        control: (provided, state) => ({
+            backgroundColor: state.isFocused ? '#5865f2' : 'transparent', // cor quando ativo
+            color: 'var(--primary)',
             width: '8rem',
             display: 'flex',
             border: '1px solid #c0c0c0',
             borderRadius: '4px',
-        })
+        }),
+        menu: (provided) => ({
+            ...provided,
+            backgroundColor: 'var(--background)', // fundo das opções
+        }),
+        option: (provided, state) => ({
+            ...provided,
+            backgroundColor: state.isFocused
+            ? '#5865f2'
+            : state.isSelected
+            ? '#4f5bd5'
+            : '#2f3136', // cor quando hover ou selecionado
+            color: state.isFocused || state.isSelected ? '#fff' : '#ccc', // cor do texto
+            cursor: 'pointer',
+        }),
+        singleValue: (provided, state) => ({
+            ...provided,
+            color: '#fff', // cor do texto selecionado
+        }),
     }
 
     useEffect(() => {
@@ -48,7 +67,7 @@ export function LegendHistory() {
         <div className={styles.legendHistoryContainer}>
             <header>
                 <h3>
-                    You have <span>{legendsHistory.length}</span> {legendFilter}
+                    You have <span>{filteredLegends.length}</span> {legendFilter}
                 </h3>
                 <Select
                     options={options}
@@ -70,7 +89,7 @@ export function LegendHistory() {
                                     {legend?.name}
                                 </span>
                                 
-                                <span>
+                                <span className={styles.legendUnities}>
                                     {legend?.unities > 1 && legend?.unities}
                                 </span>
                             </span>

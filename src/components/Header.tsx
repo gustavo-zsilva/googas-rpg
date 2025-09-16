@@ -24,9 +24,8 @@ export function Header() {
     return (
         <animated.header style={{ ...springStyles }} className={styles.headerContainer}>
             <h3>
-                <Link href="/" legacyBehavior>
-                    {/* <img src="/assets/logo.jpg" alt="Logo" /> */}
-                    <span>Googas RPG</span>
+                <Link href="/" style={{ cursor: 'pointer' }} legacyBehavior>
+                    <Image src="/assets/logo.png" width={100} height={100} />
                 </Link>
             </h3>
             { user ? (
@@ -39,6 +38,7 @@ export function Header() {
                                     height={45}
                                     src={user.photoUrl}
                                     alt={user.name}
+                                    style={{ borderRadius: '50%' }}
                                     objectFit="cover"
                                 />
                             </div>

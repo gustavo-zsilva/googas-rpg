@@ -40,7 +40,7 @@
 }
 
 .legendHistoryContainer h3 span {
-    color: #0081A7;
+    color: var(--primary);
     font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
     font-size: 1.4rem;
 }
@@ -67,20 +67,20 @@
     flex: 1;
 }
 
-.legendHistoryContainer ul li > span span:last-child {
+.legendHistoryContainer ul li .legendUnities {
     display: flex;
     justify-content: center;
 
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-family: 'Bebas Neue';
-    background: rgb(238, 238, 238);
+    /* background: var(--background-secondary); */
     
     padding: 0 .6rem;
     border-radius: 2px;
 }
 
 .legendHistoryContainer ul li:hover {
-    background: #f5f2f2;
+    background: var(--background-secondary);
 }
 
 .legendHistoryContainer ul li div {

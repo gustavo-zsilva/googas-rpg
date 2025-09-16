@@ -75,7 +75,7 @@ export default function Login() {
                 <section>
                     <form onSubmit={handleFormSubmit}>
                         <h2>
-                            Login
+                            🔥 Bem-vindo ao Googas RPG 🔥
                         </h2>
 
                         { error && (
@@ -172,7 +172,7 @@ export default function Login() {
                 </section>
 
                 <section>
-                    <img src="/assets/lighthouse.svg" alt="Lighthouse"/>
+                    <img src="/assets/logo.png" alt="Lighthouse"/>
                 </section>
                 
             </div>

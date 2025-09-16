@@ -6,7 +6,6 @@
     position: relative;
 
     border-radius: 6px;
-    background: var(--white);
 
     box-shadow: -10px 10px 1px 5px rgba(0, 0, 0, 0.05);
 }
@@ -84,8 +83,14 @@
     border: 0;
     outline: 0;
 
+    background-color: transparent;
+
     font-size: 1rem;
     padding-left: 1rem;
+}
+
+.loginContainer section input::placeholder {
+    color: var(--text);
 }
 
 .loginContainer .signUp {
@@ -113,17 +118,15 @@
 
     margin: 1.8rem 0;
 
-    background: #dbdbdb;
     height: 3px;
 
     border-radius: 4px;
 }
 
 .loginContainer .separator span {
-    background: var(--background);
     padding: 0 1rem;
 
-    color: #a1a1a1;
+    color: var(--text);
 }
 
 .loginContainer .providers {
@@ -144,7 +147,7 @@
     border-radius: 4px;
     font-size: 1rem;
 
-    color: var(--background);
+    color: var(--text);
     cursor: pointer;
 }
 

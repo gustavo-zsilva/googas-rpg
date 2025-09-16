@@ -3,7 +3,7 @@ import { useLegends } from '../contexts/LegendsContext';
 import Image from "next/legacy/image";
 import Shimmer from 'react-shimmer-effect';
 
-import Tilt from 'react-tilt';
+import Tilt from 'react-parallax-tilt';
 
 import { rarityScheme } from '../utils/rarityScheme';
 

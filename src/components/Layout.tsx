@@ -16,11 +16,13 @@ export function Layout({ children }: LayoutProps) {
 
     return (
         <div className={styles.layoutContainer}>
-            <Header />
-            { user && user.emailVerified && <Tabs /> }
-            
-            <div className={styles.content}>
-                {children}
+            <div className={styles.contentContainer}>
+                <Header />
+                { user && user.emailVerified && <Tabs /> }
+                
+                <div className={styles.content}>
+                    {children}
+                </div>
             </div>
 
             <footer>
@@ -34,7 +36,7 @@ export function Layout({ children }: LayoutProps) {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            My Github
+                            Github
                         </a>
                         <a
                             href="https://github.com/gustavo-zsilva/googas-rpg"
@@ -51,15 +53,7 @@ export function Layout({ children }: LayoutProps) {
                     <div>
                         <span>Meu pai</span>
                         <span>Mimi</span>
-                        <span>Romão - {""}
-                            <a 
-                                href="https://www.instagram.com/madeira_cu/" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                            >
-                                Insta
-                            </a>
-                        </span>
+                        <span>Romão</span>
                         <span>Vitão</span>
                         <span>RafaGul</span>
                     </div>

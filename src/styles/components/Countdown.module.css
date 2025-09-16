@@ -3,45 +3,45 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    /* height: 10%; */
-    background: #f5f2f2;
-    
-    padding: 1rem 0;
-    border-radius: 4px;
-
-    margin-top: 1rem;
+    gap: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-.countdownContainer > span {
-    align-self: center;
-    
-    margin-bottom: .6rem;
-    font-size: 1.2rem;
+.countdownContainer .progressCircle {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: relative;
+    background: conic-gradient(var(--primary) 0deg, var(--background) 0deg 360deg);
+    transition: background 1s linear;
 }
 
-.countdownContainer > div {
+.countdownContainer .progressCircle > div {
+    background-color: var(--background); /* cor do centro da bola */
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown {
     display: flex;
     justify-content: center;
-    font-size: 6rem;
+    font-size: 4rem;
 }
 
-.countdownContainer div div {
+.countdown div {
     display: flex;
-    justify-content: center;
-    width: 9.5rem;
 }
 
-.countdownContainer div div span {
-    font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-    padding: .2rem .6rem;
-}
-
-.countdownContainer div div span + span {
-    border-left: 6px solid #f5f2f2;
-}
-
-.countdownContainer div > div {
-    background: #ffffff;
-    border-radius: 5px;
+.countdown div span {
+    padding: 0 0.2rem;
+    font-family: 'Rajdhani', sans-serif;
 }

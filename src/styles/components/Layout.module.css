@@ -2,6 +2,9 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
+}
+
+.layoutContainer .contentContainer {
     min-height: 100vh;
 }
 
@@ -18,12 +21,11 @@
 
     width: 100%;
 
-    background: var(--text);
-    color: var(--background);
+    color: var(--white);
 }
 
 .layoutContainer footer a {
-    color: var(--primary);
+    color: var(--white);
 }
 
 .layoutContainer footer a:hover {
@@ -47,6 +49,6 @@
 
 .layoutContainer footer .author a + a:before,
 .layoutContainer footer .contributors span + span:before {
-    content: '●';
+    content: '';
     margin: 0 .4rem;
 }

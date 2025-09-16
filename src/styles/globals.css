@@ -1,7 +1,11 @@
 :root {
-  --primary: #0081A7;
-  --text: #2e384d;
-  --background: #f9f9f9;
+  /* --primary: #0081A7; */
+  --primary: #88D18A;
+  /* --text: #2e384d; */
+  --text: #f9f9f9;
+  /* --background: #f9f9f9; */
+  --background: #272727;
+  --background-secondary: #27272780;
 
   --white: #fff;
 
@@ -18,7 +22,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   
-  background: var(--background);
+    background: radial-gradient(circle at 30% 30%, #5865f2, var(--background) 70%);
   color: var(--text);
 }
 

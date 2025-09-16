@@ -2,12 +2,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.4rem;
+    padding-top: 1rem;
 
     position: relative;
-
-    background: var(--primary);
-    color: var(--background);
+    color: var(--white);
 
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.03);
 }
@@ -72,7 +70,7 @@
     padding: .6rem 1rem;
     border: 0;
 
-    background: var(--background);
+    background: transparent;
     border-radius: 2px;
 
     color: var(--primary);
@@ -81,4 +79,9 @@
     margin-left: 1rem;
 
     cursor: pointer;
+    transition: color 0.3s;
 }
+
+.headerContainer div button:hover {
+    color: var(--white);
+}   

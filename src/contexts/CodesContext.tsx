@@ -45,7 +45,7 @@ export function CodesProvider({ children }: CodesProviderProps) {
 
             const savedRedeemedCodes = await getRedeemedCodes(user?.uid);
             const savedIsDailyCodeRedeemed = await localForage.getItem('isDailyCodeRedeemed');
-            const previousDay = await localForage.getItem('previousDay') || new Date().getDate();
+            const previousDay = (await localForage.getItem('previousDay')) || new Date().getDate();
             const codesJSON = await import('../codes.json');
 
             setRedeemedCodes(savedRedeemedCodes);

@@ -24,12 +24,11 @@ export function Header() {
     return (
         <animated.header style={{ ...springStyles }} className={styles.headerContainer}>
             <h3>
-                <Link href="/">
+                <Link href="/" legacyBehavior>
                     {/* <img src="/assets/logo.jpg" alt="Logo" /> */}
                     <span>Googas RPG</span>
                 </Link>
             </h3>
-            
             { user ? (
                 <div className={styles.loggedIn}>
                     <div>
@@ -58,14 +57,13 @@ export function Header() {
                 <div className={styles.loggedOut}>
                     <span>Você não está logado.</span>
 
-                    <Link href="/login">
+                    <Link href="/login" legacyBehavior>
                         <button>
                             Login
                         </button>
                     </Link>
                 </div>
             ) }
-            
         </animated.header>
     );
 }

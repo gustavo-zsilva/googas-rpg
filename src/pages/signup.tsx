@@ -131,15 +131,13 @@ export default function Signup() {
 
     return (
         <div>
-
             <Head>
                 <title>Signup | Googas RPG</title>
             </Head>
-
             <div className={styles.signupContainer}>
 
                 <header>
-                    <Link href="/">
+                    <Link href="/" legacyBehavior>
                         <button>
                             <BiArrowBack size={30} />
                         </button>
@@ -200,7 +198,7 @@ export default function Signup() {
 
                             <div className={styles.login}>
                                 <Link href="/login">
-                                    <a>Already have an account? Login</a>
+                                    Already have an account? Login
                                 </Link>
                             </div>
                         </div>

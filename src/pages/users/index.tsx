@@ -30,7 +30,7 @@ export default function Users({ users }: UsersProps) {
             <div className={styles.usersContainer}>
                 {users.map(user => {
                     return (
-                        <Link href={`/users/${user.uid}`} key={user.uid}>
+                        <Link href={`/users/${user.uid}`} key={user.uid} legacyBehavior>
                             <div className={styles.userCard}>
                                 { user.photoUrl ? (
                                     <div style={{ display: 'flex', borderRadius: '50%' }}>
@@ -51,11 +51,11 @@ export default function Users({ users }: UsersProps) {
                                 </div>
                             </div>
                         </Link>
-                    )
+                    );
                 })}
             </div>
         </div>
-    )
+    );
 }
 
 export const getStaticProps: GetStaticProps = async () => {

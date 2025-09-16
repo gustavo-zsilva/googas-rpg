@@ -21,7 +21,7 @@ export function Tabs() {
 
     return (
         <div className={styles.tabsContainer}>
-            <Link href="/">
+            <Link href="/" legacyBehavior>
                 <button
                     onClick={() => changeTab('home')}
                     style={{ borderLeft: activeTab === 'home' ? '6px solid var(--primary)' : '' }}
@@ -37,8 +37,7 @@ export function Tabs() {
                     ) }
                 </button>
             </Link>
-            
-            <Link href="/legends">
+            <Link href="/legends" legacyBehavior>
                 <button
                     onClick={() => changeTab('legends')}
                     style={{ borderLeft: activeTab === 'legends' ? '6px solid var(--primary)' : '' }}

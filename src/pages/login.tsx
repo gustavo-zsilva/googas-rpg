@@ -62,11 +62,10 @@ export default function Login() {
             <Head>
                 <title>Login | Googas RPG</title>
             </Head>
-
             <div className={styles.loginContainer}>
 
                 <header>
-                    <Link href="/">
+                    <Link href="/" legacyBehavior>
                         <button>
                             <BiArrowBack size={30} />
                         </button>

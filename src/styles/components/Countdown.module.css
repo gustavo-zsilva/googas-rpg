@@ -8,6 +8,10 @@
     margin-bottom: 2rem;
 }
 
+.countdownContainer > span {
+    font-size: 1.3rem;
+}
+
 .countdownContainer .progressCircle {
     width: 260px;
     height: 260px;

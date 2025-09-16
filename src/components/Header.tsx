@@ -25,10 +25,8 @@ export function Header() {
         <animated.header style={{ ...springStyles }} className={styles.headerContainer}>
             <h3>
                 <Link href="/">
-                    <a>
-                        {/* <img src="/assets/logo.jpg" alt="Logo" /> */}
-                        <span>Googas RPG</span>
-                    </a>
+                    {/* <img src="/assets/logo.jpg" alt="Logo" /> */}
+                    <span>Googas RPG</span>
                 </Link>
             </h3>
             

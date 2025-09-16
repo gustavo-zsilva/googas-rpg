@@ -123,7 +123,7 @@ export default function Login() {
 
                             <div className={styles.signUp}>
                                 <Link href="/signup">
-                                    <a>Don't have an account? Sign Up</a>
+                                    Don't have an account? Sign Up
                                 </Link>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 import { BiUserCircle } from 'react-icons/bi';
 

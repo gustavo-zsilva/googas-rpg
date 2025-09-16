@@ -1,6 +1,6 @@
 import { useLegends } from '../contexts/LegendsContext';
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Shimmer from 'react-shimmer-effect';
 
 import Tilt from 'react-tilt';

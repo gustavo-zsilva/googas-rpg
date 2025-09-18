@@ -34,8 +34,8 @@ export function Header() {
                         { user.photoUrl ? (
                             <div>
                                 <Image
-                                    width={45}
-                                    height={45}
+                                    width={35}
+                                    height={35}
                                     src={user.photoUrl}
                                     alt={user.name}
                                     style={{ borderRadius: '50%' }}

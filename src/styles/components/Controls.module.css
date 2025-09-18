@@ -5,7 +5,7 @@
     
     width: 100%;
 
-    margin-top: 1.6rem;
+    /* margin-top: 1.6rem; */
     color: var(--white);
 }
 
@@ -43,14 +43,14 @@
     align-self: center;
 }
   
-.controlsContainer > span {
+.controlsContainer > div > span {
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.controlsContainer > span > span {
+.controlsContainer > div > span > span {
     font-size: 3.2rem;
     font-family: 'New Tegomin', Arial, Helvetica, sans-serif;
 }

@@ -39,6 +39,7 @@ interface LegendsContextProps {
     showPopup: boolean;
     luckySpins: number;
     bundleLegends: Legend[];
+    bogaTokens: number;
 }
 
 interface LegendsProviderProps {
@@ -60,6 +61,8 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
 
     const [showPopup, setShowPopup] = useState(false);          // Controls whether to show the sell popup or not
     const [bundleLegends, setBundleLegends] = useState<Legend[]>([]); // Legends obtained from opening a bundle
+
+    const [bogaTokens, setBogaTokens] = useState(0);                    // Current number of bogaTokens in account (ingame money)
     
     let isLuckySpin = false;
 
@@ -245,6 +248,7 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
                 luckySpins,
                 bundleLegends,
                 handleAddBundleLegends,
+                bogaTokens,
             }}
         >
             {children}

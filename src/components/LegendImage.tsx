@@ -10,7 +10,6 @@ import { rarityScheme } from '../utils/rarityScheme';
 import styles from '../styles/components/Image.module.css';
 
 export function LegendImage() {
-
     const { legend, isRevealing } = useLegends();
     
     return (
@@ -22,7 +21,7 @@ export function LegendImage() {
                 <div style={{ background: isRevealing ? 'transparent' : null }} />
                 
                 { legend && (
-                    <Shimmer>
+                    // <Shimmer>
                         <Image
                             width={310}
                             height={310}
@@ -30,7 +29,7 @@ export function LegendImage() {
                             alt={legend?.name}
                             objectFit="cover"
                         />
-                    </Shimmer>
+                    // </Shimmer>
                 ) }
             </div>
         </Tilt>

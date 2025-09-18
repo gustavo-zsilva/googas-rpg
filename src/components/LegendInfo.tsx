@@ -19,8 +19,8 @@ export function LegendInfo() {
                     <span
                         className={styles.legendName}
                         style={{ fontFamily: legend?.font }}
-                    >
-                        {hasLegend && <GiLightBackpack size={32} style={{ marginRight: '.4rem' }} />}
+                        >
+                        {!hasLegend && <p className="text-lg px-2 border-2 border-purple-400 text-purple-400 rounded-sm">New!</p>}
                         {legend?.name}
                     </span>
                     <span

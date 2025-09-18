@@ -6,6 +6,7 @@ import { useSpring, animated } from '@react-spring/web';
 import { useAuth } from '../contexts/AuthContext';
 
 import { BiUserCircle } from 'react-icons/bi';
+import { MdAttachMoney } from 'react-icons/md';
 
 import styles from '../styles/components/Header.module.css';
 
@@ -22,26 +23,28 @@ export function Header() {
     })
 
     return (
-        <animated.header style={{ ...springStyles }} className={styles.headerContainer}>
+        <animated.header style={{ ...springStyles }} className="grid grid-cols-3 place-items-center">
+            <div className="flex items-center text-2xl">
+                <MdAttachMoney size={30} color="#FFF" />
+                <p>120000</p>
+            </div>
             <h3>
-                <Link href="/" style={{ cursor: 'pointer' }} legacyBehavior>
+                <Link href="/" style={{ cursor: 'pointer' }}>
                     <Image src="/assets/logo.png" width={100} height={100} />
                 </Link>
             </h3>
             { user ? (
-                <div className={styles.loggedIn}>
-                    <div>
+                <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
                         { user.photoUrl ? (
-                            <div>
-                                <Image
-                                    width={35}
-                                    height={35}
-                                    src={user.photoUrl}
-                                    alt={user.name}
-                                    style={{ borderRadius: '50%' }}
-                                    objectFit="cover"
-                                />
-                            </div>
+                            <Image
+                                width={35}
+                                height={35}
+                                src={user.photoUrl}
+                                alt={user.name}
+                                style={{ borderRadius: '50%' }}
+                                objectFit="cover"
+                            />
                         ) : (
                             <BiUserCircle size={45} color="#bdbdbd" />
                         ) }
@@ -51,7 +54,7 @@ export function Header() {
                         <span>{user.isAnonymous ? 'Anonymous' : user.name ? user.name : user.email}</span>
                     </div>
                     
-                    <button onClick={signOut}>Log Out</button>
+                    <button className="text-primary hover:text-white transition-colors" onClick={signOut}>Log Out</button>
                 </div>
             ) : (
                 <div className={styles.loggedOut}>

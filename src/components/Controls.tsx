@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useLegends } from '../contexts/LegendsContext';
 
-import { useSpring, useChain, useSpringRef, animated, useTransition } from '@react-spring/web';
+import { useSpring, useChain, useSpringRef, animated } from '@react-spring/web';
 
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { MdAttachMoney } from 'react-icons/md';
+import { CiBag1 } from 'react-icons/ci';
 
 import { Alert } from '../components/Alert';
 
@@ -16,16 +17,17 @@ interface AlertController {
 }
 
 export function Controls() {
-
     const {
         spins,
         isRevealing,
         handleSpin,
         handleDiscardLegend,
         handleAddLegend,
-        legend
+        legend,
+        openBundle
     } = useLegends();
 
+    const [isOpen, setIsOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const alertController: AlertController = {
@@ -39,6 +41,11 @@ export function Controls() {
         }
 
         setIsModalOpen(true);
+    }
+
+    function handleOpenBundle() {
+        setIsOpen(true);
+        openBundle();
     }
 
     const isOutOfSpins = spins <= 0;
@@ -61,12 +68,16 @@ export function Controls() {
             {isRevealing && (
                 <div>
                     <button onClick={handleShowAlert}>
-                        <MdAttachMoney color="#fff" size={32} className={styles.icon} />
-                        Vender
+                        <MdAttachMoney color="#fff" size={28} className={styles.icon} />
+                        <span>
+                            Vender
+                        </span>
                     </button>
-                    <button onClick={handleAddLegend}>
-                        Adicionar
-                        <AiOutlineCheckCircle color="#fff" size={32} className={styles.icon} />
+                    <button onClick={handleAddLegend} className="bg-primary">
+                        <AiOutlineCheckCircle color="#fff" size={28} className={styles.icon} />
+                        <span>
+                            Adicionar
+                        </span>
                     </button>
                 </div>
             )}
@@ -78,9 +89,29 @@ export function Controls() {
                 disabled={isOutOfSpins || isRevealing}
                 style={{ display: isRevealing ? 'none' : null }}
                 onClick={handleSpin}
+                className="bg-primary"
             >
                 Spin
             </button>
+
+            <button className="bg-purple-500" disabled={isRevealing} onClick={handleOpenBundle}>
+                <CiBag1 color="#fff" size={28} />
+                <span>Open Bundle</span>
+                <i className="text-sm">10 spins</i>
+            </button>
+
+                <div className={`fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? 'visible' : 'invisible'}`}>
+                    <div className=" rounded-lg bg-background">
+                        <header className='flex'>
+                            <button onClick={() => setIsOpen(false)} className="text-white text-2xl">
+                                Close
+                            </button>
+                        </header>
+                        <p>Bundle loot</p>
+                    </div>
+                </div>
+
         </div>
     );
 }
+

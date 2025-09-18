@@ -34,6 +34,7 @@ interface LegendsContextProps {
     handleDiscardLegend: () => void;
     handleAddLegend: () => void;
     handleAddSpins: (spinsToSum: number) => void;
+    openBundle: () => void;
     showPopup: boolean;
 }
 
@@ -47,19 +48,21 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
 
     const { user } = useAuth();
 
-    const [spins, setSpins] = useState(0);
-    const [isRevealing, setIsRevealing] = useState(false);
-    const [legend, setLegend] = useState(null);
-    const [legends, setLegends] = useState([]);
-    const [legendsHistory, setLegendsHistory] = useState([]);
-    const [luckySpins, setLuckySpins] = useState(0);
-    const [showPopup, setShowPopup] = useState(false);
+    const [spins, setSpins] = useState(0);                      // Current number of spins the user has
+    const [isRevealing, setIsRevealing] = useState(false);      // Controls whether a legend is being revealed or not
+    const [legend, setLegend] = useState(null);                 // Current legend being revealed / viewed
+    const [legends, setLegends] = useState([]);                 // All legends available to be won
+    const [legendsHistory, setLegendsHistory] = useState([]);   // All legends the user has won
+    const [luckySpins, setLuckySpins] = useState(0);            // Counts the number of spins to give a guaranteed lucky spin
+    const [showPopup, setShowPopup] = useState(false);          // Controls whether to show the sell popup or not
     
     let isLuckySpin = false;
 
-    
+    function openBundle() {
+        setSpins(spins - 10);
+    }
 
-    function getRandomLegend(legendArray: Legend[]) {
+    function getRandomLegend(legendArray: Legend[]) {                       // Returns a random legend from an array of legends
         const randomIndex = Math.floor(Math.random() * legendArray.length);
         return legendArray[randomIndex];
     }
@@ -69,7 +72,7 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
         let randomIndex = Math.random() * multiplier;
         let legend: Legend;
 
-        const filterByRarity = (rarity: string) => legends.filter(legend => legend.rarity == rarity ? legend : null);
+        const filterByRarity = (rarity: string) => legends.filter(legend => legend.rarity === rarity);
         
         if (randomIndex <= 0.02) {
             const mythicalLegends = filterByRarity('mythical');
@@ -122,7 +125,7 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
         updateSpins(firestoreUser.uid, spins);
     }, [spins])
   
-    function handleSpin() {
+    function handleSpin() {                     // Handles the logic of spinning to win a legend
 
         if (spins <= 0) return;
 
@@ -189,6 +192,7 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
                 handleAddLegend,
                 handleAddSpins,
                 showPopup,
+                openBundle,
             }}
         >
             {children}

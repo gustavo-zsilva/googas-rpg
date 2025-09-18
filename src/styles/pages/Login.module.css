@@ -7,7 +7,7 @@
 
     border-radius: 6px;
 
-    box-shadow: -10px 10px 1px 5px rgba(0, 0, 0, 0.05);
+    /* box-shadow: -10px 10px 1px 5px rgba(0, 0, 0, 0.05); */
 }
 
 .loginContainer button {

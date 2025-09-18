@@ -74,7 +74,7 @@ export default function Login() {
 
                 <section>
                     <form onSubmit={handleFormSubmit}>
-                        <h2>
+                        <h2 className="text-2xl font-bold">
                             🔥 Bem-vindo ao Googas RPG 🔥
                         </h2>
 

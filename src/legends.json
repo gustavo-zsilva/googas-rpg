@@ -262,5 +262,95 @@
         "font": "",
         "description": "",
         "url": "https://floppa.fandom.com/wiki/Bobba"
+    },
+    {
+        "name": "Bill Collector",
+        "rarity": "legendary",
+        "imageUrl": "/images/bill_collector.png",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "newgen"
+    },
+    {
+        "name": "Alien Cat",
+        "rarity": "epic",
+        "imageUrl": "/images/alien_cat.jpeg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "newgen"
+    },
+    {
+        "name": "Chicken Jockey",
+        "rarity": "epic",
+        "imageUrl": "/images/chicken_jockey.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "newgen"
+    },
+    {
+        "name": "Cro",
+        "rarity": "epic",
+        "imageUrl": "/images/cro.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "newgen"
+    },
+    {
+        "name": "DAAAMMMMNNNNNNN!!!!!!",
+        "rarity": "epic",
+        "imageUrl": "/images/damn.jpeg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "newgen"
+    },
+    {
+        "name": "Freaky Ahh Cat",
+        "rarity": "epic",
+        "imageUrl": "/images/freaky_cat.png",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "newgen"
+    },
+    {
+        "name": "Vro",
+        "rarity": "legendary",
+        "imageUrl": "/images/vro.jpeg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "newgen"
+    },
+    {
+        "name": "Brr Brr Patapim",
+        "rarity": "rare",
+        "imageUrl": "/images/patapim.jpeg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "brainrot"
+    },
+    {
+        "name": "Tralalero Tralala",
+        "rarity": "epic",
+        "imageUrl": "/images/tralalero.jpeg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "brainrot"
+    },
+    {
+        "name": "Tung Tung Sahur",
+        "rarity": "rare",
+        "imageUrl": "/images/tung_sahur.jpeg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "brainrot"
     }
 ]

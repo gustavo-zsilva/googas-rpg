@@ -11,18 +11,18 @@
 
 .controlsContainer > button,
 .controlsContainer > div > button {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    gap: .6rem;
 
     margin-top: 1.2rem;
 
-    vertical-align: middle;
-
     width: 100%;
 
-    padding: .8rem;
-    background: var(--primary);
+    padding: .8rem 1.2rem;
     border: 0;
-    border-radius: 2px;
+    border-radius: .4rem;
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer;

@@ -6,7 +6,7 @@
 
     border-radius: 4px;
     padding: 0 2rem;
-    background: #FFF;
+    background: var(--color-background);
 
     box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.03);
 }
@@ -34,7 +34,7 @@
 .legendsListContainer td {
     padding: .6rem;
     /* border-bottom: 1px solid #c0c0c0; */
-    background: #FFF;
+    background: var(--color-background);
 }
 
 .legendsListContainer th {

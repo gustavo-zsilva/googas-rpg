@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.1.2",
+    "@tailwindcss/postcss": "^4.1.13",
     "@types/js-cookie": "^2.2.6",
     "axios": "^0.21.1",
     "firebase": "8.4.3",
@@ -17,17 +18,19 @@
     "localforage": "^1.9.0",
     "mongodb": "^3.6.6",
     "next": "^15.5.3",
+    "postcss": "^8.5.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-icons": "^4.2.0",
+    "react-icons": "^5.5.0",
     "react-parallax-tilt": "^1.7.308",
     "react-select": "^4.3.0",
     "react-shimmer-effect": "^1.0.9",
+    "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
-    "@types/react": "^17.0.3",
+    "@types/react": "^19.1.13",
     "@types/react-select": "^4.0.14"
   }
 }

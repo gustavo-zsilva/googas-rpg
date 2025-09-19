@@ -11,7 +11,7 @@ import { Alert } from '../components/Alert';
 
 import styles from '../styles/components/Controls.module.css';
 import Image from 'next/image';
-import { rarityScheme } from '../utils/rarityScheme';
+import { rarityScheme } from '../utils/colorSchemes';
 import Tilt from 'react-parallax-tilt';
 
 interface AlertController {
@@ -55,9 +55,12 @@ export function Controls() {
         openBundle();
     }
 
+    function handleSellBundleLegends() {
+        setIsOpen(false);
+    }
+
     function handleGetBundleLegends() {
         handleAddBundleLegends();
-
         setIsOpen(false);
     }
 
@@ -121,14 +124,14 @@ export function Controls() {
 
             <button onClick={() => handleAddSpins(300)}>get free spins</button>
 
-            <div className={`fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? 'visible' : 'invisible'}`}>
-                <div className="flex flex-col max-w-[50rem] w-full max-h-[40rem] h-full p-8 rounded-2xl border-2 border-gray-700 bg-background gap-6">
+            <div className={`
+                fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm transition-all duration-500
+                ${isOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"}
+            `}>
+                <div className={`flex flex-col max-w-[50rem] w-full max-h-[40rem] h-full p-8 rounded-2xl border-2 border-gray-700 bg-background gap-6`}>
                     <header className='flex flex-col justify-center items-center relative'>
                         <CiBag1 color="#fff" size={50} className='animate-bounce' />
                         <h1 className="text-2xl">⚡ Bundle Loot</h1>
-                        {/* <button onClick={() => setIsOpen(false)} className="absolute top-0 right-0 text-white text-xl">
-                            X
-                        </button> */}
                     </header>
                     <ul className='grid grid-cols-5 gap-6 h-full'>
                         {bundleLegends.map((legend, index) => (
@@ -168,17 +171,18 @@ export function Controls() {
                         ))}
                     </ul>
                     <div className='flex justify-end gap-4'>
-                        <button className="bg-red-400 rounded-lg text-white px-4 py-2 flex items-center gap-1" onClick={() => setIsOpen(false)}>
+                        <button className="bg-red-400 rounded-lg text-white px-4 py-2 flex items-center gap-1" onClick={handleSellBundleLegends}>
                             <MdAttachMoney size={20} className='inline' />
-                            Vender todos
+                            Sell all
                         </button>
                         <button className="bg-teal-400 rounded-lg text-white px-4 py-2 flex items-center gap-2" onClick={handleGetBundleLegends}>
                             <AiOutlineCheckCircle size={20} />
-                            Pegar todos
+                            Get all
                         </button>
                     </div>
                 </div>
             </div>
+            
 
         </div>
     );

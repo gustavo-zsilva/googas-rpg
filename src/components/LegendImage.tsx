@@ -13,7 +13,7 @@ export function LegendImage() {
     const { legend, isRevealing } = useLegends();
     
     return (
-        <Tilt>
+        <Tilt scale={1.1}>
             <div
                 className={styles.imageContainer}
                 style={{ border: `8px solid ${rarityScheme[legend?.rarity]}` }}

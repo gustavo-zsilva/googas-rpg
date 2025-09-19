@@ -5,7 +5,8 @@
         "imageUrl": "/images/martin.png",
         "font": "Bebas Neue",
         "description": "",
-        "url": null
+        "url": null,
+        "collection": "og"
     },
     {
         "name": "Guga Maçaneta",
@@ -13,7 +14,8 @@
         "imageUrl": "/images/guga_macaneta.png",
         "font": "Dancing Script",
         "description": "",
-        "url": null
+        "url": null,
+        "collection": "og"
     },
     {
         "name": "El Conserje",
@@ -21,7 +23,8 @@
         "imageUrl": "/images/el_conserje.png",
         "font": "New Tegomin",
         "description": "",
-        "url": null
+        "url": null,
+        "collection": "og"
     },
     {
         "name": "Googas",
@@ -29,7 +32,8 @@
         "imageUrl": "/images/googas.png",
         "font": "Architects Daughter",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/The_Real_Googas"
+        "url": "https://floppa.fandom.com/wiki/The_Real_Googas",
+        "collection": "og"
     },
     {
         "name": "Bingus",
@@ -37,7 +41,8 @@
         "imageUrl": "/images/bingus.png",
         "font": "Bebas Neue",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Bingus"
+        "url": "https://floppa.fandom.com/wiki/Bingus",
+        "collection": "og"
     },
     {
         "name": "AdmPoggers",
@@ -45,7 +50,8 @@
         "imageUrl": "/images/adm_poggers.png",
         "font": "Indie Flower",
         "description": "",
-        "url": "https://www.roblox.com/users/2268073812/profile"
+        "url": "https://www.roblox.com/users/2268073812/profile",
+        "collection": "og"
     },
     {
         "name": "Blue Jesus",
@@ -53,7 +59,8 @@
         "imageUrl": "/images/blue_jesus.png",
         "font": "Indie Flower",
         "description": "",
-        "url": "https://www.roblox.com/users/197125692/profile"
+        "url": "https://www.roblox.com/users/197125692/profile",
+        "collection": "og"
     },
     {
         "name": "Diedius123",
@@ -61,7 +68,8 @@
         "imageUrl": "/images/diedius123.png",
         "font": "",
         "description": "",
-        "url": "https://www.roblox.com/users/197125692/profile"
+        "url": "https://www.roblox.com/users/197125692/profile",
+        "collection": "og"
     },
     {
         "name": "The Destroyer",
@@ -69,7 +77,8 @@
         "imageUrl": "/images/the_destroyer.png",
         "font": "Dancing Script",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/The_Destroyer"
+        "url": "https://floppa.fandom.com/wiki/The_Destroyer",
+        "collection": "og"
     },
     {
         "name": "DaBaby Convertible",
@@ -77,7 +86,8 @@
         "imageUrl": "/images/dababy_convertible.png",
         "font": "Indie Flower",
         "description": "",
-        "url": "https://www.roblox.com/games/6541412379/LAPS-Dababy-Car-Driving-3D"
+        "url": "https://www.roblox.com/games/6541412379/LAPS-Dababy-Car-Driving-3D",
+        "collection": "og"
     },
     {
         "name": "Duda",
@@ -85,7 +95,8 @@
         "imageUrl": "/images/duda.png",
         "font": "",
         "description": "",
-        "url": null
+        "url": null,
+        "collection": "og"
     },
     {
         "name": "Cazumggbr",
@@ -93,7 +104,8 @@
         "imageUrl": "/images/cazumggbr.png",
         "font": "Indie Flower",
         "description": "",
-        "url": "https://www.roblox.com/users/62853383/profile"
+        "url": "https://www.roblox.com/users/62853383/profile",
+        "collection": "og"
     },
     {
         "name": "VitorGamerV3",
@@ -101,7 +113,8 @@
         "imageUrl": "/images/vitorgamerv3.png",
         "font": "",
         "description": "",
-        "url": "https://www.roblox.com/users/64158079/profile"
+        "url": "https://www.roblox.com/users/64158079/profile",
+        "collection": "og"
     },
     {
         "name": "Big Floppa",
@@ -109,7 +122,8 @@
         "imageUrl": "/images/big_floppa.png",
         "font": "Chenla",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Big_Floppa"
+        "url": "https://floppa.fandom.com/wiki/Big_Floppa",
+        "collection": "og"
     },
     {
         "name": "Fake Googas",
@@ -117,7 +131,8 @@
         "imageUrl": "/images/fake_googas.png",
         "font": "Dancing Script",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Googas"
+        "url": "https://floppa.fandom.com/wiki/Googas",
+        "collection": "og"
     },
     {
         "name": "Sogga",
@@ -125,7 +140,8 @@
         "imageUrl": "/images/sogga.png",
         "font": "Indie Flower",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Sogga"
+        "url": "https://floppa.fandom.com/wiki/Sogga",
+        "collection": "og"
     },
     {
         "name": "Zabloing",
@@ -133,7 +149,8 @@
         "imageUrl": "/images/zabloing.png",
         "font": "New Tegomin",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Zabloing"
+        "url": "https://floppa.fandom.com/wiki/Zabloing",
+        "collection": "og"
     },
     {
         "name": "Dudão",
@@ -141,7 +158,8 @@
         "imageUrl": "/images/dudao.png",
         "font": "",
         "description": "",
-        "url": null
+        "url": null,
+        "collection": "og"
     },
     {
         "name": "Pingus",
@@ -149,7 +167,8 @@
         "imageUrl": "/images/pingus.png",
         "font": "",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Pingus"
+        "url": "https://floppa.fandom.com/wiki/Pingus",
+        "collection": "og"
     },
     {
         "name": "Juan",
@@ -157,7 +176,8 @@
         "imageUrl": "/images/juan.png",
         "font": "",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Juan"
+        "url": "https://floppa.fandom.com/wiki/Juan",
+        "collection": "og"
     },
     {
         "name": "Moliammo",
@@ -165,7 +185,8 @@
         "imageUrl": "/images/moliammo.png",
         "font": "",
         "description": "",
-        "url": null
+        "url": null,
+        "collection": "og"
     },
     {
         "name": "iatedosma503",
@@ -173,7 +194,8 @@
         "imageUrl": "/images/iatedosma.png",
         "font": "",
         "description": "",
-        "url": "https://www.roblox.com/users/527075815/profile"
+        "url": "https://www.roblox.com/users/527075815/profile",
+        "collection": "og"
     },
     {
         "name": "DaBaby",
@@ -181,7 +203,8 @@
         "imageUrl": "/images/dababy.png",
         "font": "",
         "description": "",
-        "url": null
+        "url": null,
+        "collection": "og"
     },
     {
         "name": "Amogus",
@@ -189,7 +212,8 @@
         "imageUrl": "/images/amogus.png",
         "font": "",
         "description": "",
-        "url": "https://youtu.be/5DlROhT8NgU?t=3"
+        "url": "https://youtu.be/5DlROhT8NgU?t=3",
+        "collection": "og"
     },
     {
         "name": "Fleppa",
@@ -197,7 +221,8 @@
         "imageUrl": "/images/fleppa.png",
         "font": "",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Fleppa"
+        "url": "https://floppa.fandom.com/wiki/Fleppa",
+        "collection": "og"
     },
     {
         "name": "Choppa Floppa",
@@ -205,7 +230,8 @@
         "imageUrl": "/images/choppa_floppa.png",
         "font": "",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Choppa_Floppa"
+        "url": "https://floppa.fandom.com/wiki/Choppa_Floppa",
+        "collection": "og"
     },
     {
         "name": "Flopammed Al Googas",
@@ -213,7 +239,8 @@
         "imageUrl": "/images/flopammed_al_googas.png",
         "font": "",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Flopammed_Al-Googas"
+        "url": "https://floppa.fandom.com/wiki/Flopammed_Al-Googas",
+        "collection": "og"
     },
     {
         "name": "Lil Floppa",
@@ -221,7 +248,8 @@
         "imageUrl": "/images/lil_floppa.png",
         "font": "",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Lil_Floppa"
+        "url": "https://floppa.fandom.com/wiki/Lil_Floppa",
+        "collection": "og"
     },
     {
         "name": "Selwyn McSoggers",
@@ -229,7 +257,8 @@
         "imageUrl": "/images/selwyn_mcsoggers.png",
         "font": "",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Selwyn_Mcsoggers"
+        "url": "https://floppa.fandom.com/wiki/Selwyn_Mcsoggers",
+        "collection": "og"
     },
     {
         "name": "Sleepy Shloopa",
@@ -237,7 +266,8 @@
         "imageUrl": "/images/sleepy_shloopa.png",
         "font": "",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Sleepy_Shloopa"
+        "url": "https://floppa.fandom.com/wiki/Sleepy_Shloopa",
+        "collection": "og"
     },
     {
         "name": "Baweley Sogga",
@@ -245,7 +275,8 @@
         "imageUrl": "/images/baweley_sogga.png",
         "font": "",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Baweley"
+        "url": "https://floppa.fandom.com/wiki/Baweley",
+        "collection": "og"
     },
     {
         "name": "Mahmoud Flobdul",
@@ -253,7 +284,8 @@
         "imageUrl": "/images/mahmoud_flobdul.png",
         "font": "",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Mahmoud_Flobdul"
+        "url": "https://floppa.fandom.com/wiki/Mahmoud_Flobdul",
+        "collection": "og"
     },
     {
         "name": "Bobba",
@@ -261,7 +293,8 @@
         "imageUrl": "/images/bobba.png",
         "font": "",
         "description": "",
-        "url": "https://floppa.fandom.com/wiki/Bobba"
+        "url": "https://floppa.fandom.com/wiki/Bobba",
+        "collection": "og"
     },
     {
         "name": "Bill Collector",

@@ -14,6 +14,7 @@ type Legend = {
     description: string,
     url: string,
     unities: number,
+    collection: string,
 }
 
 type User = {

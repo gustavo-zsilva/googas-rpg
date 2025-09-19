@@ -7,13 +7,13 @@
 
 .legendInfo span {
     font-size: 1rem;
-    margin-top: 1rem;
 }
 
 .legendInfo > div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 1rem;
 }
 
 .legendInfo .legendName {

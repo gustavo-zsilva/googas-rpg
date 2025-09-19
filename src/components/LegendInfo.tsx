@@ -16,13 +16,15 @@ export function LegendInfo() {
         <div className={styles.legendInfo}>
             {isRevealing && (
                 <div>
-                    <span
-                        className={styles.legendName}
-                        style={{ fontFamily: legend?.font }}
-                        >
+                    <div className="flex items-center gap-3">
                         {!hasLegend && <p className="text-lg px-2 border-2 border-purple-400 text-purple-400 rounded-sm">New!</p>}
-                        {legend?.name}
-                    </span>
+                        <span
+                            className={styles.legendName}
+                            style={{ fontFamily: legend?.font }}
+                            >
+                            {legend?.name}
+                        </span>
+                    </div>
                     <span
                         className={styles.legendRarity}
                         style={{

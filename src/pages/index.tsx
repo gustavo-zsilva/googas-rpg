@@ -30,6 +30,7 @@ type Legend = {
   font: string,
   description: string,
   unities: number,
+  collection: string,
 }
 
 type User = {

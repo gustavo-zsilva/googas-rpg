@@ -2,7 +2,7 @@ import { useLegends } from '../contexts/LegendsContext';
 
 import { AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineInfoCircle } from 'react-icons/ai';
 
-import { rarityScheme } from '../utils/rarityScheme';
+import { rarityScheme } from '../utils/colorSchemes';
 
 import styles from '../styles/components/Alert.module.css';
 

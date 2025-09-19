@@ -5,7 +5,7 @@ import Select from 'react-select';
 import { BiGhost } from 'react-icons/bi';
 import { CgPacman } from 'react-icons/cg';
 
-import { rarityScheme } from '../utils/rarityScheme';
+import { rarityScheme } from '../utils/colorSchemes';
 
 import styles from '../styles/components/LegendHistory.module.css';
 

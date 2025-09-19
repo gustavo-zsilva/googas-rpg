@@ -1,6 +1,6 @@
 import Image from "next/legacy/image";
 
-import { rarityScheme } from '../utils/rarityScheme';
+import { rarityScheme } from '../utils/colorSchemes';
 import { useLegendsList } from '../contexts/LegendsListContext';
 
 import Shimmer from 'react-shimmer-effect';

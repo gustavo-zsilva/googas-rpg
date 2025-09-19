@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: .6rem;
 }
 
 .legendInfo .legendName {
@@ -21,11 +21,11 @@
     align-items: center;
     font-size: 1.8rem;
     gap: 1rem;
+    word-break: break-all;
 }
 
 .legendInfo .legendRarity {
     text-transform: capitalize;
     font-size: 1.6rem;
     padding: 0 .6rem;
-    margin-top: .8rem;
 }

@@ -2,7 +2,7 @@ import { useLegends } from "../contexts/LegendsContext";
 
 import { GiLightBackpack } from 'react-icons/gi';
 
-import { rarityScheme } from '../utils/rarityScheme';
+import { collectionScheme, rarityScheme } from '../utils/colorSchemes';
 
 import styles from '../styles/components/LegendInfo.module.css';
 
@@ -21,20 +21,30 @@ export function LegendInfo() {
                         <span
                             className={styles.legendName}
                             style={{ fontFamily: legend?.font }}
-                            >
+                        >
                             {legend?.name}
                         </span>
                     </div>
-                    <span
-                        className={styles.legendRarity}
-                        style={{
-                            color: rarityColor,
-                            borderLeft: `2px solid ${rarityColor}`,
-                            borderRight: `2px solid ${rarityColor}`
-                        }}
-                    >
-                        {legend?.rarity}
-                    </span>
+                    <div className="flex items-center mt-2 gap-3">
+                         <p
+                            className="text-lg capitalize border-2 rounded-full px-2"
+                            style={{
+                                color: rarityColor,
+                            }}
+                        >
+                            {legend?.rarity}
+                        </p>
+                        <p
+                            className="text-lg uppercase border-2 rounded-full px-2"
+                            style={{
+                                background: `${collectionScheme[legend?.collection] + '30'}`,
+                                borderColor: collectionScheme[legend?.collection],
+                                color: collectionScheme[legend?.collection],
+                            }}
+                        >
+                            {legend?.collection}
+                        </p>
+                    </div>
                 </div>
             )}
         </div>

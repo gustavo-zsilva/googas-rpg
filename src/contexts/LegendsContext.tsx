@@ -37,10 +37,12 @@ interface LegendsContextProps {
     handleAddSpins: (spinsToSum: number) => void;
     openBundle: () => void;
     handleAddBundleLegends: () => void;
+    toggleViewOnlyLegend: (legend: Legend | null) => void;
     showPopup: boolean;
     luckySpins: number;
     bundleLegends: Legend[];
     bogaTokens: number;
+    viewOnly: boolean;
 }
 
 interface LegendsProviderProps {
@@ -62,10 +64,24 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
 
     const [showPopup, setShowPopup] = useState(false);          // Controls whether to show the sell popup or not
     const [bundleLegends, setBundleLegends] = useState<Legend[]>([]); // Legends obtained from opening a bundle
+    const [viewOnly, setViewOnly] = useState(false);                    // Controls if legend being displayed is view-only
 
     const [bogaTokens, setBogaTokens] = useState(0);                    // Current number of bogaTokens in account (ingame money)
     
     let isLuckySpin = false;
+
+    function toggleViewOnlyLegend(legend: Legend | null) {
+        if (!legend) {
+            setViewOnly(false);
+            setLegend(null);
+            setIsRevealing(false);
+            return;
+        }
+
+        setIsRevealing(false);
+        setViewOnly(true);
+        setLegend(legend);
+    }
 
     function openBundle() {
         if (spins < 10) return;
@@ -182,6 +198,7 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
 
         if (spins <= 0) return;
 
+        setViewOnly(false);
         setLuckySpins(luckySpins + 1);
 
         if (luckySpins >= 20) {
@@ -250,6 +267,8 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
                 bundleLegends,
                 handleAddBundleLegends,
                 bogaTokens,
+                viewOnly,
+                toggleViewOnlyLegend,
             }}
         >
             {children}

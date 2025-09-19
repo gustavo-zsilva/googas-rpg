@@ -9,11 +9,23 @@ import { rarityScheme } from '../utils/colorSchemes';
 
 import styles from '../styles/components/LegendHistory.module.css';
 
+type Legend = {
+    name: string,
+    rarity: string,
+    imageUrl: string,
+    font: string,
+    description: string,
+    url: string,
+    unities: number,
+    collection: string,
+}
+
 export function LegendHistory() {
 
-    const { legendsHistory } = useLegends();
+    const { legendsHistory, toggleViewOnlyLegend } = useLegends();
     const [legendFilter, setLegendFilter] = useState('all');
     const [filteredLegends, setFilteredLegends] = useState([]);
+    const [lastViewedLegendName, setlastViewedLegendName] = useState<string | null>(null);
 
     const options = [
         { value: 'all', label: 'All' },
@@ -53,6 +65,17 @@ export function LegendHistory() {
         }),
     }
 
+    function handleToggleViewOnlyLegend(legend: Legend | null) {            // If legend is clicked twice, unset it to null
+        if (lastViewedLegendName === legend.name) {
+            setlastViewedLegendName(null);
+            toggleViewOnlyLegend(null);
+            return;
+        }
+        
+        setlastViewedLegendName(legend.name);
+        toggleViewOnlyLegend(legend);
+    }
+
     useEffect(() => {
         setFilteredLegends(legendsHistory);
     }, [])
@@ -82,7 +105,12 @@ export function LegendHistory() {
             <ul>
                 {filteredLegends.length > 0 ? (
                     filteredLegends.map((legend, index) => (
-                        <li key={index} style={{ borderLeft: `4px solid ${rarityScheme[legend?.rarity]}` }}>
+                        <li
+                            key={index}
+                            className="cursor-pointer"
+                            style={{ borderLeft: `4px solid ${rarityScheme[legend?.rarity]}` }}
+                            onClick={() => handleToggleViewOnlyLegend(legend)}
+                        >
                             <div style={{ backgroundImage: `url(${legend?.imageUrl})` }} />
                             <span>
                                 <span>

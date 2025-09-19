@@ -31,7 +31,8 @@ export function Controls() {
         handleAddSpins,
         luckySpins,
         bundleLegends,
-        handleAddBundleLegends
+        handleAddBundleLegends,
+        viewOnly,
     } = useLegends();
 
     const [isOpen, setIsOpen] = useState(false);
@@ -87,7 +88,7 @@ export function Controls() {
                 )}
             </div>
 
-            {isRevealing && (
+            {isRevealing && !viewOnly && (
                 <div>
                     <button onClick={handleShowAlert}>
                         <MdAttachMoney color="#fff" size={28} className={styles.icon} />

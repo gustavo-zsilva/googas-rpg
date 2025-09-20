@@ -9,10 +9,13 @@ import { BiUserCircle } from 'react-icons/bi';
 import { MdAttachMoney } from 'react-icons/md';
 
 import styles from '../styles/components/Header.module.css';
+import { useTokens } from "../contexts/TokenContext";
 
 export function Header() {
 
     const { user, signOut } = useAuth();
+    const { bogaTokens, addBogaTokens } = useTokens();
+
     const springStyles = useSpring({
         from: {
             y: -100
@@ -26,7 +29,7 @@ export function Header() {
         <animated.header style={{ ...springStyles }} className="grid grid-cols-3 place-items-center">
             <div className="flex items-center text-2xl">
                 <MdAttachMoney size={30} color="#FFF" />
-                <p>120000</p>
+                <p>{bogaTokens.toLocaleString('pt-BR')}</p>
             </div>
             <h3>
                 <Link href="/" style={{ cursor: 'pointer' }}>

@@ -87,3 +87,35 @@ export async function getRedeemedCodes(uid: string) {
 
     return redeemedCodes;
 }
+
+export async function updateBogaTokens(uid: string, bogaTokens: number) {
+    try {
+        await firestore
+        .collection('users')
+        .doc(uid)
+        .update({
+            bogaTokens,
+        })
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+export async function getBogaTokens(uid: string) {
+    let bogaTokens = 0;
+
+    try {
+        const userCollection = firestore.collection('users')
+        const userDoc = await userCollection.doc(uid).get();
+
+        if (userDoc.exists) {
+            const userData = userDoc.data();
+            bogaTokens = userData.bogaTokens || 0;
+        }
+        
+    } catch (err) {
+        console.error(err.message)
+    }
+
+    return bogaTokens;
+}

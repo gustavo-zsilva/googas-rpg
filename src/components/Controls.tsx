@@ -24,7 +24,7 @@ export function Controls() {
         spins,
         isRevealing,
         handleSpin,
-        handleDiscardLegend,
+        handleSellLegend,
         handleAddLegend,
         legend,
         openBundle,
@@ -45,7 +45,7 @@ export function Controls() {
 
     function handleShowAlert() {
         if (legend.rarity === 'common' || legend.rarity === 'rare') {
-            return handleDiscardLegend();
+            return handleSellLegend();
         }
 
         setIsModalOpen(true);

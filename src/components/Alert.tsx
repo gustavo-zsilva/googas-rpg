@@ -3,6 +3,7 @@ import { useLegends } from '../contexts/LegendsContext';
 import { AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineInfoCircle } from 'react-icons/ai';
 
 import { rarityScheme } from '../utils/colorSchemes';
+import { priceScheme } from '../utils/priceScheme';
 
 import styles from '../styles/components/Alert.module.css';
 
@@ -17,20 +18,12 @@ interface AlertProps {
 
 export function Alert({ controller }: AlertProps) {
 
-    const { legend, handleAddSpins, handleDiscardLegend } = useLegends();
+    const { legend, handleSellLegend } = useLegends();
 
     const rarityColor = rarityScheme[legend?.rarity];
 
-    const spinMarket = {
-        epic: 2,
-        legendary: 5,
-        mythical: 10,
-    }
-
-    function handleSellLegend() {
-        handleAddSpins(spinMarket[legend.rarity]);
-        handleDiscardLegend();
-
+    function handleConfirmSelling() {
+        handleSellLegend();
         controller.closeModal();
     }
 
@@ -52,7 +45,7 @@ export function Alert({ controller }: AlertProps) {
                 }}>
                     {legend?.name}
                 </span>
-                <span>por {spinMarket[legend?.rarity]} spins?</span>
+                <span>por ${priceScheme[legend?.rarity].toLocaleString('pt-BR')} bogaTokens?</span>
             </h3>
             
             
@@ -60,7 +53,7 @@ export function Alert({ controller }: AlertProps) {
                 <button onClick={handleCloseModal}>
                     <AiOutlineCloseCircle color="#ff3939" size={42} />
                 </button>
-                <button onClick={handleSellLegend}>
+                <button onClick={handleConfirmSelling}>
                     <AiOutlineCheckCircle color="var(--primary)" size={42} />
                 </button>
             </div>

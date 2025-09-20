@@ -3,6 +3,8 @@ import localForage from 'localforage';
 
 import { saveLegend, updateSpins, updateLegendUnities } from '../lib/db';
 import { useAuth } from './AuthContext';
+import { priceScheme } from "../utils/priceScheme";
+import { useTokens } from "./TokenContext";
 
 export const LegendsContext = createContext({} as LegendsContextProps);
 
@@ -32,7 +34,7 @@ interface LegendsContextProps {
     legend: Legend | null;
     legendsHistory: Legend[];
     handleSpin: () => void;
-    handleDiscardLegend: () => void;
+    handleSellLegend: () => void;
     handleAddLegend: () => void;
     handleAddSpins: (spinsToSum: number) => void;
     openBundle: () => void;
@@ -54,6 +56,7 @@ interface LegendsProviderProps {
 export function LegendsProvider({ children, firestoreLegends, firestoreUser }: LegendsProviderProps) {
 
     const { user } = useAuth();
+    const { addBogaTokens } = useTokens();
 
     const [spins, setSpins] = useState(0);                      // Current number of spins the user has
     const [isRevealing, setIsRevealing] = useState(false);      // Controls whether a legend is being revealed or not
@@ -214,7 +217,9 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
         setLegend(randomLegend);
     }
 
-    function handleDiscardLegend() {
+    function handleSellLegend() {
+        addBogaTokens(priceScheme[legend.rarity]);
+
         setIsRevealing(false);
         setLegend(null);
     }
@@ -258,7 +263,7 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
                 legend,
                 legendsHistory,
                 handleSpin,
-                handleDiscardLegend,
+                handleSellLegend,
                 handleAddLegend,
                 handleAddSpins,
                 showPopup,

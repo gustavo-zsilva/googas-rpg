@@ -67,7 +67,6 @@ export default function Home({ legends, firestoreUser }: HomeProps) {
           <title>Googas RPG</title>
           <link rel="icon" href="/favicon.ico" />
       </Head>
-
      
       <div className={styles.container}>
 

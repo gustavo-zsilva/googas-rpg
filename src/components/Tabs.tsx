@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 
 import Link from 'next/link';
 
-import { AiOutlineStar, AiFillStar, AiOutlineHome, AiFillHome } from 'react-icons/ai';
+import { AiOutlineStar, AiFillStar, AiOutlineHome, AiFillHome, AiOutlineShopping, AiFillShopping } from 'react-icons/ai';
 
 import styles from '../styles/components/Tabs.module.css';
 
 export function Tabs() {
     const [activeTab, setActiveTab] = useState('home');
-
+    
     function changeTab(tab: string) {
         sessionStorage.setItem('activeTab', tab);
         setActiveTab(tab);
@@ -21,7 +21,7 @@ export function Tabs() {
 
     return (
         <div className={styles.tabsContainer}>
-            <Link href="/" legacyBehavior>
+            <Link href="/">
                 <button
                     onClick={() => changeTab('home')}
                     style={{ borderLeft: activeTab === 'home' ? '6px solid var(--primary)' : '' }}
@@ -37,7 +37,7 @@ export function Tabs() {
                     ) }
                 </button>
             </Link>
-            <Link href="/legends" legacyBehavior>
+            <Link href="/legends">
                 <button
                     onClick={() => changeTab('legends')}
                     style={{ borderLeft: activeTab === 'legends' ? '6px solid var(--primary)' : '' }}
@@ -50,6 +50,22 @@ export function Tabs() {
                         </div>
                     ) : (
                         <AiOutlineStar size={32} color="#c0c0c0" />
+                    ) }
+                </button>
+            </Link>
+            <Link href="/shop">
+                <button
+                    onClick={() => changeTab('shop')}
+                    style={{ borderLeft: activeTab === 'shop' ? '6px solid var(--primary)' : '' }}
+                >
+                    { activeTab === 'shop'
+                    ? (
+                        <div>
+                            <AiFillShopping size={32} color="var(--primary)" />
+                            <span>Shop</span>
+                        </div>
+                    ) : (
+                        <AiOutlineShopping size={32} color="#c0c0c0" />
                     ) }
                 </button>
             </Link>

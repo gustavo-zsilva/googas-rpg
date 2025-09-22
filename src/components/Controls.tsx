@@ -32,6 +32,7 @@ export function Controls() {
         luckySpins,
         bundleLegends,
         handleAddBundleLegends,
+        handleSellBundleLegends,
         viewOnly,
     } = useLegends();
 
@@ -44,10 +45,9 @@ export function Controls() {
     }
 
     function handleShowAlert() {
-        if (legend.rarity === 'common' || legend.rarity === 'rare') {
+        if (legend?.rarity === 'common' || legend?.rarity === 'rare') {
             return handleSellLegend();
         }
-
         setIsModalOpen(true);
     }
 
@@ -56,11 +56,12 @@ export function Controls() {
         openBundle();
     }
 
-    function handleSellBundleLegends() {
+    function handleSellLegends() {
+        handleSellBundleLegends();
         setIsOpen(false);
     }
 
-    function handleGetBundleLegends() {
+    function handleAddLegends() {
         handleAddBundleLegends();
         setIsOpen(false);
     }
@@ -69,7 +70,7 @@ export function Controls() {
 
     const springRef = useSpringRef();
     const props = useSpring({ ref: springRef })
-
+    
     useChain([springRef, springRef], [0.5, 2])
 
     return (
@@ -83,7 +84,7 @@ export function Controls() {
                 </span>
                 {luckySpins >= 20 && (
                     <p className="text-amber-300 text-lg border-2 border-amber-300 px-2 rounded-sm animate-pulse">
-                        2,5x Lucky Spin 🔥
+                        5x Lucky Spin 🔥
                     </p>
                 )}
             </div>
@@ -172,11 +173,11 @@ export function Controls() {
                         ))}
                     </ul>
                     <div className='flex justify-end gap-4'>
-                        <button className="bg-red-400 rounded-lg text-white px-4 py-2 flex items-center gap-1" onClick={handleSellBundleLegends}>
+                        <button className="bg-red-400 rounded-lg text-white px-4 py-2 flex items-center gap-1" onClick={handleSellLegends}>
                             <MdAttachMoney size={20} className='inline' />
                             Sell all
                         </button>
-                        <button className="bg-teal-400 rounded-lg text-white px-4 py-2 flex items-center gap-2" onClick={handleGetBundleLegends}>
+                        <button className="bg-teal-400 rounded-lg text-white px-4 py-2 flex items-center gap-2" onClick={handleAddLegends}>
                             <AiOutlineCheckCircle size={20} />
                             Get all
                         </button>

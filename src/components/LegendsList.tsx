@@ -23,7 +23,6 @@ export function LegendsList() {
                     </tr>
                 </thead>
                 
-                
                 <tbody>
                     { legends.map(legend => {
                         return (

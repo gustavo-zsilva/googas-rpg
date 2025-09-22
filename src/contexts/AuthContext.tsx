@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-import firebase, { auth } from '../lib/firebase';
+import firebase, { auth, firestore } from '../lib/firebase';
 
 import Cookie from 'js-cookie';
 
@@ -38,10 +38,27 @@ export function AuthProvider({ children }) {
         return auth.signInAnonymously()
     }
 
-    function signInWithGoogle() {
+    async function signInWithGoogle() {
         const provider = new firebase.auth.GoogleAuthProvider();
+        const result = await auth.signInWithPopup(provider);
+        const user = result.user;
 
-        return auth.signInWithPopup(provider)
+        if (!user) return;
+
+        const userDoc = firestore.collection("users").doc(user.uid);
+        const doc = await userDoc.get();
+
+        if (!doc.exists) {
+            await userDoc.set({
+            uid: user.uid,
+            email: user.email,
+            displayName: user.displayName,
+            spins: 0, // valor inicial
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            });
+        }
+
+        return user;
     }
 
     function signInWithFacebook() {

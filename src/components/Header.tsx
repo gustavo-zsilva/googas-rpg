@@ -63,7 +63,7 @@ export function Header() {
                 <div className={styles.loggedOut}>
                     <span>Você não está logado.</span>
 
-                    <Link href="/login" legacyBehavior>
+                    <Link href="/login">
                         <button>
                             Login
                         </button>

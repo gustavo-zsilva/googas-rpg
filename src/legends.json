@@ -385,5 +385,131 @@
         "description": "",
         "url": null,
         "collection": "brainrot"
+    },
+    {
+        "name": "Guga Egípcio",
+        "rarity": "legendary",
+        "imageUrl": "/images/egyptian_guga.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "gods"
+    },
+    {
+        "name": "Turi Egípcio",
+        "rarity": "legendary",
+        "imageUrl": "/images/egyptian_yuri.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "gods"
+    },
+    {
+        "name": "Jones Egípcio",
+        "rarity": "legendary",
+        "imageUrl": "/images/egyptian_jonas.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "gods"
+    },
+    {
+        "name": "Tríceps",
+        "rarity": "mythical",
+        "imageUrl": "/images/triceps.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "gods"
+    },
+    {
+        "name": "Guga Postura",
+        "rarity": "epic",
+        "imageUrl": "/images/guga_postura.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "newgen"
+    },
+    {
+        "name": "Turi Postura",
+        "rarity": "epic",
+        "imageUrl": "/images/yuri_postura.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "newgen"
+    },
+    {
+        "name": "Knee Molester",
+        "rarity": "legendary",
+        "imageUrl": "/images/knee_molester.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "newgen"
+    },
+    {
+        "name": "Guga Stupid Ahh",
+        "rarity": "epic",
+        "imageUrl": "/images/guga_stupid.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "newgen"
+    },
+    {
+        "name": "Sigma Boy",
+        "rarity": "epic",
+        "imageUrl": "/images/guga_filtro.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "newgen"
+    },
+    {
+        "name": "Bombardiro Crocodilo",
+        "rarity": "epic",
+        "imageUrl": "/images/bombardiro.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "brainrot"
+    },
+    {
+        "name": "Boneka Ambalabu",
+        "rarity": "uncommon",
+        "imageUrl": "/images/boneka_ambalabu.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "brainrot"
+    },
+    {
+        "name": "Capuccino Assassino",
+        "rarity": "uncommon",
+        "imageUrl": "/images/capuccino_assassino.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "brainrot"
+    },
+    {
+        "name": "Frigo Camelo",
+        "rarity": "uncommon",
+        "imageUrl": "/images/frigo_camelo.png",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "brainrot"
+    },
+    {
+        "name": "Ballerina Capuccina",
+        "rarity": "uncommon",
+        "imageUrl": "/images/ballerina_capuccina.jpg",
+        "font": "",
+        "description": "",
+        "url": null,
+        "collection": "brainrot"
     }
 ]

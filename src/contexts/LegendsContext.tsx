@@ -1,5 +1,4 @@
 import { createContext, ReactNode, useState, useEffect, useContext } from "react";
-import localForage from 'localforage';
 
 import { saveLegend, updateSpins, updateLegendUnities } from '../lib/db';
 import { useAuth } from './AuthContext';
@@ -39,6 +38,7 @@ interface LegendsContextProps {
     handleAddSpins: (spinsToSum: number) => void;
     openBundle: () => void;
     handleAddBundleLegends: () => void;
+    handleSellBundleLegends: () => void;
     toggleViewOnlyLegend: (legend: Legend | null) => void;
     showPopup: boolean;
     luckySpins: number;
@@ -87,7 +87,6 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
         if (spins < 10) return;
 
         if (luckySpins >= 20) {
-            console.log('lucky spin!');
             setLuckySpins(0);
             isLuckySpin = true;
         }
@@ -131,13 +130,24 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
         setBundleLegends([]);
     }
 
+    function handleSellBundleLegends() {
+        let tokensToAdd = 0;
+
+        bundleLegends.forEach(legend => {
+            tokensToAdd += priceScheme[legend.rarity];
+        })
+
+        addBogaTokens(tokensToAdd);
+        setBundleLegends([]);
+    }
+
     function getRandomLegend(legendArray: Legend[]) {                       // Returns a random legend from an array of legends
         const randomIndex = Math.floor(Math.random() * legendArray.length);
         return legendArray[randomIndex];
     }
     
     function calculateChances() {                                           // Calculates which legend the user wins based on predefined chances
-        const multiplier = isLuckySpin ? 40 : 100;
+        const multiplier = isLuckySpin ? 20 : 100;
         let randomIndex = Math.random() * multiplier;
         let legend: Legend;
 
@@ -159,7 +169,11 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
             const rareLegends = filterByRarity('rare');
             legend = getRandomLegend(rareLegends);
         }
-        else if (randomIndex > 15) {
+        else if (randomIndex <= 50) {
+            const uncommonLegends = filterByRarity('uncommon');
+            legend = getRandomLegend(uncommonLegends);
+        }
+        else if (randomIndex > 50) {
             const commonLegends = filterByRarity('common');
             legend = getRandomLegend(commonLegends);
         }
@@ -190,9 +204,9 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
     }, [])
 
     useEffect(() => {
-        if (!user) return;
+        if (!user || !firestoreUser) return;
         updateSpins(firestoreUser.uid, spins);
-    }, [spins])
+    }, [spins, user, firestoreUser])
   
     function handleSpin() {                                                 // Handles the logic of spinning to win a legend
 
@@ -268,6 +282,7 @@ export function LegendsProvider({ children, firestoreLegends, firestoreUser }: L
                 luckySpins,
                 bundleLegends,
                 handleAddBundleLegends,
+                handleSellBundleLegends,
                 viewOnly,
                 toggleViewOnlyLegend,
             }}

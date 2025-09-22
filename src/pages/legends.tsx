@@ -5,10 +5,12 @@ import { LegendsListProvider } from '../contexts/LegendsListContext';
 import { Layout } from '../components/Layout';
 import { LegendsList } from '../components/LegendsList';
 
+import { firestore } from '../lib/firebase';
+
 import { AiFillStar } from 'react-icons/ai';
 
+import legendsJSON from '../legends.json';
 import styles from '../styles/pages/Legends.module.css';
-import { firestore } from '../lib/firebase';
 
 type Legend = {
     name: string,
@@ -47,8 +49,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     const { uid } = req.cookies;
     let firestoreLegends = [];
 
-    const legendsJSON = await import('../legends.json');
-    const allLegends = legendsJSON.default;
+    const allLegends = legendsJSON;
 
     try {
         const userCollection = firestore.collection('users');
@@ -56,6 +57,11 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
         const legendsCollection = userDoc.collection('legends');
         const legendsData = await legendsCollection.get();
         firestoreLegends = legendsData.docs.map(doc => doc.data());
+        // Organize by rarity: mythical, legendary, epic, rare, common
+        allLegends.sort((a, b) => {
+            const rarityOrder = ['mythical', 'legendary', 'epic', 'rare', 'uncommon', 'common'];
+            return rarityOrder.indexOf(a.rarity) - rarityOrder.indexOf(b.rarity);
+        });
 
     } catch (err) {
         console.log(err);

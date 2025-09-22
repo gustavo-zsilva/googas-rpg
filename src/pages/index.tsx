@@ -115,6 +115,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   try {
     const userDoc = firestore.collection('users').doc(uid);
     const userData = await userDoc.get();
+    
     firestoreUser = JSON.parse(JSON.stringify(userData.data()));
 
     const legendsCollection = userDoc.collection('legends') || null;

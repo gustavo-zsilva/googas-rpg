@@ -137,7 +137,7 @@ export default function Signup() {
             <div className={styles.signupContainer}>
 
                 <header>
-                    <Link href="/" legacyBehavior>
+                    <Link href="/">
                         <button>
                             <BiArrowBack size={30} />
                         </button>

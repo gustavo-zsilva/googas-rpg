@@ -30,7 +30,7 @@ export default function Users({ users }: UsersProps) {
             <div className={styles.usersContainer}>
                 {users.map(user => {
                     return (
-                        <Link href={`/users/${user.uid}`} key={user.uid} legacyBehavior>
+                        <Link href={`/users/${user.uid}`} key={user.uid}>
                             <div className={styles.userCard}>
                                 { user.photoUrl ? (
                                     <div style={{ display: 'flex', borderRadius: '50%' }}>

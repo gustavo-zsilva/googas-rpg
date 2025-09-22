@@ -1,5 +1,6 @@
 export const priceScheme = {
     'common': 10,
+    'uncommon': 25,
     'rare': 45,
     'epic': 200,
     'legendary': 1000,          // 1k

@@ -95,10 +95,10 @@
 
 .legendsListContainer .owned {
     background: rgba(79, 241, 79, 0.767);
-    color: rgb(0, 180, 0);
+    color: #FFF;
 }
 
 .legendsListContainer .notOwned {
     background: rgba(255, 0, 0, 0.308);
-    color: rgba(212, 0, 0, 0.5);
+    color: #FFF;
 }

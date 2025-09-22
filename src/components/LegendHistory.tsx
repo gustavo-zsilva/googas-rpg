@@ -33,6 +33,7 @@ export function LegendHistory() {
         { value: 'legendary', label: 'Legendary' },
         { value: 'epic', label: 'Epic' },
         { value: 'rare', label: 'Rare' },
+        { value: 'uncommon', label: 'Uncommon' },
         { value: 'common', label: 'Common' },
     ]
 

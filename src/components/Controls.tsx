@@ -45,7 +45,7 @@ export function Controls() {
     }
 
     function handleShowAlert() {
-        if (legend?.rarity === 'common' || legend?.rarity === 'rare') {
+        if (legend?.rarity === 'common' || legend?.rarity === 'uncommon' || legend?.rarity === 'rare') {
             return handleSellLegend();
         }
         setIsModalOpen(true);

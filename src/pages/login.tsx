@@ -65,7 +65,7 @@ export default function Login() {
             <div className={styles.loginContainer}>
 
                 <header>
-                    <Link href="/" legacyBehavior>
+                    <Link href="/">
                         <button>
                             <BiArrowBack size={30} />
                         </button>
